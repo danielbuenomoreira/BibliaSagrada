@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bíblia Offline</title>
+    <link rel="stylesheet" href="arquivos/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bíblia Sagrada</h1>
+    </header>
+
+    <main>
+        <div class="container-config">
+            <div class="seletor-modo">
+                <input type="radio" name="modo_busca" id="modo_guiada" checked>
+                <label for="modo_guiada">Busca Guiada</label>
+                <input type="radio" name="modo_busca" id="modo_livre">
+                <label for="modo_livre">Busca Livre</label>
+            </div>
+
+            <div class="selecao-versao">
+                <label for="versao-select">Versão:</label>
+                <select id="versao-select">
+                    <option value="ara">ARA (Almeida Revista e Atualizada)</option>
+                    <option value="naa">NAA (Nova Almeida Atualizada)</option>
+                    <option value="nvi">NVI (Nova Versão Internacional)</option>
+                    <option value="acf">ACF (Almeida Corrigida e Fiel)</option>
+                    <option value="aa">AA (Almeida Revisada Imprensa Bíblica)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="container-busca">
+            <div id="form_guiada" class="form-busca">
+                <select id="livro-select"></select>
+                <input type="number" id="capitulo-input" placeholder="Capítulo">
+            </div>
+            <div id="form_livre" class="form-busca hidden">
+                <input type="text" id="referencia-input" placeholder="Ex: 1 Coríntios 13">
+            </div>
+            <button id="buscar-btn">Buscar</button>
+        </div>
+
+        <div id="resultado-busca" class="capitulo-container"></div>
+    </main>
+
+    <script src="arquivos/script.js"></script>
+</body>
+</html>
