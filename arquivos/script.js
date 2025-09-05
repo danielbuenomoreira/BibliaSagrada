@@ -117,4 +117,134 @@ document.addEventListener('DOMContentLoaded', () => {
             } else { // Este bloco agora serve para NVI e ACF
                 await buscarEmArquivoPorLivro(livro, capitulo);
             }
-        } catch (error
+        } catch (error) {
+            textoBiblico.innerHTML = `<p style="color: red;">${error.message}</p>`;
+            btnAnterior.classList.add('hidden');
+            btnProximo.classList.add('hidden');
+        }
+    }
+
+    // --- LÓGICA DE BUSCA DE DADOS ---
+
+    // Caminho 1: Para ARA e NAA (Arquivo único).
+    async function buscarEmArquivoUnico(livro, capitulo) {
+        const caminho = `./biblia/${estadoAtual.versao.toUpperCase()}.json`;
+        const response = await fetch(caminho);
+        if (!response.ok) throw new Error(`Arquivo ${caminho} não encontrado.`);
+        const dadosBiblia = await response.json();
+
+        const dadosLivro = dadosBiblia.find(b => b.name === livro);
+        if (!dadosLivro) throw new Error(`Livro "${livro}" não encontrado.`);
+        
+        estadoAtual.totalCapitulos = dadosLivro.chapters.length;
+        const numCapitulo = validarCapitulo(capitulo);
+        
+        const dadosCapitulo = dadosLivro.chapters[numCapitulo - 1];
+        if (!dadosCapitulo) throw new Error(`Capítulo ${numCapitulo} inválido para "${livro}".`);
+
+        estadoAtual.capitulo = numCapitulo;
+        exibirCapituloArquivoUnico(dadosCapitulo);
+    }
+
+    // Caminho 2: Para NVI e ACF (Arquivos por livro, formato aninhado).
+    async function buscarEmArquivoPorLivro(livro, capitulo) {
+        const nomeArquivo = normalizarNomeLivro(livro);
+        const caminho = `./biblia/${estadoAtual.versao}/${nomeArquivo}.json`;
+        const response = await fetch(caminho);
+        if (!response.ok) throw new Error(`Arquivo ${caminho} não encontrado.`);
+        const dadosDoLivro = await response.json();
+
+        estadoAtual.totalCapitulos = dadosDoLivro.length;
+        const numCapitulo = validarCapitulo(capitulo);
+
+        const objetoCapitulo = dadosDoLivro.find(item => item.hasOwnProperty(numCapitulo));
+        if (!objetoCapitulo) throw new Error(`Capítulo ${numCapitulo} inválido para "${livro}".`);
+        
+        estadoAtual.capitulo = numCapitulo;
+        exibirCapituloPorLivro(objetoCapitulo[numCapitulo]);
+    }
+    
+    // --- FUNÇÕES DE EXIBIÇÃO E NAVEGAÇÃO ---
+
+    function exibirCapituloArquivoUnico(versiculosArray) {
+        let html = '';
+        versiculosArray.forEach((texto, index) => {
+            html += `<p><sup>${index + 1}</sup> ${texto}</p>`;
+        });
+        textoBiblico.innerHTML = html;
+        atualizarControles();
+    }
+    
+    function exibirCapituloPorLivro(versiculosObjeto) {
+        let html = '';
+        for (const numero in versiculosObjeto) {
+            html += `<p><sup>${numero}</sup> ${versiculosObjeto[numero]}</p>`;
+        }
+        textoBiblico.innerHTML = html;
+        atualizarControles();
+    }
+    
+    function atualizarControles() {
+        const todosOsLivros = [...livrosVT, ...livrosNT];
+        const livroInfo = todosOsLivros.find(l => l.dataName === estadoAtual.livro);
+        const nomeParaExibir = livroInfo ? livroInfo.display : estadoAtual.livro;
+
+        tituloCapitulo.textContent = `${nomeParaExibir} ${estadoAtual.capitulo}`;
+        inputCapitulo.value = estadoAtual.capitulo;
+
+        btnAnterior.classList.toggle('hidden', estadoAtual.capitulo <= 1);
+        btnProximo.classList.toggle('hidden', estadoAtual.capitulo >= estadoAtual.totalCapitulos);
+    }
+
+    // --- FUNÇÕES DE AÇÃO DO UTILIZADOR ---
+
+    function selecionarLivro(evento) {
+        if (evento.target.tagName === 'LI') {
+            const nomeLivro = evento.target.dataset.livro;
+            document.querySelectorAll('#lista-livros li.ativo').forEach(li => li.classList.remove('ativo'));
+            evento.target.classList.add('ativo');
+            
+            // Esconde o menu após a seleção, melhorando a experiência em telemóveis
+            listaLivros.classList.remove('visivel');
+
+            carregarCapitulo(nomeLivro, 1);
+        }
+    }
+
+    function irParaCapitulo() {
+        const numCapitulo = parseInt(inputCapitulo.value);
+        carregarCapitulo(estadoAtual.livro, numCapitulo);
+    }
+    
+    function irCapituloAnterior() {
+        if (estadoAtual.capitulo > 1) {
+            carregarCapitulo(estadoAtual.livro, estadoAtual.capitulo - 1);
+        }
+    }
+
+    function irProximoCapitulo() {
+        if (estadoAtual.capitulo < estadoAtual.totalCapitulos) {
+            carregarCapitulo(estadoAtual.livro, estadoAtual.capitulo + 1);
+        }
+    }
+
+    // --- FUNÇÕES AUXILIARES ---
+
+    function validarCapitulo(num) {
+        const capitulo = parseInt(num);
+        if (isNaN(capitulo) || capitulo < 1) { return 1; }
+        if (capitulo > estadoAtual.totalCapitulos) { return estadoAtual.totalCapitulos; }
+        return capitulo;
+    }
+
+    // Função correta que mantém os espaços nos nomes dos arquivos.
+    function normalizarNomeLivro(nome) {
+        return nome
+            .toLowerCase() // Converte para minúsculas
+            .normalize('NFD') // Separa os acentos das letras
+            .replace(/[\u0300-\u036f]/g, ""); // Remove os acentos
+    }
+    
+    // --- EXECUÇÃO INICIAL ---
+    criarListasDeLivros();
+});
