@@ -1,51 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bíblia Sagrada</title>
+
     <link rel="stylesheet" href="arquivos/style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Bíblia Sagrada</h1>
-    </header>
+    <div id="container-principal">
 
-    <main>
-        <div class="container-config">
-            <div class="seletor-modo">
-                <input type="radio" name="modo_busca" id="modo_guiada" checked>
-                <label for="modo_guiada">Busca Guiada</label>
-                <input type="radio" name="modo_busca" id="modo_livre">
-                <label for="modo_livre">Busca Livre</label>
+        <aside id="lista-livros">
+            <header>
+                <h1>Bíblia Sagrada</h1>
+                <div class="selecao-versao">
+                    <label for="versao-select">Versão:</label>
+                    <select id="versao-select">
+                        <option value="ara">ARA (Almeida Revista e Atualizada)</option>
+                        <option value="naa">NAA (Nova Almeida Atualizada)</option>
+                        <option value="nvi">NVI (Nova Versão Internacional)</option>
+                        <option value="acf">ACF (Almeida Corrigida e Fiel)</option>
+                        <option value="aa">AA (Almeida Revisada Imprensa Bíblica)</option>
+                    </select>
+                </div>
+            </header>
+
+            <div class="listas-testamentos">
+                <div class="lista-container">
+                    <h2>Velho Testamento</h2>
+                    <ul id="lista-vt"></ul>
+                </div>
+
+                <div class="lista-container">
+                    <h2>Novo Testamento</h2>
+                    <ul id="lista-nt"></ul>
+                </div>
+            </div>
+        </aside>
+
+        <main id="conteudo-principal">
+            <div id="boas-vindas">
+                <h2>Bem-vindo!</h2>
+                <p>Selecione um livro na lista ao lado para começar a leitura.</p>
             </div>
 
-            <div class="selecao-versao">
-                <label for="versao-select">Versão:</label>
-                <select id="versao-select">
-                    <option value="ara">ARA (Almeida Revista e Atualizada)</option>
-                    <option value="naa">NAA (Nova Almeida Atualizada)</option>
-                    <option value="nvi">NVI (Nova Versão Internacional)</option>
-                    <option value="acf">ACF (Almeida Corrigida e Fiel)</option>
-                    <option value="aa">AA (Almeida Revisada Imprensa Bíblica)</option>
-                </select>
-            </div>
-        </div>
+            <div id="exibicao-capitulo" class="hidden">
+                <header class="cabecalho-capitulo">
+                    <h2 id="titulo-capitulo"></h2>
+                    <div class="controle-capitulo">
+                        <label for="input-capitulo">Capítulo:</label>
+                        <input type="number" id="input-capitulo" min="1">
+                        <button id="ir-capitulo-btn">Ir</button>
+                    </div>
+                </header>
 
-        <div class="container-busca">
-            <div id="form_guiada" class="form-busca">
-                <select id="livro-select"></select>
-                <input type="number" id="capitulo-input" placeholder="Capítulo">
-            </div>
-            <div id="form_livre" class="form-busca hidden">
-                <input type="text" id="referencia-input" placeholder="Ex: 1 Coríntios 13">
-            </div>
-            <button id="buscar-btn">Buscar</button>
-        </div>
+                <div id="texto-biblico"></div>
 
-        <div id="resultado-busca" class="capitulo-container"></div>
-    </main>
+                <footer id="navegacao-capitulos">
+                    <button id="btn-anterior" class="hidden">Capítulo Anterior</button>
+                    <button id="btn-proximo" class="hidden">Próximo Capítulo</button>
+                </footer>
+            </div>
+        </main>
+    </div>
 
     <script src="arquivos/script.js"></script>
 </body>

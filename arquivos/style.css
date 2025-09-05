@@ -1,96 +1,188 @@
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f0f2f5;
-    color: #1c1e21;
+/* --- Configurações Globais --- */
+/* A regra '*' seleciona todos os elementos para aplicar um reset básico de margens e caixas */
+* {
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total dos elementos */
     margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 0;
 }
 
-header { text-align: center; margin-bottom: 20px; }
+/* Estilos aplicados a todo o corpo da página */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Fontes modernas e seguras */
+    background-color: #f0f2f5; /* Um cinza claro para o fundo */
+    color: #333; /* Cor de texto padrão (cinza escuro) */
+}
 
-.container-config {
+/* --- Layout Principal --- */
+/* O contêiner principal usa Flexbox para criar o layout de duas colunas */
+#container-principal {
+    display: flex; /* Ativa o Flexbox */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+}
+
+/* --- Barra Lateral (Lista de Livros) --- */
+/* Estilos para a barra lateral esquerda */
+#lista-livros {
+    width: 350px; /* Largura fixa */
+    background-color: #fff; /* Fundo branco */
+    border-right: 1px solid #ddd; /* Linha divisória à direita */
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Organiza os itens em coluna */
+    height: 100%; /* Ocupa a altura total do container */
+}
+
+/* Cabeçalho da barra lateral */
+#lista-livros header {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+#lista-livros h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Estilo para o seletor de versão */
+.selecao-versao {
+    display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
+    gap: 10px;
+}
+
+#versao-select {
+    flex-grow: 1; /* Faz o select ocupar o espaço restante */
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Container que segura as duas listas para permitir a rolagem */
+.listas-testamentos {
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical SE necessário */
+    flex-grow: 1; /* Faz esta div ocupar todo o espaço vertical restante */
+    padding: 10px;
+}
+
+.lista-container h2 {
+    font-size: 18px;
+    padding: 10px;
+    color: #007bff; /* Azul para destaque */
+    border-bottom: 1px solid #eee;
+}
+
+/* Estilo para as listas de livros (ul) */
+#lista-vt, #lista-nt {
+    list-style: none; /* Remove os marcadores de lista (bolinhas) */
+}
+
+/* Estilo para cada item da lista (li) */
+#lista-vt li, #lista-nt li {
+    padding: 12px 10px;
+    cursor: pointer; /* Muda o cursor para uma mão, indicando que é clicável */
+    border-radius: 4px;
+    transition: background-color 0.2s; /* Efeito suave na mudança de cor */
+}
+
+/* Efeito ao passar o mouse sobre um livro */
+#lista-vt li:hover, #lista-nt li:hover {
+    background-color: #f0f2f5; /* Cor de fundo suave */
+}
+
+/* Estilo para o livro que está atualmente selecionado */
+#lista-vt li.ativo, #lista-nt li.ativo {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+/* --- Conteúdo Principal (Leitura) --- */
+/* Estilos para a área principal à direita */
+#conteudo-principal {
+    flex-grow: 1; /* Ocupa todo o espaço restante na horizontal */
+    padding: 30px;
+    overflow-y: auto; /* Permite rolar o conteúdo do capítulo se for muito longo */
+}
+
+/* Estilo da mensagem de boas-vindas */
+#boas-vindas {
+    text-align: center;
+    color: #777;
+    margin-top: 50px;
+}
+
+/* Classe para esconder elementos (usada pelo JavaScript) */
+.hidden {
+    display: none !important; /* !important para garantir que a regra seja aplicada */
+}
+
+/* Cabeçalho da área de exibição do capítulo */
+.cabecalho-capitulo {
+    display: flex;
+    justify-content: space-between; /* Espaça o título e os controles */
+    align-items: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-/* Estilo para as abas de modo de busca */
-.seletor-modo {
+.controle-capitulo {
     display: flex;
-    border-radius: 8px;
-    overflow: hidden;
+    align-items: center;
+    gap: 10px;
+}
+
+#input-capitulo {
+    width: 70px; /* Largura para o campo de número */
+    padding: 8px;
+    border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 16px;
 }
-.seletor-modo input[type="radio"] { display: none; }
-.seletor-modo label {
-    padding: 10px 20px;
+
+#ir-capitulo-btn {
+    padding: 8px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
-    background-color: #fff;
-    transition: background-color 0.3s;
-    user-select: none;
 }
-.seletor-modo input[type="radio"]:checked + label {
+
+/* Estilos para o texto bíblico */
+#texto-biblico p {
+    line-height: 1.8; /* Espaçamento entre linhas para melhor legibilidade */
+    margin-bottom: 1em; /* Espaço de um parágrafo abaixo de cada versículo */
+    font-size: 18px;
+}
+
+#texto-biblico sup {
+    font-weight: bold;
+    color: #555;
+    margin-right: 5px;
+}
+
+/* Rodapé com os botões de navegação */
+#navegacao-capitulos {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between; /* Coloca um botão em cada ponta */
+}
+
+#navegacao-capitulos button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #007bff;
+    background-color: #fff;
+    color: #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#navegacao-capitulos button:hover {
     background-color: #007bff;
     color: white;
 }
-
-.selecao-versao { display: flex; align-items: center; gap: 10px; }
-
-#versao-select {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.container-busca {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 20px;
-}
-
-.form-busca { display: flex; gap: 10px; width: 100%; }
-.form-busca.hidden { display: none; }
-
-#livro-select, #capitulo-input, #referencia-input {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    flex-grow: 1;
-}
-#capitulo-input { max-width: 120px; }
-
-#buscar-btn {
-    padding: 12px 30px;
-    font-size: 18px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-#buscar-btn:hover { background-color: #218838; }
-
-.capitulo-container {
-    background-color: #fff;
-    padding: 20px 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    max-width: 800px;
-    width: 100%;
-}
-.capitulo-container h2 { margin-top: 0; }
-.capitulo-container p { margin-bottom: 10px; line-height: 1.7; }
-.capitulo-container sup { font-weight: bold; color: #007bff; }
