@@ -35,6 +35,13 @@
         </aside>
 
         <main id="conteudo-principal">
+            
+            <button id="btn-toggle-menu" aria-label="Mostrar menu de livros">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <div id="boas-vindas">
                 <h2>Bem-vindo!</h2>
                 <p>Selecione um livro na lista ao lado para começar a leitura.</p>
@@ -42,14 +49,7 @@
 
             <div id="exibicao-capitulo" class="hidden">
                 <header class="cabecalho-capitulo">
-                    <button id="btn-toggle-menu" aria-label="Mostrar menu de livros">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    
                     <h2 id="titulo-capitulo"></h2>
-
                     <div class="controle-capitulo">
                         <label for="input-capitulo">Capítulo:</label>
                         <input type="number" id="input-capitulo" min="1">

@@ -8,7 +8,6 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #f0f2f5;
     color: #333;
-    /* Adicionamos overflow: hidden para evitar barras de rolagem indesejadas em mobile */
     overflow: hidden;
 }
 
@@ -26,132 +25,38 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* Adicionamos uma transição para a animação de deslizar */
     transition: transform 0.3s ease-in-out;
 }
-#lista-livros header {
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-}
-#lista-livros h1 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.selecao-versao {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-#versao-select {
-    flex-grow: 1;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-.listas-testamentos {
-    overflow-y: auto;
-    flex-grow: 1;
-    padding: 10px;
-}
-.lista-container h2 {
-    font-size: 18px;
-    padding: 10px;
-    color: #007bff;
-    border-bottom: 1px solid #eee;
-}
-#lista-vt, #lista-nt {
-    list-style: none;
-}
-#lista-vt li, #lista-nt li {
-    padding: 12px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-}
-#lista-vt li:hover, #lista-nt li:hover {
-    background-color: #f0f2f5;
-}
-#lista-vt li.ativo, #lista-nt li.ativo {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-}
+#lista-livros header { padding: 20px; border-bottom: 1px solid #ddd; }
+#lista-livros h1 { font-size: 24px; text-align: center; margin-bottom: 15px; }
+.selecao-versao { display: flex; align-items: center; gap: 10px; }
+#versao-select { flex-grow: 1; padding: 8px; border-radius: 5px; border: 1px solid #ccc; }
+.listas-testamentos { overflow-y: auto; flex-grow: 1; padding: 10px; }
+.lista-container h2 { font-size: 18px; padding: 10px; color: #007bff; border-bottom: 1px solid #eee; }
+#lista-vt, #lista-nt { list-style: none; }
+#lista-vt li, #lista-nt li { padding: 12px 10px; cursor: pointer; border-radius: 4px; transition: background-color 0.2s; }
+#lista-vt li:hover, #lista-nt li:hover { background-color: #f0f2f5; }
+#lista-vt li.ativo, #lista-nt li.ativo { background-color: #007bff; color: white; font-weight: bold; }
 
 /* --- Conteúdo Principal (Leitura) --- */
 #conteudo-principal {
     flex-grow: 1;
     padding: 30px;
     overflow-y: auto;
+    /* Adicionamos position: relative para que o botão do menu possa ser posicionado dentro dele */
+    position: relative;
 }
-#boas-vindas {
-    text-align: center;
-    color: #777;
-    margin-top: 50px;
-}
-.hidden {
-    display: none !important;
-}
-.cabecalho-capitulo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-.controle-capitulo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-#input-capitulo {
-    width: 70px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-#ir-capitulo-btn {
-    padding: 8px 15px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-#texto-biblico p {
-    line-height: 1.8;
-    margin-bottom: 1em;
-    font-size: 18px;
-}
-#texto-biblico sup {
-    font-weight: bold;
-    color: #555;
-    margin-right: 5px;
-}
-#navegacao-capitulos {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-}
-#navegacao-capitulos button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: 1px solid #007bff;
-    background-color: #fff;
-    color: #007bff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-}
-#navegacao-capitulos button:hover {
-    background-color: #007bff;
-    color: white;
-}
-
+#boas-vindas { text-align: center; color: #777; margin-top: 50px; }
+.hidden { display: none !important; }
+.cabecalho-capitulo { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin-bottom: 20px; }
+.controle-capitulo { display: flex; align-items: center; gap: 10px; }
+#input-capitulo { width: 70px; padding: 8px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
+#ir-capitulo-btn { padding: 8px 15px; border: none; background-color: #007bff; color: white; border-radius: 5px; cursor: pointer; }
+#texto-biblico p { line-height: 1.8; margin-bottom: 1em; font-size: 18px; }
+#texto-biblico sup { font-weight: bold; color: #555; margin-right: 5px; }
+#navegacao-capitulos { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; display: flex; justify-content: space-between; }
+#navegacao-capitulos button { padding: 10px 20px; font-size: 16px; border: 1px solid #007bff; background-color: #fff; color: #007bff; border-radius: 5px; cursor: pointer; transition: background-color 0.2s, color 0.2s; }
+#navegacao-capitulos button:hover { background-color: #007bff; color: white; }
 
 /* --- ESTILOS PARA O BOTÃO DO MENU (Hambúrguer) --- */
 #btn-toggle-menu {
@@ -164,46 +69,37 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 10; /* Garante que ele fique visível */
+    z-index: 10;
 }
-#btn-toggle-menu:focus {
-    outline: none;
-}
-#btn-toggle-menu span {
-    width: 30px;
-    height: 3px;
-    background: #333;
-    border-radius: 10px;
-}
-
+#btn-toggle-menu:focus { outline: none; }
+#btn-toggle-menu span { width: 30px; height: 3px; background: #333; border-radius: 10px; }
 
 /* --- REGRAS PARA TELAS PEQUENAS (Design Responsivo) --- */
-/* Esta 'media query' aplica os estilos abaixo apenas se a largura da tela for 800px ou menor */
 @media (max-width: 800px) {
-    /* Mostra o botão do menu que estava escondido */
+    /* Mostra o botão do menu e o posiciona no canto superior esquerdo */
     #btn-toggle-menu {
         display: flex;
+        position: absolute; /* Posição absoluta em relação ao #conteudo-principal */
+        top: 20px;
+        left: 20px;
     }
     
     /* Modifica a barra lateral para se tornar um menu flutuante */
     #lista-livros {
-        position: fixed; /* Tira o menu do fluxo normal da página */
+        position: fixed;
         top: 0;
         left: 0;
-        z-index: 100; /* Garante que o menu fique ACIMA de todo o conteúdo */
-        /* Esconde o menu para fora da tela à esquerda */
+        z-index: 100;
         transform: translateX(-100%); 
     }
 
-    /* Nova classe que o JavaScript vai adicionar para mostrar o menu */
     #lista-livros.visivel {
-        transform: translateX(0); /* Traz o menu de volta para a tela */
-        box-shadow: 5px 0px 15px rgba(0,0,0,0.2); /* Adiciona uma sombra para destaque */
+        transform: translateX(0);
+        box-shadow: 5px 0px 15px rgba(0,0,0,0.2);
     }
 
-    /* Ajusta o cabeçalho do capítulo para alinhar o botão à esquerda */
+    /* Adiciona um preenchimento à esquerda do cabeçalho do capítulo para não ficar em cima do botão */
     .cabecalho-capitulo {
-        justify-content: flex-start; /* Alinha itens à esquerda */
-        gap: 15px; /* Adiciona um espaço entre o botão e o título */
+        padding-left: 45px;
     }
 }
