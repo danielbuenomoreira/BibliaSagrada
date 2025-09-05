@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Converte o nome do livro para o formato do nome do arquivo (ex: "1 Crônicas" -> "1cronicas").
     function normalizarNomeLivro(nome) {
-        return nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '');
+        return nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
     }
     
     // --- EXECUÇÃO INICIAL ---
