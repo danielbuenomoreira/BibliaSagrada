@@ -15,10 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnProximo = document.getElementById('btn-proximo');
 
     // --- DADOS DA APLICAÇÃO ---
-    // --- ALTERAÇÃO AQUI ---
-    // Transformamos as listas de livros em arrays de objetos.
-    // 'display' é o que o utilizador vê.
-    // 'dataName' é o que o código usa para buscar nos arquivos JSON.
     const livrosVT = [
         { display: "Gênesis", dataName: "Gênesis" }, { display: "Êxodo", dataName: "Êxodo" },
         { display: "Levítico", dataName: "Levítico" }, { display: "Números", dataName: "Números" },
@@ -31,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { display: "Ester", dataName: "Ester" }, { display: "Jó", dataName: "Jó" },
         { display: "Salmos", dataName: "Salmos" }, { display: "Provérbios", dataName: "Provérbios" },
         { display: "Eclesiastes", dataName: "Eclesiastes" },
-        // A correção principal está aqui:
         { display: "Cânticos de Salomão", dataName: "Cânticos" },
         { display: "Isaías", dataName: "Isaías" }, { display: "Jeremias", dataName: "Jeremias" },
         { display: "Lamentações de Jeremias", dataName: "Lamentações de Jeremias" }, { display: "Ezequiel", dataName: "Ezequiel" },
@@ -61,20 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const estadoAtual = {
         versao: '',
-        livro: '', // Guardará o 'dataName'
+        livro: '',
         capitulo: 0,
         totalCapitulos: 0
     };
 
     // --- INICIALIZAÇÃO DA APLICAÇÃO ---
-
     function criarListasDeLivros() {
-        // --- ALTERAÇÃO AQUI ---
-        // A lógica agora usa as propriedades 'display' e 'dataName' do nosso novo objeto.
         livrosVT.forEach(livro => {
             const li = document.createElement('li');
-            li.textContent = livro.display;      // Mostra o nome de exibição.
-            li.dataset.livro = livro.dataName;   // Armazena o nome de dados para a busca.
+            li.textContent = livro.display;
+            li.dataset.livro = livro.dataName;
             listaVT.appendChild(li);
         });
 
@@ -117,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         exibicaoCapitulo.classList.remove('hidden');
         textoBiblico.innerHTML = '<p>Carregando...</p>';
 
-        estadoAtual.livro = livro; // O 'livro' aqui é o 'dataName' (ex: "Cânticos")
+        estadoAtual.livro = livro;
         estadoAtual.versao = selectVersao.value;
         
         try {
@@ -134,14 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- LÓGICA DE BUSCA DE DADOS ---
-    // Nenhuma alteração de lógica necessária aqui, pois as funções já recebem o 'dataName' correto.
     async function buscarEmArquivoUnico(livro, capitulo) {
         const caminho = `./biblia/${estadoAtual.versao.toUpperCase()}.json`;
         const response = await fetch(caminho);
         if (!response.ok) throw new Error(`Arquivo ${caminho} não encontrado.`);
         const dadosBiblia = await response.json();
 
-        // A busca funciona porque estadoAtual.livro é "Cânticos", que bate com b.name no JSON.
         const dadosLivro = dadosBiblia.find(b => b.name === livro);
         if (!dadosLivro) throw new Error(`Livro "${livro}" não encontrado na versão ${estadoAtual.versao.toUpperCase()}.`);
         
@@ -156,8 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function buscarEmArquivoPorLivro(livro, capitulo) {
-        // A normalização funciona porque normalizarNomeLivro("Cânticos") vira "canticos", que bate com o nome do arquivo.
-        const nomeArquivo = normalizarNomeLivro(livro);
+        const nomeArquivo = normalizarNomeLivro(livro); // Agora esta função irá gerar o nome de arquivo correto
         const caminho = `./biblia/${estadoAtual.versao}/${nomeArquivo}.json`;
         const response = await fetch(caminho);
         if (!response.ok) throw new Error(`Arquivo ${caminho} não encontrado.`);
@@ -193,11 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function atualizarControles() {
-        // --- ALTERAÇÃO AQUI ---
-        // Precisamos encontrar o nome de exibição correto para mostrar no título.
         const todosOsLivros = [...livrosVT, ...livrosNT];
         const livroInfo = todosOsLivros.find(l => l.dataName === estadoAtual.livro);
-        const nomeParaExibir = livroInfo ? livroInfo.display : estadoAtual.livro; // Usa o nome de exibição se encontrar
+        const nomeParaExibir = livroInfo ? livroInfo.display : estadoAtual.livro;
 
         tituloCapitulo.textContent = `${nomeParaExibir} ${estadoAtual.capitulo}`;
         inputCapitulo.value = estadoAtual.capitulo;
@@ -232,8 +219,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return capitulo;
     }
 
+    // Converte o nome do livro para o formato do nome do arquivo.
     function normalizarNomeLivro(nome) {
-        return nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '');
+        // --- CORREÇÃO AQUI --- 
+        // A parte .replace(/\s+/g, '') foi removida para manter os espaços 
+        // em nomes como "1 Samuel", gerando "1 samuel" em vez de "1samuel".
+        return nome
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, "");
     }
     
     // --- EXECUÇÃO INICIAL ---
