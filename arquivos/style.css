@@ -1,95 +1,77 @@
 /* --- Configurações Globais --- */
-/* A regra '*' seleciona todos os elementos para aplicar um reset básico de margens e caixas */
 * {
-    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total dos elementos */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-/* Estilos aplicados a todo o corpo da página */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Fontes modernas e seguras */
-    background-color: #f0f2f5; /* Um cinza claro para o fundo */
-    color: #333; /* Cor de texto padrão (cinza escuro) */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    /* Adicionamos overflow: hidden para evitar barras de rolagem indesejadas em mobile */
+    overflow: hidden;
 }
 
 /* --- Layout Principal --- */
-/* O contêiner principal usa Flexbox para criar o layout de duas colunas */
 #container-principal {
-    display: flex; /* Ativa o Flexbox */
-    height: 100vh; /* Ocupa 100% da altura da tela */
+    display: flex;
+    height: 100vh;
 }
 
 /* --- Barra Lateral (Lista de Livros) --- */
-/* Estilos para a barra lateral esquerda */
 #lista-livros {
-    width: 350px; /* Largura fixa */
-    background-color: #fff; /* Fundo branco */
-    border-right: 1px solid #ddd; /* Linha divisória à direita */
+    width: 350px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
     display: flex;
-    flex-direction: column; /* Organiza os itens em coluna */
-    height: 100%; /* Ocupa a altura total do container */
+    flex-direction: column;
+    height: 100%;
+    /* Adicionamos uma transição para a animação de deslizar */
+    transition: transform 0.3s ease-in-out;
 }
-
-/* Cabeçalho da barra lateral */
 #lista-livros header {
     padding: 20px;
     border-bottom: 1px solid #ddd;
 }
-
 #lista-livros h1 {
     font-size: 24px;
     text-align: center;
     margin-bottom: 15px;
 }
-
-/* Estilo para o seletor de versão */
 .selecao-versao {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 #versao-select {
-    flex-grow: 1; /* Faz o select ocupar o espaço restante */
+    flex-grow: 1;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-
-/* Container que segura as duas listas para permitir a rolagem */
 .listas-testamentos {
-    overflow-y: auto; /* Adiciona uma barra de rolagem vertical SE necessário */
-    flex-grow: 1; /* Faz esta div ocupar todo o espaço vertical restante */
+    overflow-y: auto;
+    flex-grow: 1;
     padding: 10px;
 }
-
 .lista-container h2 {
     font-size: 18px;
     padding: 10px;
-    color: #007bff; /* Azul para destaque */
+    color: #007bff;
     border-bottom: 1px solid #eee;
 }
-
-/* Estilo para as listas de livros (ul) */
 #lista-vt, #lista-nt {
-    list-style: none; /* Remove os marcadores de lista (bolinhas) */
+    list-style: none;
 }
-
-/* Estilo para cada item da lista (li) */
 #lista-vt li, #lista-nt li {
     padding: 12px 10px;
-    cursor: pointer; /* Muda o cursor para uma mão, indicando que é clicável */
+    cursor: pointer;
     border-radius: 4px;
-    transition: background-color 0.2s; /* Efeito suave na mudança de cor */
+    transition: background-color 0.2s;
 }
-
-/* Efeito ao passar o mouse sobre um livro */
 #lista-vt li:hover, #lista-nt li:hover {
-    background-color: #f0f2f5; /* Cor de fundo suave */
+    background-color: #f0f2f5;
 }
-
-/* Estilo para o livro que está atualmente selecionado */
 #lista-vt li.ativo, #lista-nt li.ativo {
     background-color: #007bff;
     color: white;
@@ -97,49 +79,39 @@ body {
 }
 
 /* --- Conteúdo Principal (Leitura) --- */
-/* Estilos para a área principal à direita */
 #conteudo-principal {
-    flex-grow: 1; /* Ocupa todo o espaço restante na horizontal */
+    flex-grow: 1;
     padding: 30px;
-    overflow-y: auto; /* Permite rolar o conteúdo do capítulo se for muito longo */
+    overflow-y: auto;
 }
-
-/* Estilo da mensagem de boas-vindas */
 #boas-vindas {
     text-align: center;
     color: #777;
     margin-top: 50px;
 }
-
-/* Classe para esconder elementos (usada pelo JavaScript) */
 .hidden {
-    display: none !important; /* !important para garantir que a regra seja aplicada */
+    display: none !important;
 }
-
-/* Cabeçalho da área de exibição do capítulo */
 .cabecalho-capitulo {
     display: flex;
-    justify-content: space-between; /* Espaça o título e os controles */
+    justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #007bff;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
-
 .controle-capitulo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 #input-capitulo {
-    width: 70px; /* Largura para o campo de número */
+    width: 70px;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 16px;
 }
-
 #ir-capitulo-btn {
     padding: 8px 15px;
     border: none;
@@ -148,29 +120,23 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-
-/* Estilos para o texto bíblico */
 #texto-biblico p {
-    line-height: 1.8; /* Espaçamento entre linhas para melhor legibilidade */
-    margin-bottom: 1em; /* Espaço de um parágrafo abaixo de cada versículo */
+    line-height: 1.8;
+    margin-bottom: 1em;
     font-size: 18px;
 }
-
 #texto-biblico sup {
     font-weight: bold;
     color: #555;
     margin-right: 5px;
 }
-
-/* Rodapé com os botões de navegação */
 #navegacao-capitulos {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid #eee;
     display: flex;
-    justify-content: space-between; /* Coloca um botão em cada ponta */
+    justify-content: space-between;
 }
-
 #navegacao-capitulos button {
     padding: 10px 20px;
     font-size: 16px;
@@ -181,8 +147,63 @@ body {
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
 }
-
 #navegacao-capitulos button:hover {
     background-color: #007bff;
     color: white;
+}
+
+
+/* --- ESTILOS PARA O BOTÃO DO MENU (Hambúrguer) --- */
+#btn-toggle-menu {
+    display: none; /* Escondido por padrão em telas grandes */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10; /* Garante que ele fique visível */
+}
+#btn-toggle-menu:focus {
+    outline: none;
+}
+#btn-toggle-menu span {
+    width: 30px;
+    height: 3px;
+    background: #333;
+    border-radius: 10px;
+}
+
+
+/* --- REGRAS PARA TELAS PEQUENAS (Design Responsivo) --- */
+/* Esta 'media query' aplica os estilos abaixo apenas se a largura da tela for 800px ou menor */
+@media (max-width: 800px) {
+    /* Mostra o botão do menu que estava escondido */
+    #btn-toggle-menu {
+        display: flex;
+    }
+    
+    /* Modifica a barra lateral para se tornar um menu flutuante */
+    #lista-livros {
+        position: fixed; /* Tira o menu do fluxo normal da página */
+        top: 0;
+        left: 0;
+        z-index: 100; /* Garante que o menu fique ACIMA de todo o conteúdo */
+        /* Esconde o menu para fora da tela à esquerda */
+        transform: translateX(-100%); 
+    }
+
+    /* Nova classe que o JavaScript vai adicionar para mostrar o menu */
+    #lista-livros.visivel {
+        transform: translateX(0); /* Traz o menu de volta para a tela */
+        box-shadow: 5px 0px 15px rgba(0,0,0,0.2); /* Adiciona uma sombra para destaque */
+    }
+
+    /* Ajusta o cabeçalho do capítulo para alinhar o botão à esquerda */
+    .cabecalho-capitulo {
+        justify-content: flex-start; /* Alinha itens à esquerda */
+        gap: 15px; /* Adiciona um espaço entre o botão e o título */
+    }
 }

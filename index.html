@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bíblia Sagrada</title>
-
     <link rel="stylesheet" href="arquivos/style.css">
 </head>
-
 <body>
-
     <div id="container-principal">
 
         <aside id="lista-livros">
@@ -26,13 +22,11 @@
                     </select>
                 </div>
             </header>
-
             <div class="listas-testamentos">
                 <div class="lista-container">
                     <h2>Velho Testamento</h2>
                     <ul id="lista-vt"></ul>
                 </div>
-
                 <div class="lista-container">
                     <h2>Novo Testamento</h2>
                     <ul id="lista-nt"></ul>
@@ -48,7 +42,14 @@
 
             <div id="exibicao-capitulo" class="hidden">
                 <header class="cabecalho-capitulo">
+                    <button id="btn-toggle-menu" aria-label="Mostrar menu de livros">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
                     <h2 id="titulo-capitulo"></h2>
+
                     <div class="controle-capitulo">
                         <label for="input-capitulo">Capítulo:</label>
                         <input type="number" id="input-capitulo" min="1">
@@ -68,5 +69,4 @@
 
     <script src="arquivos/script.js"></script>
 </body>
-
 </html>

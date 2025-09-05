@@ -2,6 +2,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- SELEÇÃO DOS ELEMENTOS DO HTML ---
+    // Adicionamos os elementos que vamos manipular o menu de livros.
+    const btnToggleMenu = document.getElementById('btn-toggle-menu');
+    const listaLivros = document.getElementById('lista-livros'); 
+
+    // --- SELEÇÃO DOS ELEMENTOS DO HTML ---
     const selectVersao = document.getElementById('versao-select');
     const listaVT = document.getElementById('lista-vt');
     const listaNT = document.getElementById('lista-nt');
