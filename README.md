@@ -4,6 +4,7 @@ Olá, meu nome é Daniel Moreira.
 2)Eu queria ter um projeto simples, mas completo para postar aqui no GitHub.
 
 Aproveitem.
+
 Link: https://danielmoreiraprogramador.github.io/bibliasagrada/
 
 Obrigado.
