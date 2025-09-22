@@ -1,13 +1,13 @@
-Olá, meu nome é Daniel Moreira.
-2 motivos principais para eu criar esse projeto:
-1)Eu não sabendo que já existem outros projetos como esse, pensei em compartilhar a Bíblia sem anúncios e completa nas versões mais utilizadas atualmente para qualquer um poder ler e em qualquer lugar.
-2)Eu queria ter um projeto simples, mas completo para postar aqui no GitHub.
+Olá, meu nome é Daniel Moreira.<br>
+2 motivos principais para eu criar esse projeto:<br>
+1)Eu não sabendo que já existem outros projetos como esse, pensei em compartilhar a Bíblia sem anúncios e completa nas versões mais utilizadas atualmente para qualquer um poder ler e em qualquer lugar.<br>
+2)Eu queria ter um projeto simples, mas completo para postar aqui no GitHub.<br>
 
-Aproveitem.
+Aproveitem.<br>
 
 Link: https://danielmoreiraprogramador.github.io/bibliasagrada/
 
-Obrigado.
+Obrigado.<br>
 
-Meu projeto do Hinário Adventista completo em vídeo: https://github.com/danielmoreiraprogramador/NovoHinarioAdventista
+<p>Meu projeto do Hinário Adventista completo em vídeo: https://github.com/danielmoreiraprogramador/NovoHinarioAdventista</p>
 Minhas redes sociais: https://danielmoreiraprogramador.github.io/quemsoueu/
