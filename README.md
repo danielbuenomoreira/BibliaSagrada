@@ -9,4 +9,5 @@ Link: https://danielmoreiraprogramador.github.io/bibliasagrada/
 
 Obrigado.
 
+Meu projeto do Hinário Adventista completo em vídeo: https://github.com/danielmoreiraprogramador/NovoHinarioAdventista
 Minhas redes sociais: https://danielmoreiraprogramador.github.io/quemsoueu/
