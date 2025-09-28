@@ -5,9 +5,9 @@ Olá, meu nome é Daniel Moreira.<br>
 
 Aproveitem.<br>
 
-Link: https://danielmoreiraprogramador.github.io/BibliaSagrada/
+Link: https://danielbuenomoreira.github.io/BibliaSagrada/
 
 Obrigado.<br>
 
-<p>Meu projeto do Hinário Adventista completo em vídeo: https://github.com/danielmoreiraprogramador/NovoHinarioAdventista</p>
-Minhas redes sociais: https://danielmoreiraprogramador.github.io/QuemSouEu/
+<p>Meu projeto do Hinário Adventista completo em vídeo: https://github.com/danielbuenomoreira/NovoHinarioAdventista</p>
+Minhas redes sociais: https://danielbuenomoreira.github.io/QuemSouEu/
