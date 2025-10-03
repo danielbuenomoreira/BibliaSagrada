@@ -1,13 +1,50 @@
-Olá, meu nome é Daniel Moreira.<br>
-2 motivos principais para eu criar esse projeto:<br>
-1)Eu não sabendo que já existem outros projetos como esse, pensei em compartilhar a Bíblia sem anúncios e completa nas versões mais utilizadas atualmente para qualquer um poder ler e em qualquer lugar.<br>
-2)Eu queria ter um projeto simples, mas completo para postar aqui no GitHub.<br>
+# 📖 Bíblia Sagrada Online
 
-Aproveitem.<br>
+Olá e seja bem-vindo! Meu nome é **Daniel Moreira**, e fico feliz em compartilhar este projeto com você.
 
-Link: https://danielbuenomoreira.github.io/BibliaSagrada/
+Desenvolvi esta aplicação com dois grandes objetivos em mente:
 
-Obrigado.<br>
+1.  **Missão:** Oferecer uma plataforma de leitura da Bíblia que seja **completa, gratuita e 100% livre de anúncios**, permitindo que qualquer pessoa estude as Escrituras de forma acessível e em qualquer lugar.
+2.  **Portfólio:** Criar um projeto pessoal que fosse ao mesmo tempo simples em seu propósito, mas completo em sua execução, para demonstrar minhas habilidades de desenvolvimento web.
 
-<p>Meu projeto do Hinário Adventista completo em vídeo: https://github.com/danielbuenomoreira/NovoHinarioAdventista</p>
-Minhas redes sociais: https://danielbuenomoreira.github.io/QuemSouEu/
+Espero que seja uma bênção para você. Aproveite a leitura!
+
+---
+
+### ✨ Funcionalidades Principais
+
+Para garantir a melhor experiência de leitura, o projeto conta com:
+
+* **Interface Limpa e Sem Distrações:** Foco total na Palavra, sem banners, pop-ups ou qualquer tipo de anúncio.
+* **Versões da Bíblia:** Inclui as traduções mais utilizadas para o estudo e a leitura devocional.
+* **Navegação Intuitiva:** Encontre qualquer livro, capítulo e versículo de forma rápida e fácil.
+* **Design Responsivo:** Leia confortavelmente no seu celular, tablet ou computador.
+
+---
+
+### 💻 Acesse a Bíblia Online
+
+Este projeto está no ar e pode ser acessado por qualquer pessoa através do link abaixo:
+
+➡️ **[https://danielbuenomoreira.github.io/BibliaSagrada/](https://danielbuenomoreira.github.io/BibliaSagrada/)**
+
+---
+
+### 🛠️ Tecnologias Utilizadas
+
+Este projeto foi construído utilizando as tecnologias fundamentais da web:
+
+* **HTML5**
+* **CSS3**
+* **JavaScript** (para a lógica de navegação, busca e troca de versões)
+
+---
+
+### 🌐 Meus Outros Projetos e Redes
+
+Gostou do que viu? Conecte-se comigo ou explore meus outros trabalhos:
+
+* 🎵 **Novo Hinário Adventista:** [Repositório no GitHub](https://github.com/danielbuenomoreira/NovoHinarioAdventista)
+* 👤 **Quem Sou Eu (Minhas Redes):** [Página de Contato](https://danielbuenomoreira.github.io/QuemSouEu/)
+
+Obrigado pela visita!
