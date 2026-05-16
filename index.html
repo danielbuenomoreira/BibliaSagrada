@@ -24,6 +24,7 @@
                     </select>
                 </div>
             </header>
+
             <div class="listas-testamentos">
                 <details class="lista-container" open>
                     <summary>
@@ -42,11 +43,22 @@
 
         <main id="conteudo-principal">
 
-            <button id="btn-toggle-menu" aria-label="Mostrar menu de livros">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div id="controles-topo">
+                <button id="btn-toggle-menu" aria-label="Alternar menu de livros">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="configuracoes-interface">
+                    <button id="btn-tema" title="Alternar Tema">🌙 Escuro</button>
+                    <div class="controle-fonte">
+                        <button id="btn-diminuir-fonte" title="Diminuir Letra">A-</button>
+                        <button id="btn-normal-fonte" title="Letra Normal">A</button>
+                        <button id="btn-aumentar-fonte" title="Aumentar Letra">A+</button>
+                    </div>
+                </div>
+            </div>
 
             <div id="boas-vindas">
                 <h2>Bem-vindo!</h2>

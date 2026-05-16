@@ -19,6 +19,68 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnInicio = document.getElementById('btn-inicio');
     const btnProximoLivro = document.getElementById('btn-proximo-livro');
 
+    const btnTema = document.getElementById('btn-tema');
+    const btnDiminuirFonte = document.getElementById('btn-diminuir-fonte');
+    const btnNormalFonte = document.getElementById('btn-normal-fonte');
+    const btnAumentarFonte = document.getElementById('btn-aumentar-fonte');
+
+    const TAMANHO_FONTE_PADRAO = 18;
+    let tamanhoFonteAtual = localStorage.getItem('biblia_tamanhoFonte') ? parseInt(localStorage.getItem('biblia_tamanhoFonte')) : TAMANHO_FONTE_PADRAO;
+    let modoEscuro = localStorage.getItem('biblia_modoEscuro') === 'true';
+
+    function aplicarConfiguracoesVisuais() {
+        document.documentElement.style.setProperty('--tamanho-fonte', `${tamanhoFonteAtual}px`);
+        if (modoEscuro) {
+            document.body.classList.add('dark-mode');
+            btnTema.textContent = '☀️ Claro';
+        } else {
+            document.body.classList.remove('dark-mode');
+            btnTema.textContent = '🌙 Escuro';
+        }
+    }
+    
+    aplicarConfiguracoesVisuais();
+
+    btnTema.addEventListener('click', () => {
+        modoEscuro = !modoEscuro;
+        localStorage.setItem('biblia_modoEscuro', modoEscuro);
+        aplicarConfiguracoesVisuais();
+    });
+
+    btnAumentarFonte.addEventListener('click', () => {
+        if (tamanhoFonteAtual < 36) {
+            tamanhoFonteAtual += 2;
+            localStorage.setItem('biblia_tamanhoFonte', tamanhoFonteAtual);
+            aplicarConfiguracoesVisuais();
+        }
+    });
+
+    btnDiminuirFonte.addEventListener('click', () => {
+        if (tamanhoFonteAtual > 12) {
+            tamanhoFonteAtual -= 2;
+            localStorage.setItem('biblia_tamanhoFonte', tamanhoFonteAtual);
+            aplicarConfiguracoesVisuais();
+        }
+    });
+
+    btnNormalFonte.addEventListener('click', () => {
+        tamanhoFonteAtual = TAMANHO_FONTE_PADRAO;
+        localStorage.setItem('biblia_tamanhoFonte', tamanhoFonteAtual);
+        aplicarConfiguracoesVisuais();
+    });
+
+    // --- INTERAÇÃO DO MENU LATERAL (RESPONSIVO E DESKTOP) ---
+    btnToggleMenu.addEventListener('click', () => {
+        const container = document.getElementById('container-principal');
+        if (window.innerWidth > 800) {
+            container.classList.remove('menu-aberto');
+            container.classList.toggle('menu-oculto');
+        } else {
+            container.classList.remove('menu-oculto');
+            container.classList.toggle('menu-aberto');
+        }
+    });
+
     const livrosVT = [
         { display: "Gênesis", dataName: "Gênesis" }, { display: "Êxodo", dataName: "Êxodo" },
         { display: "Levítico", dataName: "Levítico" }, { display: "Números", dataName: "Números" },
@@ -82,10 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    btnToggleMenu.addEventListener('click', () => {
-        listaLivros.classList.toggle('visivel');
-    });
-
     function normalizarNomeLivro(nome) {
         return nome
             .toLowerCase()
@@ -102,21 +160,17 @@ document.addEventListener('DOMContentLoaded', () => {
         estadoAtual.versao = selectVersao.value;
 
         const nomeArquivo = normalizarNomeLivro(livro);
-        const caminho = `./biblia/${estadoAtual.versao}/${nomeArquivo}.json`;
+        const caminho = `./biblia/${estadoAtual.versao}/${nomeArquivo}.json?v=${new Date().getTime()}`;
 
         try {
             const response = await fetch(caminho);
             if (!response.ok) throw new Error(`Arquivo não encontrado.`);
             
             const dadosArray = await response.json();
-            
-            // Pega o objeto principal que contém todos os capítulos como chaves ("1", "2", etc)
             const dadosLivro = dadosArray[0];
             
-            // Define o total de capítulos baseado na quantidade de chaves do objeto
             estadoAtual.totalCapitulos = Object.keys(dadosLivro).length;
 
-            // Lógica de limite inteligente
             let numCapitulo = parseInt(capituloSolicitado);
             if (isNaN(numCapitulo) || numCapitulo < 1) {
                 numCapitulo = 1;
@@ -130,13 +184,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!versiculos) throw new Error(`Capítulo ${numCapitulo} não encontrado.`);
 
             exibirCapitulo(versiculos);
-
-            // Rola a página de volta para o topo do conteúdo após carregar
             document.getElementById('conteudo-principal').scrollTo(0, 0);
 
         } catch (error) {
             textoBiblico.innerHTML = `<p style="color: red;">${error.message}</p>`;
             btnAnterior.classList.add('hidden');
+            btnAnteriorLivro.classList.add('hidden');
             btnProximo.classList.add('hidden');
             btnProximoLivro.classList.add('hidden');
         }
@@ -153,23 +206,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function atualizarControles() {
         const livroInfo = todosOsLivros.find(l => l.dataName === estadoAtual.livro);
-    
+        
         tituloCapitulo.textContent = `${livroInfo ? livroInfo.display : estadoAtual.livro} ${estadoAtual.capitulo}`;
         inputCapitulo.value = estadoAtual.capitulo;
 
         const indexAtual = todosOsLivros.findIndex(l => l.dataName === estadoAtual.livro);
 
-        // Controle dos botões de voltar (Esquerda)
         if (estadoAtual.capitulo <= 1) {
             btnAnterior.classList.add('hidden');
-            // Só exibe "Livro Anterior" se não estiver no primeiro livro (Gênesis, índice 0)
             btnAnteriorLivro.classList.toggle('hidden', indexAtual === 0);
         } else {
             btnAnterior.classList.remove('hidden');
             btnAnteriorLivro.classList.add('hidden');
         }
-    
-        // Controle dos botões de avançar (Direita)
+        
         if (estadoAtual.capitulo >= estadoAtual.totalCapitulos) {
             btnProximo.classList.add('hidden');
             btnProximoLivro.classList.toggle('hidden', indexAtual === todosOsLivros.length - 1);
@@ -178,8 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
             btnProximoLivro.classList.add('hidden');
         }
     }
-
-    // --- EVENTOS ---
 
     listaVT.addEventListener('click', selecionarLivro);
     listaNT.addEventListener('click', selecionarLivro);
@@ -190,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('#lista-livros li.ativo').forEach(li => li.classList.remove('ativo'));
             evento.target.classList.add('ativo');
             
-            listaLivros.classList.remove('visivel');
+            document.getElementById('container-principal').classList.remove('menu-aberto');
             carregarCapitulo(nomeLivro, 1);
         }
     }
@@ -203,7 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     irCapituloBtn.addEventListener('click', () => carregarCapitulo(estadoAtual.livro, inputCapitulo.value));
 
-    // Permite buscar o capítulo pressionando a tecla Enter
     inputCapitulo.addEventListener('keyup', (evento) => {
         if (evento.key === 'Enter') {
             carregarCapitulo(estadoAtual.livro, inputCapitulo.value);
@@ -213,36 +260,28 @@ document.addEventListener('DOMContentLoaded', () => {
     btnAnterior.addEventListener('click', () => carregarCapitulo(estadoAtual.livro, estadoAtual.capitulo - 1));
     btnProximo.addEventListener('click', () => carregarCapitulo(estadoAtual.livro, estadoAtual.capitulo + 1));
     
-    btnProximoLivro.addEventListener('click', () => {
-        const indexAtual = todosOsLivros.findIndex(l => l.dataName === estadoAtual.livro);
-        if (indexAtual >= 0 && indexAtual < todosOsLivros.length - 1) {
-            const proximoLivro = todosOsLivros[indexAtual + 1].dataName;
-            
-            // Atualiza a seleção visual no menu lateral
-            document.querySelectorAll('#lista-livros li.ativo').forEach(li => li.classList.remove('ativo'));
-            const novoLi = document.querySelector(`li[data-livro="${proximoLivro}"]`);
-            if (novoLi) novoLi.classList.add('ativo');
-
-            carregarCapitulo(proximoLivro, 1);
-        }
-    });
-
     btnAnteriorLivro.addEventListener('click', () => {
         const indexAtual = todosOsLivros.findIndex(l => l.dataName === estadoAtual.livro);
         if (indexAtual > 0) {
             const livroAnterior = todosOsLivros[indexAtual - 1].dataName;
-        
-            // Atualiza o estado visual ativo no menu lateral de livros
             document.querySelectorAll('#lista-livros li.ativo').forEach(li => li.classList.remove('ativo'));
             const novoLi = document.querySelector(`li[data-livro="${livroAnterior}"]`);
             if (novoLi) novoLi.classList.add('ativo');
-
-            // O valor 999 aciona o teto máximo de capítulos dentro da função carregarCapitulo
             carregarCapitulo(livroAnterior, 999);
         }
     });
 
-    // Botão Início limpa a tela de exibição e volta aos créditos iniciais
+    btnProximoLivro.addEventListener('click', () => {
+        const indexAtual = todosOsLivros.findIndex(l => l.dataName === estadoAtual.livro);
+        if (indexAtual >= 0 && indexAtual < todosOsLivros.length - 1) {
+            const proximoLivro = todosOsLivros[indexAtual + 1].dataName;
+            document.querySelectorAll('#lista-livros li.ativo').forEach(li => li.classList.remove('ativo'));
+            const novoLi = document.querySelector(`li[data-livro="${proximoLivro}"]`);
+            if (novoLi) novoLi.classList.add('ativo');
+            carregarCapitulo(proximoLivro, 1);
+        }
+    });
+
     btnInicio.addEventListener('click', () => {
         exibicaoCapitulo.classList.add('hidden');
         boasVindas.classList.remove('hidden');
