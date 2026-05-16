@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const textoBiblico = document.getElementById('texto-biblico');
     
     const btnAnterior = document.getElementById('btn-anterior');
+    const btnAnteriorLivro = document.getElementById('btn-anterior-livro');
     const btnProximo = document.getElementById('btn-proximo');
     const btnInicio = document.getElementById('btn-inicio');
     const btnProximoLivro = document.getElementById('btn-proximo-livro');
@@ -152,17 +153,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function atualizarControles() {
         const livroInfo = todosOsLivros.find(l => l.dataName === estadoAtual.livro);
-        
+    
         tituloCapitulo.textContent = `${livroInfo ? livroInfo.display : estadoAtual.livro} ${estadoAtual.capitulo}`;
         inputCapitulo.value = estadoAtual.capitulo;
 
-        // Controle dos botões de navegação
-        btnAnterior.classList.toggle('hidden', estadoAtual.capitulo <= 1);
-        
+        const indexAtual = todosOsLivros.findIndex(l => l.dataName === estadoAtual.livro);
+
+        // Controle dos botões de voltar (Esquerda)
+        if (estadoAtual.capitulo <= 1) {
+            btnAnterior.classList.add('hidden');
+            // Só exibe "Livro Anterior" se não estiver no primeiro livro (Gênesis, índice 0)
+            btnAnteriorLivro.classList.toggle('hidden', indexAtual === 0);
+        } else {
+            btnAnterior.classList.remove('hidden');
+            btnAnteriorLivro.classList.add('hidden');
+        }
+    
+        // Controle dos botões de avançar (Direita)
         if (estadoAtual.capitulo >= estadoAtual.totalCapitulos) {
             btnProximo.classList.add('hidden');
-            // Só mostra o botão "Próximo Livro" se não estiver no Apocalipse
-            const indexAtual = todosOsLivros.findIndex(l => l.dataName === estadoAtual.livro);
             btnProximoLivro.classList.toggle('hidden', indexAtual === todosOsLivros.length - 1);
         } else {
             btnProximo.classList.remove('hidden');
@@ -215,6 +224,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (novoLi) novoLi.classList.add('ativo');
 
             carregarCapitulo(proximoLivro, 1);
+        }
+    });
+
+    btnAnteriorLivro.addEventListener('click', () => {
+        const indexAtual = todosOsLivros.findIndex(l => l.dataName === estadoAtual.livro);
+        if (indexAtual > 0) {
+            const livroAnterior = todosOsLivros[indexAtual - 1].dataName;
+        
+            // Atualiza o estado visual ativo no menu lateral de livros
+            document.querySelectorAll('#lista-livros li.ativo').forEach(li => li.classList.remove('ativo'));
+            const novoLi = document.querySelector(`li[data-livro="${livroAnterior}"]`);
+            if (novoLi) novoLi.classList.add('ativo');
+
+            // O valor 999 aciona o teto máximo de capítulos dentro da função carregarCapitulo
+            carregarCapitulo(livroAnterior, 999);
         }
     });
 
