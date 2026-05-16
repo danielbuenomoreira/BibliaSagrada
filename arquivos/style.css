@@ -46,77 +46,110 @@ body {
     gap: 10px;
 }
 
+/* Estilo melhorado para o menu de versão */
 #versao-select {
-    flex-grow: 1;
-    padding: 8px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 6px;
     border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    flex: 1; /* Faz o seletor ocupar o espaço restante */
+    transition: border-color 0.2s;
+}
+
+#versao-select:hover {
+    border-color: #007bff;
 }
 
 .listas-testamentos {
+    flex: 1;
     overflow-y: auto;
-    flex-grow: 1;
-    padding: 10px;
+    padding: 20px;
 }
 
+.lista-container {
+    margin-bottom: 20px;
+}
+
+/* Estilos para o menu retrátil (Velho e Novo Testamento) */
+details summary {
+    cursor: pointer;
+    list-style: none; /* Remove a seta padrão do navegador */
+    margin-bottom: 15px;
+}
+details summary::-webkit-details-marker {
+    display: none;
+}
 .lista-container h2 {
     font-size: 18px;
+    color: #333; /* Mudado de azul para preto/cinza escuro */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.lista-container h2::after {
+    content: "▼";
+    font-size: 12px;
+    color: #333; /* Flechinha preta */
+}
+details[open] .lista-container h2::after {
+    content: "▲";
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
     padding: 10px;
-    color: #007bff;
-    border-bottom: 1px solid #eee;
-}
-
-#lista-vt,
-#lista-nt {
-    list-style: none;
-}
-
-#lista-vt li,
-#lista-nt li {
-    padding: 12px 10px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 5px;
+    margin-bottom: 5px;
     transition: background-color 0.2s;
 }
 
-#lista-vt li:hover,
-#lista-nt li:hover {
-    background-color: #f0f2f5;
+li:hover {
+    background-color: #e9ecef;
 }
 
-#lista-vt li.ativo,
-#lista-nt li.ativo {
+li.ativo {
     background-color: #007bff;
     color: white;
-    font-weight: bold;
 }
 
-/* --- Conteúdo Principal (Leitura) --- */
+/* --- Conteúdo Principal --- */
 #conteudo-principal {
-    flex-grow: 1;
-    padding: 30px;
+    flex: 1;
+    padding: 40px;
     overflow-y: auto;
-    /* Adicionamos position: relative para que o botão do menu possa ser posicionado dentro dele */
     position: relative;
 }
 
 #boas-vindas {
     text-align: center;
-    color: #777;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
-.hidden {
-    display: none !important;
+#boas-vindas h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+#boas-vindas p {
+    font-size: 18px;
+    color: #666;
 }
 
 .cabecalho-capitulo {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
     border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
 }
 
 .controle-capitulo {
@@ -125,52 +158,69 @@ body {
     gap: 10px;
 }
 
-#input-capitulo {
-    width: 70px;
-    padding: 8px;
-    border-radius: 5px;
+/* Largura ajustada para o input do capítulo */
+.controle-capitulo input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
     border: 1px solid #ccc;
-    font-size: 16px;
+    border-radius: 4px;
 }
 
-#ir-capitulo-btn {
-    padding: 8px 15px;
-    border: none;
+.controle-capitulo button {
+    padding: 5px 15px;
     background-color: #007bff;
     color: white;
-    border-radius: 5px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+}
+
+.controle-capitulo button:hover {
+    background-color: #0056b3;
 }
 
 #texto-biblico p {
-    line-height: 1.8;
-    margin-bottom: 1em;
     font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
 }
 
+/* Números dos versículos em preto e negrito */
 #texto-biblico sup {
     font-weight: bold;
-    color: #555;
     margin-right: 5px;
+    color: #333; 
+    font-size: 0.8em;
 }
 
+/* --- Rodapé e Navegação --- */
 #navegacao-capitulos {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
 }
+
+.nav-btn-container {
+    flex: 1;
+    display: flex;
+}
+.nav-left { justify-content: flex-start; }
+.nav-center { justify-content: center; }
+.nav-right { justify-content: flex-end; }
 
 #navegacao-capitulos button {
     padding: 10px 20px;
-    font-size: 16px;
-    border: 1px solid #007bff;
-    background-color: #fff;
+    background-color: transparent;
     color: #007bff;
-    border-radius: 5px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
+    transition: all 0.2s;
 }
 
 #navegacao-capitulos button:hover {
@@ -181,7 +231,6 @@ body {
 /* --- ESTILOS PARA O BOTÃO DO MENU (Hambúrguer) --- */
 #btn-toggle-menu {
     display: none;
-    /* Escondido por padrão em telas grandes */
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
@@ -206,32 +255,31 @@ body {
 
 /* --- REGRAS PARA TELAS PEQUENAS (Design Responsivo) --- */
 @media (max-width: 800px) {
-
-    /* Mostra o botão do menu e o posiciona no canto superior esquerdo */
     #btn-toggle-menu {
         display: flex;
         position: absolute;
-        /* Posição absoluta em relação ao #conteudo-principal */
         top: 20px;
         left: 20px;
     }
 
-    /* Modifica a barra lateral para se tornar um menu flutuante */
     #lista-livros {
-        position: fixed;
-        top: 0;
+        position: absolute;
         left: 0;
-        z-index: 100;
+        top: 0;
+        z-index: 5;
         transform: translateX(-100%);
     }
 
     #lista-livros.visivel {
         transform: translateX(0);
-        box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
     }
 
-    /* Adiciona um preenchimento à esquerda do cabeçalho do capítulo para não ficar em cima do botão */
-    .cabecalho-capitulo {
-        padding-left: 45px;
+    #conteudo-principal {
+        padding-top: 60px;
     }
+}
+
+.hidden {
+    display: none !important;
 }

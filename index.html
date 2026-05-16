@@ -25,14 +25,18 @@
                 </div>
             </header>
             <div class="listas-testamentos">
-                <div class="lista-container">
-                    <h2>Velho Testamento</h2>
+                <details class="lista-container" open>
+                    <summary>
+                        <h2>Velho Testamento</h2>
+                    </summary>
                     <ul id="lista-vt"></ul>
-                </div>
-                <div class="lista-container">
-                    <h2>Novo Testamento</h2>
+                </details>
+                <details class="lista-container" open>
+                    <summary>
+                        <h2>Novo Testamento</h2>
+                    </summary>
                     <ul id="lista-nt"></ul>
-                </div>
+                </details>
             </div>
         </aside>
 
@@ -46,8 +50,9 @@
 
             <div id="boas-vindas">
                 <h2>Bem-vindo!</h2>
-                <p>Selecione um livro na lista ao lado para começar a leitura.</p>
-                <p><small>Desenvolvido por <a href="https://danielbuenomoreira.github.io/QuemSouEu/" target="_blank">@danielmoreiraprogramador</a></small></p>
+                <p>Selecione um livro na lista ao lado para começar a leitura da Bíblia Sagrada.</p>
+                <p><small>Desenvolvido por <a href="https://danielbuenomoreira.github.io/QuemSouEu/"
+                            target="_blank">@danielmoreiraprogramador</a></small></p>
             </div>
 
             <div id="exibicao-capitulo" class="hidden">
@@ -63,8 +68,16 @@
                 <div id="texto-biblico"></div>
 
                 <footer id="navegacao-capitulos">
-                    <button id="btn-anterior" class="hidden">Capítulo Anterior</button>
-                    <button id="btn-proximo" class="hidden">Próximo Capítulo</button>
+                    <div class="nav-btn-container nav-left">
+                        <button id="btn-anterior" class="hidden">Capítulo Anterior</button>
+                    </div>
+                    <div class="nav-btn-container nav-center">
+                        <button id="btn-inicio">Início</button>
+                    </div>
+                    <div class="nav-btn-container nav-right">
+                        <button id="btn-proximo" class="hidden">Próximo Capítulo</button>
+                        <button id="btn-proximo-livro" class="hidden">Próximo Livro</button>
+                    </div>
                 </footer>
             </div>
         </main>
@@ -73,6 +86,4 @@
     <script src="arquivos/script.js"></script>
 </body>
 
-
 </html>
-

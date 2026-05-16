@@ -1,25 +1,23 @@
-// O evento 'DOMContentLoaded' espera que todo o HTML da página seja carregado antes de executar o script.
-// Isso evita erros de tentar manipular elementos que ainda não existem.
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- SELEÇÃO DOS ELEMENTOS DO HTML ---
-    // Guardamos referências aos elementos que vamos manipular frequentemente.
-    const listaLivros = document.getElementById('lista-livros'); // A barra lateral inteira
-    const btnToggleMenu = document.getElementById('btn-toggle-menu'); // O botão "hambúrguer"
+    const listaLivros = document.getElementById('lista-livros');
+    const btnToggleMenu = document.getElementById('btn-toggle-menu');
     const selectVersao = document.getElementById('versao-select');
     const listaVT = document.getElementById('lista-vt');
     const listaNT = document.getElementById('lista-nt');
+    
     const boasVindas = document.getElementById('boas-vindas');
     const exibicaoCapitulo = document.getElementById('exibicao-capitulo');
     const tituloCapitulo = document.getElementById('titulo-capitulo');
     const inputCapitulo = document.getElementById('input-capitulo');
     const irCapituloBtn = document.getElementById('ir-capitulo-btn');
     const textoBiblico = document.getElementById('texto-biblico');
+    
     const btnAnterior = document.getElementById('btn-anterior');
     const btnProximo = document.getElementById('btn-proximo');
+    const btnInicio = document.getElementById('btn-inicio');
+    const btnProximoLivro = document.getElementById('btn-proximo-livro');
 
-    // --- DADOS DA APLICAÇÃO ---
-    // Listas de livros como objetos para separar o nome de exibição do nome de busca.
     const livrosVT = [
         { display: "Gênesis", dataName: "Gênesis" }, { display: "Êxodo", dataName: "Êxodo" },
         { display: "Levítico", dataName: "Levítico" }, { display: "Números", dataName: "Números" },
@@ -31,8 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { display: "Esdras", dataName: "Esdras" }, { display: "Neemias", dataName: "Neemias" },
         { display: "Ester", dataName: "Ester" }, { display: "Jó", dataName: "Jó" },
         { display: "Salmos", dataName: "Salmos" }, { display: "Provérbios", dataName: "Provérbios" },
-        { display: "Eclesiastes", dataName: "Eclesiastes" },
-        { display: "Cânticos de Salomão", dataName: "Cânticos" },
+        { display: "Eclesiastes", dataName: "Eclesiastes" }, { display: "Cânticos de Salomão", dataName: "Cânticos" },
         { display: "Isaías", dataName: "Isaías" }, { display: "Jeremias", dataName: "Jeremias" },
         { display: "Lamentações de Jeremias", dataName: "Lamentações de Jeremias" }, { display: "Ezequiel", dataName: "Ezequiel" },
         { display: "Daniel", dataName: "Daniel" }, { display: "Oséias", dataName: "Oséias" },
@@ -43,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { display: "Ageu", dataName: "Ageu" }, { display: "Zacarias", dataName: "Zacarias" },
         { display: "Malaquias", dataName: "Malaquias" }
     ];
+    
     const livrosNT = [
         { display: "Mateus", dataName: "Mateus" }, { display: "Marcos", dataName: "Marcos" },
         { display: "Lucas", dataName: "Lucas" }, { display: "João", dataName: "João" }, { display: "Atos", dataName: "Atos" },
@@ -59,7 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { display: "Judas", dataName: "Judas" }, { display: "Apocalipse", dataName: "Apocalipse" }
     ];
 
-    // 'estadoAtual' guarda o estado da leitura atual (livro, capítulo, etc.).
+    const todosOsLivros = [...livrosVT, ...livrosNT];
+
     const estadoAtual = {
         versao: '',
         livro: '',
@@ -67,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         totalCapitulos: 0
     };
 
-    // --- INICIALIZAÇÃO DA APLICAÇÃO ---
     function criarListasDeLivros() {
         livrosVT.forEach(livro => {
             const li = document.createElement('li');
@@ -83,99 +81,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- CONFIGURAÇÃO DOS EVENTOS ---
-    listaVT.addEventListener('click', selecionarLivro);
-    listaNT.addEventListener('click', selecionarLivro);
-
-    selectVersao.addEventListener('change', () => {
-        if (estadoAtual.livro) {
-            carregarCapitulo(estadoAtual.livro, estadoAtual.capitulo);
-        }
-    });
-
-    irCapituloBtn.addEventListener('click', irParaCapitulo);
-    btnAnterior.addEventListener('click', irCapituloAnterior);
-    btnProximo.addEventListener('click', irProximoCapitulo);
-
-    // Evento para o botão do menu responsivo (hambúrguer)
     btnToggleMenu.addEventListener('click', () => {
         listaLivros.classList.toggle('visivel');
     });
 
-    // --- LÓGICA PRINCIPAL ---
-    async function carregarCapitulo(livro, capitulo) {
+    function normalizarNomeLivro(nome) {
+        return nome
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    async function carregarCapitulo(livro, capituloSolicitado) {
         boasVindas.classList.add('hidden');
         exibicaoCapitulo.classList.remove('hidden');
         textoBiblico.innerHTML = '<p>Carregando...</p>';
+        
         estadoAtual.livro = livro;
         estadoAtual.versao = selectVersao.value;
-        
+
+        const nomeArquivo = normalizarNomeLivro(livro);
+        const caminho = `./biblia/${estadoAtual.versao}/${nomeArquivo}.json`;
+
         try {
-            // Lógica simplificada após a remoção da versão "AA"
-            if (estadoAtual.versao === 'ara' || estadoAtual.versao === 'naa') {
-                await buscarEmArquivoUnico(livro, capitulo);
-            } else { // Este bloco agora serve para NVI e ACF
-                await buscarEmArquivoPorLivro(livro, capitulo);
+            const response = await fetch(caminho);
+            if (!response.ok) throw new Error(`Arquivo não encontrado.`);
+            
+            const dadosArray = await response.json();
+            
+            // Pega o objeto principal que contém todos os capítulos como chaves ("1", "2", etc)
+            const dadosLivro = dadosArray[0];
+            
+            // Define o total de capítulos baseado na quantidade de chaves do objeto
+            estadoAtual.totalCapitulos = Object.keys(dadosLivro).length;
+
+            // Lógica de limite inteligente
+            let numCapitulo = parseInt(capituloSolicitado);
+            if (isNaN(numCapitulo) || numCapitulo < 1) {
+                numCapitulo = 1;
+            } else if (numCapitulo > estadoAtual.totalCapitulos) {
+                numCapitulo = estadoAtual.totalCapitulos;
             }
+
+            estadoAtual.capitulo = numCapitulo;
+            const versiculos = dadosLivro[numCapitulo.toString()];
+
+            if (!versiculos) throw new Error(`Capítulo ${numCapitulo} não encontrado.`);
+
+            exibirCapitulo(versiculos);
+
+            // Rola a página de volta para o topo do conteúdo após carregar
+            document.getElementById('conteudo-principal').scrollTo(0, 0);
+
         } catch (error) {
             textoBiblico.innerHTML = `<p style="color: red;">${error.message}</p>`;
             btnAnterior.classList.add('hidden');
             btnProximo.classList.add('hidden');
+            btnProximoLivro.classList.add('hidden');
         }
     }
 
-    // --- LÓGICA DE BUSCA DE DADOS ---
-
-    // Caminho 1: Para ARA e NAA (Arquivo único).
-    async function buscarEmArquivoUnico(livro, capitulo) {
-        const caminho = `./biblia/${estadoAtual.versao.toUpperCase()}.json`;
-        const response = await fetch(caminho);
-        if (!response.ok) throw new Error(`Arquivo ${caminho} não encontrado.`);
-        const dadosBiblia = await response.json();
-
-        const dadosLivro = dadosBiblia.find(b => b.name === livro);
-        if (!dadosLivro) throw new Error(`Livro "${livro}" não encontrado.`);
-        
-        estadoAtual.totalCapitulos = dadosLivro.chapters.length;
-        const numCapitulo = validarCapitulo(capitulo);
-        
-        const dadosCapitulo = dadosLivro.chapters[numCapitulo - 1];
-        if (!dadosCapitulo) throw new Error(`Capítulo ${numCapitulo} inválido para "${livro}".`);
-
-        estadoAtual.capitulo = numCapitulo;
-        exibirCapituloArquivoUnico(dadosCapitulo);
-    }
-
-    // Caminho 2: Para NVI e ACF (Arquivos por livro, formato aninhado).
-    async function buscarEmArquivoPorLivro(livro, capitulo) {
-        const nomeArquivo = normalizarNomeLivro(livro);
-        const caminho = `./biblia/${estadoAtual.versao}/${nomeArquivo}.json`;
-        const response = await fetch(caminho);
-        if (!response.ok) throw new Error(`Arquivo ${caminho} não encontrado.`);
-        const dadosDoLivro = await response.json();
-
-        estadoAtual.totalCapitulos = dadosDoLivro.length;
-        const numCapitulo = validarCapitulo(capitulo);
-
-        const objetoCapitulo = dadosDoLivro.find(item => item.hasOwnProperty(numCapitulo));
-        if (!objetoCapitulo) throw new Error(`Capítulo ${numCapitulo} inválido para "${livro}".`);
-        
-        estadoAtual.capitulo = numCapitulo;
-        exibirCapituloPorLivro(objetoCapitulo[numCapitulo]);
-    }
-    
-    // --- FUNÇÕES DE EXIBIÇÃO E NAVEGAÇÃO ---
-
-    function exibirCapituloArquivoUnico(versiculosArray) {
-        let html = '';
-        versiculosArray.forEach((texto, index) => {
-            html += `<p><sup>${index + 1}</sup> ${texto}</p>`;
-        });
-        textoBiblico.innerHTML = html;
-        atualizarControles();
-    }
-    
-    function exibirCapituloPorLivro(versiculosObjeto) {
+    function exibirCapitulo(versiculosObjeto) {
         let html = '';
         for (const numero in versiculosObjeto) {
             html += `<p><sup>${numero}</sup> ${versiculosObjeto[numero]}</p>`;
@@ -183,20 +149,31 @@ document.addEventListener('DOMContentLoaded', () => {
         textoBiblico.innerHTML = html;
         atualizarControles();
     }
-    
-    function atualizarControles() {
-        const todosOsLivros = [...livrosVT, ...livrosNT];
-        const livroInfo = todosOsLivros.find(l => l.dataName === estadoAtual.livro);
-        const nomeParaExibir = livroInfo ? livroInfo.display : estadoAtual.livro;
 
-        tituloCapitulo.textContent = `${nomeParaExibir} ${estadoAtual.capitulo}`;
+    function atualizarControles() {
+        const livroInfo = todosOsLivros.find(l => l.dataName === estadoAtual.livro);
+        
+        tituloCapitulo.textContent = `${livroInfo ? livroInfo.display : estadoAtual.livro} ${estadoAtual.capitulo}`;
         inputCapitulo.value = estadoAtual.capitulo;
 
+        // Controle dos botões de navegação
         btnAnterior.classList.toggle('hidden', estadoAtual.capitulo <= 1);
-        btnProximo.classList.toggle('hidden', estadoAtual.capitulo >= estadoAtual.totalCapitulos);
+        
+        if (estadoAtual.capitulo >= estadoAtual.totalCapitulos) {
+            btnProximo.classList.add('hidden');
+            // Só mostra o botão "Próximo Livro" se não estiver no Apocalipse
+            const indexAtual = todosOsLivros.findIndex(l => l.dataName === estadoAtual.livro);
+            btnProximoLivro.classList.toggle('hidden', indexAtual === todosOsLivros.length - 1);
+        } else {
+            btnProximo.classList.remove('hidden');
+            btnProximoLivro.classList.add('hidden');
+        }
     }
 
-    // --- FUNÇÕES DE AÇÃO DO UTILIZADOR ---
+    // --- EVENTOS ---
+
+    listaVT.addEventListener('click', selecionarLivro);
+    listaNT.addEventListener('click', selecionarLivro);
 
     function selecionarLivro(evento) {
         if (evento.target.tagName === 'LI') {
@@ -204,47 +181,51 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('#lista-livros li.ativo').forEach(li => li.classList.remove('ativo'));
             evento.target.classList.add('ativo');
             
-            // Esconde o menu após a seleção, melhorando a experiência em telemóveis
             listaLivros.classList.remove('visivel');
-
             carregarCapitulo(nomeLivro, 1);
         }
     }
 
-    function irParaCapitulo() {
-        const numCapitulo = parseInt(inputCapitulo.value);
-        carregarCapitulo(estadoAtual.livro, numCapitulo);
-    }
-    
-    function irCapituloAnterior() {
-        if (estadoAtual.capitulo > 1) {
-            carregarCapitulo(estadoAtual.livro, estadoAtual.capitulo - 1);
+    selectVersao.addEventListener('change', () => {
+        if (estadoAtual.livro) {
+            carregarCapitulo(estadoAtual.livro, estadoAtual.capitulo);
         }
-    }
+    });
 
-    function irProximoCapitulo() {
-        if (estadoAtual.capitulo < estadoAtual.totalCapitulos) {
-            carregarCapitulo(estadoAtual.livro, estadoAtual.capitulo + 1);
+    irCapituloBtn.addEventListener('click', () => carregarCapitulo(estadoAtual.livro, inputCapitulo.value));
+
+    // Permite buscar o capítulo pressionando a tecla Enter
+    inputCapitulo.addEventListener('keyup', (evento) => {
+        if (evento.key === 'Enter') {
+            carregarCapitulo(estadoAtual.livro, inputCapitulo.value);
         }
-    }
+    });
 
-    // --- FUNÇÕES AUXILIARES ---
-
-    function validarCapitulo(num) {
-        const capitulo = parseInt(num);
-        if (isNaN(capitulo) || capitulo < 1) { return 1; }
-        if (capitulo > estadoAtual.totalCapitulos) { return estadoAtual.totalCapitulos; }
-        return capitulo;
-    }
-
-    // Função correta que mantém os espaços nos nomes dos arquivos.
-    function normalizarNomeLivro(nome) {
-        return nome
-            .toLowerCase() // Converte para minúsculas
-            .normalize('NFD') // Separa os acentos das letras
-            .replace(/[\u0300-\u036f]/g, ""); // Remove os acentos
-    }
+    btnAnterior.addEventListener('click', () => carregarCapitulo(estadoAtual.livro, estadoAtual.capitulo - 1));
+    btnProximo.addEventListener('click', () => carregarCapitulo(estadoAtual.livro, estadoAtual.capitulo + 1));
     
-    // --- EXECUÇÃO INICIAL ---
+    btnProximoLivro.addEventListener('click', () => {
+        const indexAtual = todosOsLivros.findIndex(l => l.dataName === estadoAtual.livro);
+        if (indexAtual >= 0 && indexAtual < todosOsLivros.length - 1) {
+            const proximoLivro = todosOsLivros[indexAtual + 1].dataName;
+            
+            // Atualiza a seleção visual no menu lateral
+            document.querySelectorAll('#lista-livros li.ativo').forEach(li => li.classList.remove('ativo'));
+            const novoLi = document.querySelector(`li[data-livro="${proximoLivro}"]`);
+            if (novoLi) novoLi.classList.add('ativo');
+
+            carregarCapitulo(proximoLivro, 1);
+        }
+    });
+
+    // Botão Início limpa a tela de exibição e volta aos créditos iniciais
+    btnInicio.addEventListener('click', () => {
+        exibicaoCapitulo.classList.add('hidden');
+        boasVindas.classList.remove('hidden');
+        document.querySelectorAll('#lista-livros li.ativo').forEach(li => li.classList.remove('ativo'));
+        estadoAtual.livro = '';
+        estadoAtual.capitulo = 0;
+    });
+
     criarListasDeLivros();
 });
