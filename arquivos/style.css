@@ -38,6 +38,7 @@ body {
     font-size: 24px;
     text-align: center;
     margin-bottom: 15px;
+    color: #007bff;
 }
 
 .selecao-versao {
@@ -56,7 +57,7 @@ body {
     color: #333;
     cursor: pointer;
     outline: none;
-    flex: 1; /* Faz o seletor ocupar o espaço restante */
+    flex: 1;
     transition: border-color 0.2s;
 }
 
@@ -77,24 +78,28 @@ body {
 /* Estilos para o menu retrátil (Velho e Novo Testamento) */
 details summary {
     cursor: pointer;
-    list-style: none; /* Remove a seta padrão do navegador */
+    list-style: none;
     margin-bottom: 15px;
 }
+
 details summary::-webkit-details-marker {
     display: none;
 }
+
 .lista-container h2 {
     font-size: 18px;
-    color: #333; /* Mudado de azul para preto/cinza escuro */
+    color: #333;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .lista-container h2::after {
     content: "▼";
     font-size: 12px;
-    color: #333; /* Flechinha preta */
+    color: #333;
 }
+
 details[open] .lista-container h2::after {
     content: "▲";
 }
@@ -136,6 +141,7 @@ li.ativo {
 #boas-vindas h2 {
     font-size: 32px;
     margin-bottom: 10px;
+    color: #007bff;
 }
 
 #boas-vindas p {
@@ -158,7 +164,6 @@ li.ativo {
     gap: 10px;
 }
 
-/* Largura ajustada para o input do capítulo */
 .controle-capitulo input {
     width: 60px;
     padding: 5px;
@@ -187,7 +192,6 @@ li.ativo {
     text-align: justify;
 }
 
-/* Números dos versículos em preto e negrito */
 #texto-biblico sup {
     font-weight: bold;
     margin-right: 5px;
