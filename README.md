@@ -30,6 +30,13 @@ Este projeto está no ar e pode ser acessado por qualquer pessoa através do lin
 
 ---
 
+### 🛠️ Tecnologias Utilizadas
+
+* **HTML5**, **CSS3** e **JavaScript** (navegação e troca de versões)
+* **Python** (scripts de correção, validação e conversão em `ferramentas/`)
+
+---
+
 ### Licença e direitos autorais
 
 * **Código** (HTML, CSS, JavaScript e scripts em `ferramentas/`): licença MIT, veja o arquivo `LICENSE`.
