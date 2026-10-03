@@ -1,0 +1,2217 @@
+{
+"gerado_em": "2026-10-03",
+"globais": [
+{
+"versao": "acf",
+"de": "capitàes",
+"para": "capitães",
+"esperado": 23
+},
+{
+"versao": "acf",
+"de": "babilônia",
+"para": "Babilônia",
+"esperado": 284
+},
+{
+"versao": "acf",
+"de": "macedônia",
+"para": "Macedônia",
+"esperado": 16
+}
+],
+"pontuais": [
+{
+"versao": "acf",
+"livro": "Gênesis",
+"cap": "10",
+"verso": "8",
+"antes": "E Cuxe gerou a Ninrode; este começou a ser poderoso na terra. 9",
+"depois": "E Cuxe gerou a Ninrode; este começou a ser poderoso na terra."
+},
+{
+"versao": "acf",
+"livro": "Gênesis",
+"cap": "15",
+"verso": "18",
+"antes": "Naquele mesmo dia fez o Senhor uma aliança com Abrão, dizendo: « tua descendência tenho dado esta terra, desde o rio do Egito até ao grande rio Eufrates;",
+"depois": "Naquele mesmo dia fez o Senhor uma aliança com Abrão, dizendo: À tua descendência tenho dado esta terra, desde o rio do Egito até ao grande rio Eufrates;"
+},
+{
+"versao": "acf",
+"livro": "Gênesis",
+"cap": "18",
+"verso": "1",
+"antes": "Depois apareceu-lhe o Senhor nos carvalhais de Manre, estando ele assentado à porta da tenda, no calor do dia",
+"depois": "Depois apareceu-lhe o Senhor nos carvalhais de Manre, estando ele assentado à porta da tenda, no calor do dia."
+},
+{
+"versao": "acf",
+"livro": "Gênesis",
+"cap": "19",
+"verso": "20",
+"antes": "Eis que agora aquela cidade está perto, para fugir para lá, e é pequena; ora, deixe-me escapar para lá (não é pequena? ), para que minha alma viva.",
+"depois": "Eis que agora aquela cidade está perto, para fugir para lá, e é pequena; ora, deixe-me escapar para lá (não é pequena?), para que minha alma viva."
+},
+{
+"versao": "acf",
+"livro": "Gênesis",
+"cap": "21",
+"verso": "28",
+"antes": "pôs Abraão, porém, à parte sete cordeiras do rebanho.",
+"depois": "Pôs Abraão, porém, à parte sete cordeiras do rebanho."
+},
+{
+"versao": "acf",
+"livro": "Êxodo",
+"cap": "18",
+"verso": "12",
+"antes": "Então Jetro, o sogro de Moisés, tomou holocausto e sacrifícios para Deus; e veio Arão, e todos os anciãos de Israel, para comerem pão com o sogro de Moisés diante de deus.",
+"depois": "Então Jetro, o sogro de Moisés, tomou holocausto e sacrifícios para Deus; e veio Arão, e todos os anciãos de Israel, para comerem pão com o sogro de Moisés diante de Deus."
+},
+{
+"versao": "acf",
+"livro": "Êxodo",
+"cap": "40",
+"verso": "22",
+"antes": "pôs também a mesa na tenda da congregação, ao lado do tabernáculo, para o norte, fora do véu,",
+"depois": "Pôs também a mesa na tenda da congregação, ao lado do tabernáculo, para o norte, fora do véu,"
+},
+{
+"versao": "acf",
+"livro": "Êxodo",
+"cap": "40",
+"verso": "24",
+"antes": "pôs também na tenda da congregação o candelabro na frente da mesa, ao lado do tabernáculo, para o sul,",
+"depois": "Pôs também na tenda da congregação o candelabro na frente da mesa, ao lado do tabernáculo, para o sul,"
+},
+{
+"versao": "acf",
+"livro": "Levítico",
+"cap": "13",
+"verso": "5",
+"antes": "E ao sétimo dia o sacerdote o examinará; e eis que, se a praga, ao seu parecer parou, e na pele não se estendeu, então o sacerdote o encerrará por outros sete dias; 6",
+"depois": "E ao sétimo dia o sacerdote o examinará; e eis que, se a praga, ao seu parecer parou, e na pele não se estendeu, então o sacerdote o encerrará por outros sete dias;"
+},
+{
+"versao": "acf",
+"livro": "Levítico",
+"cap": "15",
+"verso": "3",
+"antes": "Esta, pois, será a sua imundícia, por causa do seu fluxo; se a sua carne vasa o seu fluxo ou se a sua carne estanca o seu fluxo, esta é a sua imundícia.",
+"depois": "Esta, pois, será a sua imundícia, por causa do seu fluxo; se a sua carne vaza o seu fluxo ou se a sua carne estanca o seu fluxo, esta é a sua imundícia."
+},
+{
+"versao": "acf",
+"livro": "Números",
+"cap": "21",
+"verso": "29",
+"antes": "Ai de ti, Moabe! perdido és, povo de Quemos! entregou seus filhos, que iam fugindo, e suas filhas, como cativas a Siom, rei dos amorreus.",
+"depois": "Ai de ti, Moabe! perdido és, povo de Quemós! entregou seus filhos, que iam fugindo, e suas filhas, como cativas a Siom, rei dos amorreus."
+},
+{
+"versao": "acf",
+"livro": "Deuteronômio",
+"cap": "19",
+"verso": "9",
+"antes": "(Quando guardares todos estes mandamentos, que hoje te ordeno, para cumprí-los, amando ao Senhor teu Deus e andando nos seus caminhos todos os dias), então acrescentarás outras três cidades além destas três.",
+"depois": "(Quando guardares todos estes mandamentos, que hoje te ordeno, para cumpri-los, amando ao Senhor teu Deus e andando nos seus caminhos todos os dias), então acrescentarás outras três cidades além destas três."
+},
+{
+"versao": "acf",
+"livro": "Deuteronômio",
+"cap": "23",
+"verso": "4",
+"antes": "Porquanto não saíram com pão e água, a receber-vos no caminho, quando saíeis do Egito; e porquanto alugaram contra ti a Balaão, filho de Beor, de Petor, de mesopotâmia, para te amaldiçoar.",
+"depois": "Porquanto não saíram com pão e água, a receber-vos no caminho, quando saíeis do Egito; e porquanto alugaram contra ti a Balaão, filho de Beor, de Petor, de Mesopotâmia, para te amaldiçoar."
+},
+{
+"versao": "acf",
+"livro": "Josué",
+"cap": "12",
+"verso": "12",
+"antes": "O rei de Eglom, outro; o rei de Geser, outro;",
+"depois": "O rei de Eglom, outro; o rei de Gezer, outro;"
+},
+{
+"versao": "acf",
+"livro": "Josué",
+"cap": "21",
+"verso": "40",
+"antes": "Todas estas cidades foram dos filhos de Merari, segundo as suas famílias, que ainda restavam das famílias dos dos levitas; e foi a sua sorte doze cidades.",
+"depois": "Todas estas cidades foram dos filhos de Merari, segundo as suas famílias, que ainda restavam das famílias dos levitas; e foi a sua sorte doze cidades."
+},
+{
+"versao": "acf",
+"livro": "Juízes",
+"cap": "3",
+"verso": "8",
+"antes": "Então a ira do SENHOR se acendeu contra Israel, e ele os vendeu na mão de Cusã-Risataim, rei da mesopotâmia; e os filhos de Israel serviram a Cusã-Risataim oito anos.",
+"depois": "Então a ira do SENHOR se acendeu contra Israel, e ele os vendeu na mão de Cusã-Risataim, rei da Mesopotâmia; e os filhos de Israel serviram a Cusã-Risataim oito anos."
+},
+{
+"versao": "acf",
+"livro": "2 Samuel",
+"cap": "16",
+"verso": "21",
+"antes": "E disse Aitofel a Absalão: Possue as concubinas de teu pai, que deixou para guardarem a casa; e assim todo o Israel ouvirá que te fizeste aborrecível para com teu pai; e se fortalecerão as mãos de todos os que estão contigo.",
+"depois": "E disse Aitofel a Absalão: Possui as concubinas de teu pai, que deixou para guardarem a casa; e assim todo o Israel ouvirá que te fizeste aborrecível para com teu pai; e se fortalecerão as mãos de todos os que estão contigo."
+},
+{
+"versao": "acf",
+"livro": "1 Reis",
+"cap": "22",
+"verso": "32",
+"antes": "Sucedeu que, vendo os capítães dos carros a Jeosafá, disseram eles: Certamente este é o rei de Israel. E chegaram-se a ele, para pelejar com ele; porém Jeosafá gritou.",
+"depois": "Sucedeu que, vendo os capitães dos carros a Jeosafá, disseram eles: Certamente este é o rei de Israel. E chegaram-se a ele, para pelejar com ele; porém Jeosafá gritou."
+},
+{
+"versao": "acf",
+"livro": "1 Reis",
+"cap": "22",
+"verso": "35",
+"antes": "E a peleja foi crescendo nequele dia, e o rei foi sustentado no carro defronte dos sírios; porém ele morreu à tarde; e o sangue da ferida corria para o fundo do carro.",
+"depois": "E a peleja foi crescendo naquele dia, e o rei foi sustentado no carro defronte dos sírios; porém ele morreu à tarde; e o sangue da ferida corria para o fundo do carro."
+},
+{
+"versao": "acf",
+"livro": "2 Crônicas",
+"cap": "5",
+"verso": "10",
+"antes": "Na arca não havia coisa alguma senão as duas tábuas, que Moisés tinha posto em Horebe, quando o Senhor fez aliança com os filhos de Israel, saíndo eles do Egito.",
+"depois": "Na arca não havia coisa alguma senão as duas tábuas, que Moisés tinha posto em Horebe, quando o Senhor fez aliança com os filhos de Israel, saindo eles do Egito."
+},
+{
+"versao": "acf",
+"livro": "2 Crônicas",
+"cap": "10",
+"verso": "2",
+"antes": "Sucedeu que, ouvindo-o Jero-boão, filho de Nebate (o qual estava então no Egito para onde fugira da presença do rei Salomão), voltou do Egito,",
+"depois": "Sucedeu que, ouvindo-o Jeroboão, filho de Nebate (o qual estava então no Egito para onde fugira da presença do rei Salomão), voltou do Egito,"
+},
+{
+"versao": "acf",
+"livro": "2 Crônicas",
+"cap": "23",
+"verso": "13",
+"antes": "E olhou, e eis que o rei estava junto à coluna, à entrada, e os principes e as trombetas junto ao rei; e todo o povo da terra estava alegre e tocava as trombetas; e também os cantores tocavam instrumentos musicais, e dirigiam o cantar de louvores; então Atalia rasgou os seus vestidos, e clamou: Traição, traição!",
+"depois": "E olhou, e eis que o rei estava junto à coluna, à entrada, e os príncipes e as trombetas junto ao rei; e todo o povo da terra estava alegre e tocava as trombetas; e também os cantores tocavam instrumentos musicais, e dirigiam o cantar de louvores; então Atalia rasgou os seus vestidos, e clamou: Traição, traição!"
+},
+{
+"versao": "acf",
+"livro": "2 Crônicas",
+"cap": "36",
+"verso": "11",
+"antes": "Tinha Zedequias a idade de vinte e um anos anos, quando começou a reinar; e onze anos reinou em Jerusalém.",
+"depois": "Tinha Zedequias a idade de vinte e um anos, quando começou a reinar; e onze anos reinou em Jerusalém."
+},
+{
+"versao": "acf",
+"livro": "Esdras",
+"cap": "2",
+"verso": "57",
+"antes": "Os filhos de Sefatias, os filhos de Hatil, os filhos de PoquereteHazebaim, os filhos de Ami.",
+"depois": "Os filhos de Sefatias, os filhos de Hatil, os filhos de Poquerete-Hazebaim, os filhos de Ami."
+},
+{
+"versao": "acf",
+"livro": "Neemias",
+"cap": "7",
+"verso": "3",
+"antes": "E disse-lhes: Não se abram as portas de Jerusalém até que o sol aqueça, e enquanto os que assisti-rem ali permanecerem, fechem as portas, e vós trancai-as; e ponhamse guardas dos moradores de Jerusalém, cada um na sua guarda, e cada um diante da sua casa.",
+"depois": "E disse-lhes: Não se abram as portas de Jerusalém até que o sol aqueça, e enquanto os que assistirem ali permanecerem, fechem as portas, e vós trancai-as; e ponham-se guardas dos moradores de Jerusalém, cada um na sua guarda, e cada um diante da sua casa."
+},
+{
+"versao": "acf",
+"livro": "Ester",
+"cap": "1",
+"verso": "1",
+"antes": "E sucedeu nos dias de Assuero, o Assuero que reinou desde a India até a Etiópia, sobre cento e vinte e sete províncias,",
+"depois": "E sucedeu nos dias de Assuero, o Assuero que reinou desde a Índia até a Etiópia, sobre cento e vinte e sete províncias,"
+},
+{
+"versao": "acf",
+"livro": "Ester",
+"cap": "8",
+"verso": "9",
+"antes": "Então foram chamados os escrivães do rei, naquele mesmo tempo, no terceiro mês (que é o mês de Sivã), aos vinte e três dias; e se escreveu conforme a tudo quanto ordenou Mardoqueu aos judeus, como também aos sátrapas, e aos governadores, e aos líderes das províncias, que se estendem da Úndia até Etiópia, cento e vinte e sete províncias, a cada província segundo o seu modo de escrever, e a cada povo conforme a sua língua; como também aos judeus segundo o seu modo de escrever, e conforme a sua língua.",
+"depois": "Então foram chamados os escrivães do rei, naquele mesmo tempo, no terceiro mês (que é o mês de Sivã), aos vinte e três dias; e se escreveu conforme a tudo quanto ordenou Mardoqueu aos judeus, como também aos sátrapas, e aos governadores, e aos líderes das províncias, que se estendem da Índia até Etiópia, cento e vinte e sete províncias, a cada província segundo o seu modo de escrever, e a cada povo conforme a sua língua; como também aos judeus segundo o seu modo de escrever, e conforme a sua língua."
+},
+{
+"versao": "acf",
+"livro": "Ester",
+"cap": "9",
+"verso": "9",
+"antes": "E a Farmasta, e a Arisai, e a Aridai, e a Vaisata; ú",
+"depois": "E a Farmasta, e a Arisai, e a Aridai, e a Vaisata;"
+},
+{
+"versao": "acf",
+"livro": "Jó",
+"cap": "6",
+"verso": "4",
+"antes": "Porque as flechas do TodoPoderoso estão em mim, cujo ardente veneno suga o meu espírito; os terrores de Deus se armam contra mim.",
+"depois": "Porque as flechas do Todo-Poderoso estão em mim, cujo ardente veneno suga o meu espírito; os terrores de Deus se armam contra mim."
+},
+{
+"versao": "acf",
+"livro": "Jó",
+"cap": "8",
+"verso": "3",
+"antes": "Porventura perverteria Deus o direito? E perverteria o TodoPoderoso a justiça?",
+"depois": "Porventura perverteria Deus o direito? E perverteria o Todo-Poderoso a justiça?"
+},
+{
+"versao": "acf",
+"livro": "Jó",
+"cap": "15",
+"verso": "2",
+"antes": "Porventura proferirá o sábio và sabedoria? E encherá do vento oriental o seu ventre,",
+"depois": "Porventura proferirá o sábio vã sabedoria? E encherá do vento oriental o seu ventre,"
+},
+{
+"versao": "acf",
+"livro": "Jó",
+"cap": "19",
+"verso": "13",
+"antes": "pôs longe de mim a meus irmãos, e os que me conhecem, como estranhos se apartaram de mim.",
+"depois": "Pôs longe de mim a meus irmãos, e os que me conhecem, como estranhos se apartaram de mim."
+},
+{
+"versao": "acf",
+"livro": "Jó",
+"cap": "27",
+"verso": "10",
+"antes": "Deleitar-se-á no TodoPoderoso, ou invocará a Deus em todo o tempo?",
+"depois": "Deleitar-se-á no Todo-Poderoso, ou invocará a Deus em todo o tempo?"
+},
+{
+"versao": "acf",
+"livro": "Jó",
+"cap": "31",
+"verso": "2",
+"antes": "Que porção teria eu do Deus lá de cima, ou que herança do TodoPoderoso desde as alturas?",
+"depois": "Que porção teria eu do Deus lá de cima, ou que herança do Todo-Poderoso desde as alturas?"
+},
+{
+"versao": "acf",
+"livro": "Jó",
+"cap": "32",
+"verso": "8",
+"antes": "Na verdade, há um espírito no homem, e a inspiração do TodoPoderoso o faz entendido.",
+"depois": "Na verdade, há um espírito no homem, e a inspiração do Todo-Poderoso o faz entendido."
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "2",
+"verso": "1",
+"antes": "Por que se amotinam os gentios, e os povos imaginam coisas vàs?",
+"depois": "Por que se amotinam os gentios, e os povos imaginam coisas vãs?"
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "5",
+"verso": "1",
+"antes": "DÁ ouvidos às minhas palavras, ó Senhor, atende à minha meditação.",
+"depois": "Dá ouvidos às minhas palavras, ó Senhor, atende à minha meditação."
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "6",
+"verso": "3",
+"antes": "Até a minha alma está perturbada; mas tu, Senhor, até quando?.",
+"depois": "Até a minha alma está perturbada; mas tu, Senhor, até quando?"
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "9",
+"verso": "4",
+"antes": "Pois tu tens sustentado o meu direito e a minha causa; tu te assentaste no tribunal, julgando justamente;.",
+"depois": "Pois tu tens sustentado o meu direito e a minha causa; tu te assentaste no tribunal, julgando justamente;"
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "9",
+"verso": "13",
+"antes": "Tem misericórdia de mim, Senhor, olha para a minha aflição, causada por aqueles que me odeiam; tu que me levantas das portas da morte;.",
+"depois": "Tem misericórdia de mim, Senhor, olha para a minha aflição, causada por aqueles que me odeiam; tu que me levantas das portas da morte;"
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "9",
+"verso": "16",
+"antes": "O Senhor é conhecido pelo juízo que fez; enlaçado foi o ímpio nas obras de suas mãos. (Higaiom; Selá.).",
+"depois": "O Senhor é conhecido pelo juízo que fez; enlaçado foi o ímpio nas obras de suas mãos. (Higaiom; Selá.)"
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "9",
+"verso": "20",
+"antes": "Põe-os em medo, Senhor, para que saibam as nações que são formadas por meros homens. (Selá.).",
+"depois": "Põe-os em medo, Senhor, para que saibam as nações que são formadas por meros homens. (Selá.)"
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "28",
+"verso": "1",
+"antes": "A ti clamarei, ó Senhor, Rocha minha; não emudeças para comigo; não aconteça, cal ando-te tu para comigo, que eu fique semelhante aos que descem ao abismo.",
+"depois": "A ti clamarei, ó Senhor, Rocha minha; não emudeças para comigo; não aconteça, calando-te tu para comigo, que eu fique semelhante aos que descem ao abismo."
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "37",
+"verso": "1",
+"antes": "NÃO te indignes por causa dos malfeitores, nem tenhas inveja dos que praticam a iniqüidade.",
+"depois": "Não te indignes por causa dos malfeitores, nem tenhas inveja dos que praticam a iniqüidade."
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "39",
+"verso": "6",
+"antes": "Na verdade, todo homem anda numa và aparência; na verdade, em vão se inquietam; amontoam riquezas, e não sabem quem as levará.",
+"depois": "Na verdade, todo homem anda numa vã aparência; na verdade, em vão se inquietam; amontoam riquezas, e não sabem quem as levará."
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "60",
+"verso": "9",
+"antes": "Quem me conduzirá à cidade forte? Quem me guiará até Edom?.",
+"depois": "Quem me conduzirá à cidade forte? Quem me guiará até Edom?"
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "68",
+"verso": "7",
+"antes": "Ó Deus, quando saías diante do teu povo, quando caminhavas pelo deserto, (Selá.).",
+"depois": "Ó Deus, quando saías diante do teu povo, quando caminhavas pelo deserto, (Selá.)"
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "68",
+"verso": "19",
+"antes": "Bendito seja o Senhor, que de dia em dia nos carrega de benefícios; o Deus que é a nossa salvação. (Selá.).",
+"depois": "Bendito seja o Senhor, que de dia em dia nos carrega de benefícios; o Deus que é a nossa salvação. (Selá.)"
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "78",
+"verso": "19",
+"antes": "E falaram contra Deus, e disseram: Acaso pode Deus prepararnos uma mesa no deserto?",
+"depois": "E falaram contra Deus, e disseram: Acaso pode Deus preparar-nos uma mesa no deserto?"
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "91",
+"verso": "5",
+"antes": "Não terás medo do terror de noite nem da seta que voa de dia,.",
+"depois": "Não terás medo do terror de noite nem da seta que voa de dia,"
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "119",
+"verso": "21",
+"antes": "Tu repreendeste asperamente os soberbos que são amaldiçoa-dos, que se desviam dos teus mandamentos.",
+"depois": "Tu repreendeste asperamente os soberbos que são amaldiçoados, que se desviam dos teus mandamentos."
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "119",
+"verso": "127",
+"antes": "Por isso am",
+"depois": "Por isso amo os teus mandamentos mais do que o ouro, e ainda mais do que o ouro fino."
+},
+{
+"versao": "acf",
+"livro": "Salmos",
+"cap": "122",
+"verso": "1",
+"antes": "Alegrei-me quando me disseram: Vamos à casa do Senhor.",
+"depois": "Alegrei-me quando me disseram: Vamos à casa do SENHOR."
+},
+{
+"versao": "acf",
+"livro": "Eclesiastes",
+"cap": "9",
+"verso": "12",
+"antes": "que também o homem não sabe o seu tempo; assim como os peixes que se pescam com a rede maligna, e como os passarinhos que se prendem com o laço, assim se enlaçam também os filhos dos homens no mau tempo, quando cai de repente sobre eles.",
+"depois": "Que também o homem não sabe o seu tempo; assim como os peixes que se pescam com a rede maligna, e como os passarinhos que se prendem com o laço, assim se enlaçam também os filhos dos homens no mau tempo, quando cai de repente sobre eles."
+},
+{
+"versao": "acf",
+"livro": "Eclesiastes",
+"cap": "12",
+"verso": "5",
+"antes": "Como também quando temerem o que é alto, e houver espantos no caminho, e florescer a amendoeira, e o gafanhoto for um peso, e perecer o apetite; porque o homem se vai à sua casa eterna, e os pranteadore andarão rodeando pela praça;",
+"depois": "Como também quando temerem o que é alto, e houver espantos no caminho, e florescer a amendoeira, e o gafanhoto for um peso, e perecer o apetite; porque o homem se vai à sua casa eterna, e os pranteadores andarão rodeando pela praça;"
+},
+{
+"versao": "acf",
+"livro": "Cânticos",
+"cap": "1",
+"verso": "1",
+"antes": "cântico dos cânticos, que é de Salomão.",
+"depois": "Cântico dos cânticos, que é de Salomão."
+},
+{
+"versao": "acf",
+"livro": "Cânticos",
+"cap": "2",
+"verso": "3",
+"antes": "Qual a macieira entre as árvores do bosque, tal é o meu amado entre os filhos;desejo muito a sua sombra, e debaixo dela me assento;e o seu fruto é doce ao meu paladar.",
+"depois": "Qual a macieira entre as árvores do bosque, tal é o meu amado entre os filhos; desejo muito a sua sombra, e debaixo dela me assento; e o seu fruto é doce ao meu paladar."
+},
+{
+"versao": "acf",
+"livro": "Cânticos",
+"cap": "3",
+"verso": "2",
+"antes": "Levantar-me-ei, pois, e rodearei a cidade;pelas ruas e pelas praças buscarei aquele a quem ama a minha alma;busquei-o, e não o achei.",
+"depois": "Levantar-me-ei, pois, e rodearei a cidade; pelas ruas e pelas praças buscarei aquele a quem ama a minha alma; busquei-o, e não o achei."
+},
+{
+"versao": "acf",
+"livro": "Cânticos",
+"cap": "3",
+"verso": "3",
+"antes": "Acharam-me os guardas, que rondavam pela cidade;eu lhes perguntei: Vistes aquele a quem ama a minha alma?",
+"depois": "Acharam-me os guardas, que rondavam pela cidade; eu lhes perguntei: Vistes aquele a quem ama a minha alma?"
+},
+{
+"versao": "acf",
+"livro": "Cânticos",
+"cap": "6",
+"verso": "3",
+"antes": "Eu sou do meu amado, e o meu amado é meu;ele apascenta entre os lírios.",
+"depois": "Eu sou do meu amado, e o meu amado é meu; ele apascenta entre os lírios."
+},
+{
+"versao": "acf",
+"livro": "Cânticos",
+"cap": "8",
+"verso": "5",
+"antes": "Quem é esta que sobe do deserto, e vem encostada ao seu amado?\nDebaixo da macieira te despertei, ali esteve tua mãe com dores; ali esteve com dores aquela que te deu à luz.",
+"depois": "Quem é esta que sobe do deserto, e vem encostada ao seu amado? Debaixo da macieira te despertei, ali esteve tua mãe com dores; ali esteve com dores aquela que te deu à luz."
+},
+{
+"versao": "acf",
+"livro": "Isaías",
+"cap": "55",
+"verso": "1",
+"antes": "Ó VÓS, todos os que tendes sede, vinde às águas, e os que não tendes dinheiro, vinde, comprai, e comei; sim, vinde, comprai, sem dinheiro e sem preço, vinho e leite.",
+"depois": "Ó vós, todos os que tendes sede, vinde às águas, e os que não tendes dinheiro, vinde, comprai, e comei; sim, vinde, comprai, sem dinheiro e sem preço, vinho e leite."
+},
+{
+"versao": "acf",
+"livro": "Jeremias",
+"cap": "23",
+"verso": "2",
+"antes": "Portanto assim diz o Senhor Deus de Israel, contra os pastores que apascentam o meu povo: Vós dispersastes as minhas ovelhas, e as afugentastes, e não as visitas-tes; eis que visitarei sobre vós a maldade das vossas ações, diz o Senhor.",
+"depois": "Portanto assim diz o Senhor Deus de Israel, contra os pastores que apascentam o meu povo: Vós dispersastes as minhas ovelhas, e as afugentastes, e não as visitastes; eis que visitarei sobre vós a maldade das vossas ações, diz o Senhor."
+},
+{
+"versao": "acf",
+"livro": "Jeremias",
+"cap": "49",
+"verso": "27",
+"antes": "E acenderei fogo no muro de Damasco, e consumirá os palácios de Bene-Hadade.",
+"depois": "E acenderei fogo no muro de Damasco, e consumirá os palácios de Ben-Hadade."
+},
+{
+"versao": "acf",
+"livro": "Lamentações de Jeremias",
+"cap": "3",
+"verso": "54",
+"antes": "águas correram sobre a minha cabeça; eu disse: Estou cortado.",
+"depois": "Águas correram sobre a minha cabeça; eu disse: Estou cortado."
+},
+{
+"versao": "acf",
+"livro": "Ezequiel",
+"cap": "7",
+"verso": "7",
+"antes": "A manhà vem para ti, ó habitante da terra. Vem o tempo; chegado é o dia da turbação, e não mais o sonido de alegria dos montes.",
+"depois": "A manhã vem para ti, ó habitante da terra. Vem o tempo; chegado é o dia da turbação, e não mais o sonido de alegria dos montes."
+},
+{
+"versao": "acf",
+"livro": "Ezequiel",
+"cap": "7",
+"verso": "10",
+"antes": "Eis aqui o dia, eis que vem; veio a manhà, já floresceu a vara, já reverdeceu a soberba.",
+"depois": "Eis aqui o dia, eis que vem; veio a manhã, já floresceu a vara, já reverdeceu a soberba."
+},
+{
+"versao": "acf",
+"livro": "Ezequiel",
+"cap": "21",
+"verso": "22",
+"antes": "« sua direita estará a adivinhação sobre Jerusalém, para ordenar aos capitães, para abrirem a boca, ordenando a matança, para levantarem a voz com júbilo, para pôrem os aríetes contra as portas, para levantarem trincheiras, para edificarem baluartes.",
+"depois": "À sua direita estará a adivinhação sobre Jerusalém, para ordenar aos capitães, para abrirem a boca, ordenando a matança, para levantarem a voz com júbilo, para porem os aríetes contra as portas, para levantarem trincheiras, para edificarem baluartes."
+},
+{
+"versao": "acf",
+"livro": "Ezequiel",
+"cap": "26",
+"verso": "12",
+"antes": "E roubarão as tuas riquezas, e saquearão as tuas mercadorias, e derrubarão os teus muros, e arrazarão as tuas casas agradáveis; e lançarão no meio das águas as tuas pedras, e as tuas madeiras, e o teu pó.",
+"depois": "E roubarão as tuas riquezas, e saquearão as tuas mercadorias, e derrubarão os teus muros, e arrasarão as tuas casas agradáveis; e lançarão no meio das águas as tuas pedras, e as tuas madeiras, e o teu pó."
+},
+{
+"versao": "acf",
+"livro": "Ezequiel",
+"cap": "32",
+"verso": "4",
+"antes": "Então te deixarei em terra; sobre a face do campo te lançarei, e farei posar sobre ti todas as aves do céu, e fartarei de ti os animais de toda a terra.",
+"depois": "Então te deixarei em terra; sobre a face do campo te lançarei, e farei pousar sobre ti todas as aves do céu, e fartarei de ti os animais de toda a terra."
+},
+{
+"versao": "acf",
+"livro": "Ezequiel",
+"cap": "37",
+"verso": "20",
+"antes": "E as varas, sobre que houve- res escrito, estarão na tua mão, perante os olhos deles.",
+"depois": "E as varas, sobre que houveres escrito, estarão na tua mão, perante os olhos deles."
+},
+{
+"versao": "acf",
+"livro": "Ezequiel",
+"cap": "39",
+"verso": "13",
+"antes": "Sim, todo o povo da terra os enterrará, e será para eles memo-rável dia em que eu for glorificado, diz o Senhor Deus.",
+"depois": "Sim, todo o povo da terra os enterrará, e será para eles memorável dia em que eu for glorificado, diz o Senhor Deus."
+},
+{
+"versao": "acf",
+"livro": "Ezequiel",
+"cap": "46",
+"verso": "2",
+"antes": "E o príncipe entrará pelo caminho do vestíbulo da porta, por fora, e permanecerá junto da ombreira da porta; e os sacerdo- tes prepararão o holocausto, e os sacrifícios pacíficos dele; e ele adorará junto ao umbral da porta, e sairá; mas a porta não se fechará até à tarde.",
+"depois": "E o príncipe entrará pelo caminho do vestíbulo da porta, por fora, e permanecerá junto da ombreira da porta; e os sacerdotes prepararão o holocausto, e os sacrifícios pacíficos dele; e ele adorará junto ao umbral da porta, e sairá; mas a porta não se fechará até à tarde."
+},
+{
+"versao": "acf",
+"livro": "Daniel",
+"cap": "8",
+"verso": "15",
+"antes": "E aconteceu que, havendo eu, Daniel, tido a visão, procurei o significado, e eis que se apresen- tou diante de mim como que uma semelhança de homem.",
+"depois": "E aconteceu que, havendo eu, Daniel, tido a visão, procurei o significado, e eis que se apresentou diante de mim como que uma semelhança de homem."
+},
+{
+"versao": "acf",
+"livro": "Oséias",
+"cap": "5",
+"verso": "14",
+"antes": "Porque para Efraim serei como um leão, e como um leãozinho à casa de Judá: eu, eu o despedaçarei, e irme-ei embora; arrebatarei, e não haverá quem livre.",
+"depois": "Porque para Efraim serei como um leão, e como um leãozinho à casa de Judá: eu, eu o despedaçarei, e ir-me-ei embora; arrebatarei, e não haverá quem livre."
+},
+{
+"versao": "acf",
+"livro": "Oséias",
+"cap": "10",
+"verso": "5",
+"antes": "Os moradores de Samaria serão atemorizados pelo bezerro de Bete-«ven; porque o seu povo se lamentará por causa dele, como também os seus sacerdotes idólatras que nele se regozijavam, por causa da sua glória, que se apartou dela.",
+"depois": "Os moradores de Samaria serão atemorizados pelo bezerro de Bete-Áven; porque o seu povo se lamentará por causa dele, como também os seus sacerdotes idólatras que nele se regozijavam, por causa da sua glória, que se apartou dela."
+},
+{
+"versao": "acf",
+"livro": "Amós",
+"cap": "5",
+"verso": "8",
+"antes": "Procurai o que faz o sete-estrêlo e o órion e torna a sombra da noite em manhã, e faz escurecer o dia como a noite, que chama as águas do mar, e as derrama sobre a terra; o Senhor é o seu nome.",
+"depois": "Procurai o que faz o Sete-estrelo e o Órion e torna a sombra da noite em manhã, e faz escurecer o dia como a noite, que chama as águas do mar, e as derrama sobre a terra; o Senhor é o seu nome."
+},
+{
+"versao": "acf",
+"livro": "Obadias",
+"cap": "1",
+"verso": "5",
+"antes": "Se viessem a ti ladrões, ou assaltantes de noite (como estás destruído! ), não furtariam o que lhes bastasse? Se a ti viessem os vindimadores, não deixariam algumas uvas?",
+"depois": "Se viessem a ti ladrões, ou assaltantes de noite (como estás destruído!), não furtariam o que lhes bastasse? Se a ti viessem os vindimadores, não deixariam algumas uvas?"
+},
+{
+"versao": "acf",
+"livro": "Jonas",
+"cap": "1",
+"verso": "6",
+"antes": "E o mestre do navio chegou- se a ele, e disse-lhe: Que tens, dorminhoco? Levanta-te, clama ao teu Deus; talvez assim ele se lembre de nós para que não pereçamos.",
+"depois": "E o mestre do navio chegou-se a ele, e disse-lhe: Que tens, dorminhoco? Levanta-te, clama ao teu Deus; talvez assim ele se lembre de nós para que não pereçamos."
+},
+{
+"versao": "acf",
+"livro": "Jonas",
+"cap": "1",
+"verso": "10",
+"antes": "Então estes homens se enche-ram de grande temor, e disseram-lhe: Por que fizeste tu isto? Pois sabiam os homens que fugia da presença do Senhor, porque ele lho tinha declarado.",
+"depois": "Então estes homens se encheram de grande temor, e disseram-lhe: Por que fizeste tu isto? Pois sabiam os homens que fugia da presença do Senhor, porque ele lho tinha declarado."
+},
+{
+"versao": "acf",
+"livro": "Naum",
+"cap": "2",
+"verso": "9",
+"antes": "Saqueai a prata, saqueai o ouro, porque não têm fim as provi-sões, riquezas há de todo o gênero de bens desejáveis.",
+"depois": "Saqueai a prata, saqueai o ouro, porque não têm fim as provisões, riquezas há de todo o gênero de bens desejáveis."
+},
+{
+"versao": "acf",
+"livro": "Habacuque",
+"cap": "2",
+"verso": "6",
+"antes": "Não levantarão, pois, todos estes contra ele uma parábola e um provérbio sarcástico contra ele? E se dirá: Ai daquele que multiplica o que não é seu! (até quando? ) e daquele que carrega sobre si dívidas!",
+"depois": "Não levantarão, pois, todos estes contra ele uma parábola e um provérbio sarcástico contra ele? E se dirá: Ai daquele que multiplica o que não é seu! (até quando?) e daquele que carrega sobre si dívidas!"
+},
+{
+"versao": "acf",
+"livro": "Habacuque",
+"cap": "3",
+"verso": "9",
+"antes": "Descoberto se movimentou o teu arco; os juramentos feitos às tribos foram uma palavra segura. (Selá. ) Tu fendeste a terra com rios.",
+"depois": "Descoberto se movimentou o teu arco; os juramentos feitos às tribos foram uma palavra segura. (Selá.) Tu fendeste a terra com rios."
+},
+{
+"versao": "acf",
+"livro": "Sofonias",
+"cap": "3",
+"verso": "14",
+"antes": "Canta alegremente, ó filha de Sião; rejubila, ó Israel; regozija- te, e exulta de todo o coração, ó filha de Jerusalém.",
+"depois": "Canta alegremente, ó filha de Sião; rejubila, ó Israel; regozija-te, e exulta de todo o coração, ó filha de Jerusalém."
+},
+{
+"versao": "acf",
+"livro": "Zacarias",
+"cap": "10",
+"verso": "6",
+"antes": "E fortalecerei a casa de Judá, e salvarei a casa de José, e fá-los- ei voltar, porque me compadeci deles; e serão como se eu não os tivera rejeitado, porque eu sou o Senhor seu Deus, e os ouvirei.",
+"depois": "E fortalecerei a casa de Judá, e salvarei a casa de José, e fá-los-ei voltar, porque me compadeci deles; e serão como se eu não os tivera rejeitado, porque eu sou o Senhor seu Deus, e os ouvirei."
+},
+{
+"versao": "acf",
+"livro": "Zacarias",
+"cap": "14",
+"verso": "3",
+"antes": "E o Senhor sairá, e pelejará contra estas nações, como pele- jou, sim, no dia da batalha.",
+"depois": "E o Senhor sairá, e pelejará contra estas nações, como pelejou, sim, no dia da batalha."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "2",
+"verso": "6",
+"antes": "E tu, Belém, terra de Judá,De modo nenhum és a menor entre as capitais de Judá;porque de ti sairá o Guia que há de apascentar o meu povo Israel.",
+"depois": "E tu, Belém, terra de Judá, De modo nenhum és a menor entre as capitais de Judá; porque de ti sairá o Guia que há de apascentar o meu povo Israel."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "2",
+"verso": "10",
+"antes": "E, vendo eles a estrela, regoziram-se muito com grande alegria.",
+"depois": "E, vendo eles a estrela, regozijaram-se muito com grande alegria."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "3",
+"verso": "3",
+"antes": "Porque este é o anunciado pelo profeta Isaías, que disse:Voz do que clama no deserto:Preparai o caminho do Senhor,Endireitai as suas veredas.",
+"depois": "Porque este é o anunciado pelo profeta Isaías, que disse: Voz do que clama no deserto: Preparai o caminho do Senhor, Endireitai as suas veredas."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "4",
+"verso": "16",
+"antes": "O povo, que estava assentado em trevas, Viu uma grande luz; aos que estavam assentados na região e sombra da morte,A luz raiou.",
+"depois": "O povo, que estava assentado em trevas, Viu uma grande luz; aos que estavam assentados na região e sombra da morte, A luz raiou."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "9",
+"verso": "13",
+"antes": "Ide, porém, e aprendei o que significa: Misericórdia quero, e não sacrifício. Porque eu nào vim a chamar os justos, mas os pecadores, ao arrependimento.",
+"depois": "Ide, porém, e aprendei o que significa: Misericórdia quero, e não sacrifício. Porque eu não vim a chamar os justos, mas os pecadores, ao arrependimento."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "11",
+"verso": "10",
+"antes": "Porque é este de quem está escrito:Eis que diante da tua face envio o meu anjo,que preparará diante de ti o teu caminho.",
+"depois": "Porque é este de quem está escrito: Eis que diante da tua face envio o meu anjo, que preparará diante de ti o teu caminho."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "12",
+"verso": "18",
+"antes": "Eis aqui o meu servo, que escolhi,o meu amado, em quem a minha alma se compraz;porei sobre ele o meu espírito,e anunciará aos gentios o juízo.",
+"depois": "Eis aqui o meu servo, que escolhi, o meu amado, em quem a minha alma se compraz; porei sobre ele o meu espírito, e anunciará aos gentios o juízo."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "12",
+"verso": "19",
+"antes": "Não contenderá, nem clamará,Nem alguém ouvirá pelas ruas a sua voz;",
+"depois": "Não contenderá, nem clamará, Nem alguém ouvirá pelas ruas a sua voz;"
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "12",
+"verso": "20",
+"antes": "Não esmagará a cana quebrada,enão apagará o morrão que fumega,até que faça triunfar o juízo;",
+"depois": "Não esmagará a cana quebrada, e não apagará o morrão que fumega, até que faça triunfar o juízo;"
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "13",
+"verso": "14",
+"antes": "E neles se cumpre a profecia de Isaías, que diz:Ouvindo, ouvireis, mas não compreendereis,e, vendo, vereis, mas não percebereis.",
+"depois": "E neles se cumpre a profecia de Isaías, que diz: Ouvindo, ouvireis, mas não compreendereis, e, vendo, vereis, mas não percebereis."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "13",
+"verso": "15",
+"antes": "Porque o coração deste povo está endurecido,E ouviram de mau grado com seus ouvidos,E fecharam seus olhos;Para que não vejam com os olhos,E ouçam com os ouvidos,e compreendam com o coração,e se convertam,e eu os cure.",
+"depois": "Porque o coração deste povo está endurecido, E ouviram de mau grado com seus ouvidos, E fecharam seus olhos; Para que não vejam com os olhos, E ouçam com os ouvidos, e compreendam com o coração, e se convertam, e eu os cure."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "14",
+"verso": "20",
+"antes": "E comeram todos, e saciaramse; e levantaram dos pedaços, que sobejaram, doze alcofas cheias.",
+"depois": "E comeram todos, e saciaram-se; e levantaram dos pedaços, que sobejaram, doze alcofas cheias."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "14",
+"verso": "25",
+"antes": "Mas, à quarta vigília da noite, dirigiu-se Jesus para eles, andan-do por cima do mar.",
+"depois": "Mas, à quarta vigília da noite, dirigiu-se Jesus para eles, andando por cima do mar."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "14",
+"verso": "26",
+"antes": "E os discípulos, vendo-o an-dando sobre o mar, assustaram-se, dizendo: É um fantasma. E gritaram com medo.",
+"depois": "E os discípulos, vendo-o andando sobre o mar, assustaram-se, dizendo: É um fantasma. E gritaram com medo."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "17",
+"verso": "17",
+"antes": "E Jesus, respondendo, disse: Ó geração incrédula e perversa! até quando estarei eu convosco, e até quando vos sofrerei? Trazeimo aqui.",
+"depois": "E Jesus, respondendo, disse: Ó geração incrédula e perversa! até quando estarei eu convosco, e até quando vos sofrerei? Trazei-mo aqui."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "18",
+"verso": "27",
+"antes": "Então o Senhor daquele servo, movido de íntima compaixão, soltou-o e perdoou-lhe a dívida.",
+"depois": "Então o senhor daquele servo, movido de íntima compaixão, soltou-o e perdoou-lhe a dívida."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "19",
+"verso": "1",
+"antes": "E aconteceu que, concluindo Jesus estes discursos, saiu da Galiléia, e dirigiu- se aos confins da Judéia, além do Jordão;",
+"depois": "E aconteceu que, concluindo Jesus estes discursos, saiu da Galiléia, e dirigiu-se aos confins da Judéia, além do Jordão;"
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "20",
+"verso": "6",
+"antes": "E, saindo perto da hora undécima, encontrou outros que estavam ociosos, e perguntou- lhes: Por que estais ociosos todo o dia?",
+"depois": "E, saindo perto da hora undécima, encontrou outros que estavam ociosos, e perguntou-lhes: Por que estais ociosos todo o dia?"
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "21",
+"verso": "5",
+"antes": "Dizei à filha de Sião: Eis que o teu Rei aí te vem,Manso, e assentado sobre uma jumenta,E sobre um jumentinho, filho de animal de carga.",
+"depois": "Dizei à filha de Sião: Eis que o teu Rei aí te vem, Manso, e assentado sobre uma jumenta, E sobre um jumentinho, filho de animal de carga."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "21",
+"verso": "42",
+"antes": "Diz-lhes Jesus: Nunca lestes nas Escrituras:A pedra, que os edificadores rejeitaram,essa foi posta por cabeça do ângulo;pelo Senhor foi feito isto,E é maravilhoso aos nossos olhos?",
+"depois": "Diz-lhes Jesus: Nunca lestes nas Escrituras: A pedra, que os edificadores rejeitaram, essa foi posta por cabeça do ângulo; pelo Senhor foi feito isto, E é maravilhoso aos nossos olhos?"
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "22",
+"verso": "44",
+"antes": "Disse o Senhor ao meu Senhor:Assenta-te à minha direita,Até que eu ponha os teus inimigos por escabelo de teus pés?",
+"depois": "Disse o Senhor ao meu Senhor: Assenta-te à minha direita, Até que eu ponha os teus inimigos por escabelo de teus pés?"
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "24",
+"verso": "9",
+"antes": "Então vos hão de entregar para serdes atormentados, e matar-vosão; e sereis odiados de todas as nações por causa do meu nome.",
+"depois": "Então vos hão de entregar para serdes atormentados, e matar-vos-ão; e sereis odiados de todas as nações por causa do meu nome."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "24",
+"verso": "10",
+"antes": "Nesse tempo muitos serão escandalizados, e trair-se-ão uns aos outros, e uns aos outros se odiarào.",
+"depois": "Nesse tempo muitos serão escandalizados, e trair-se-ão uns aos outros, e uns aos outros se odiarão."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "25",
+"verso": "36",
+"antes": "Estava nu, e vestistes-me; adoeci, e visitastes-me; estive na prisão, e foste me ver.",
+"depois": "Estava nu, e vestistes-me; adoeci, e visitastes-me; estive na prisão, e fostes me ver."
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "26",
+"verso": "60",
+"antes": "E não o achavam; apesar de se apresentarem muitas testemunhas falsas, nào o achavam. Mas, por fim chegaram duas testemunhas falsas,",
+"depois": "E não o achavam; apesar de se apresentarem muitas testemunhas falsas, não o achavam. Mas, por fim chegaram duas testemunhas falsas,"
+},
+{
+"versao": "acf",
+"livro": "Mateus",
+"cap": "27",
+"verso": "37",
+"antes": "E por cima da sua cabeça puseram escrita a sua acusação: este e³ jesus, o rei dos judeus.",
+"depois": "E por cima da sua cabeça puseram escrita a sua acusação: ESTE É JESUS, O REI DOS JUDEUS."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "3",
+"verso": "2",
+"antes": "E estavam observando-o securaria no sábado, para o acusarem.",
+"depois": "E estavam observando-o se curaria no sábado, para o acusarem."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "3",
+"verso": "15",
+"antes": "E para que tivessem o poderde curar as enfermidades e expulsar os demônios:",
+"depois": "E para que tivessem o poder de curar as enfermidades e expulsar os demônios:"
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "4",
+"verso": "10",
+"antes": "E, quando se achou só, osque estavam junto dele com os doze interrogaram-no acerca da parábola.",
+"depois": "E, quando se achou só, os que estavam junto dele com os doze interrogaram-no acerca da parábola."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "4",
+"verso": "30",
+"antes": "E dizia: A que assemelhare-mos o reino de Deus? ou com que parábola o representaremos?",
+"depois": "E dizia: A que assemelharemos o reino de Deus? ou com que parábola o representaremos?"
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "5",
+"verso": "35",
+"antes": "Estando ele ainda falando, chegaram alguns do principal da sinagoga, a quem disseram: A tuafilha está morta; para que enfadas mais o Mestre?",
+"depois": "Estando ele ainda falando, chegaram alguns do principal da sinagoga, a quem disseram: A tua filha está morta; para que enfadas mais o Mestre?"
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "6",
+"verso": "4",
+"antes": "E Jesus lhes dizia: Não há profeta sem honra senão na suapátria, entre os seus parentes, e na sua casa.",
+"depois": "E Jesus lhes dizia: Não há profeta sem honra senão na sua pátria, entre os seus parentes, e na sua casa."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "7",
+"verso": "6",
+"antes": "E ele, respondendo, disse-lhes: Bem profetizou Isaías acerca de vós, hipócritas, como está escrito:Este povo honra-me com os lábios,Mas o seu coração está longe de mim;",
+"depois": "E ele, respondendo, disse-lhes: Bem profetizou Isaías acerca de vós, hipócritas, como está escrito: Este povo honra-me com os lábios, Mas o seu coração está longe de mim;"
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "7",
+"verso": "7",
+"antes": "Em vão, porém, me honram,Ensinando doutrinas que são mandamentos de homens.",
+"depois": "Em vão, porém, me honram, Ensinando doutrinas que são mandamentos de homens."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "8",
+"verso": "11",
+"antes": "E saíram os fariseus, e começaram a disputar com ele, pedindolhe, para o tentarem, um sinal do céu.",
+"depois": "E saíram os fariseus, e começaram a disputar com ele, pedindo-lhe, para o tentarem, um sinal do céu."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "9",
+"verso": "3",
+"antes": "E as suas vestes tornaram- se resplandecentes, extremamente brancas como a neve, tais como nenhum lavadeiro sobre a terra as poderia branquear.",
+"depois": "E as suas vestes tornaram-se resplandecentes, extremamente brancas como a neve, tais como nenhum lavadeiro sobre a terra as poderia branquear."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "10",
+"verso": "32",
+"antes": "E iam no caminho, subindo para Jerusalém; e Jesus ia adiante deles. E eles maravilhavam-se, e seguiam-no atemorizados.  E, tornando a tomar consigo os doze, começou a dizer-lhes as coisas que lhe deviam sobrevir,",
+"depois": "E iam no caminho, subindo para Jerusalém; e Jesus ia adiante deles. E eles maravilhavam-se, e seguiam-no atemorizados. E, tornando a tomar consigo os doze, começou a dizer-lhes as coisas que lhe deviam sobrevir,"
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "12",
+"verso": "10",
+"antes": "Ainda não lestes esta Escritura:A pedra, que os edificadores rejeitaram,Esta foi posta por cabeça de esquina;",
+"depois": "Ainda não lestes esta Escritura: A pedra, que os edificadores rejeitaram, Esta foi posta por cabeça de esquina;"
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "12",
+"verso": "36",
+"antes": "O próprio Davi disse pelo Espírito Santo:O Senhor disse ao meu Senhor:Assenta-te à minha direita Até que eu ponha os teus inimigos por escabelo dos teus pés.",
+"depois": "O próprio Davi disse pelo Espírito Santo: O Senhor disse ao meu Senhor: Assenta-te à minha direita Até que eu ponha os teus inimigos por escabelo dos teus pés."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "13",
+"verso": "8",
+"antes": "Porque se levantará nação contra nação, e reino contra reino, e haverá terremotos em diversos lugares, e haverá fomes e tribulações. Estas coisas sào os princípios das dores.",
+"depois": "Porque se levantará nação contra nação, e reino contra reino, e haverá terremotos em diversos lugares, e haverá fomes e tribulações. Estas coisas são os princípios das dores."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "13",
+"verso": "20",
+"antes": "E, se o Senhor não abreviasse aqueles dias, nenhuma carne se salvaria; mas, por causa dos eleitosque escolheu, abreviou aqueles dias.",
+"depois": "E, se o Senhor não abreviasse aqueles dias, nenhuma carne se salvaria; mas, por causa dos eleitos que escolheu, abreviou aqueles dias."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "14",
+"verso": "3",
+"antes": "E, estando ele em betânia, assentado à mesa, em casa de Simão, o leproso, veio uma mulher, que trazia um vaso de alabastro, com ungüento de nardo puro, de muito preço, e quebrando o vaso, lho derramou sobre a cabeça.",
+"depois": "E, estando ele em Betânia, assentado à mesa, em casa de Simão, o leproso, veio uma mulher, que trazia um vaso de alabastro, com ungüento de nardo puro, de muito preço, e quebrando o vaso, lho derramou sobre a cabeça."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "14",
+"verso": "41",
+"antes": "E voltou terceira vez, e disse-lhes: Dormi agora, e descansai. Basta; é chegada a hora.  Eis que o Filho do homem vai ser entregue nas mãos dos pecadores.",
+"depois": "E voltou terceira vez, e disse-lhes: Dormi agora, e descansai. Basta; é chegada a hora. Eis que o Filho do homem vai ser entregue nas mãos dos pecadores."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "14",
+"verso": "52",
+"antes": "Mas ele, largando o lençol, fugiu nu. Jesus perante o Sinédrio. Negação de Pedro",
+"depois": "Mas ele, largando o lençol, fugiu nu."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "14",
+"verso": "66",
+"antes": "E, estando Pedro embaixo, noátrio, chegou uma das criadas do sumo sacerdote;",
+"depois": "E, estando Pedro embaixo, no átrio, chegou uma das criadas do sumo sacerdote;"
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "14",
+"verso": "72",
+"antes": "E o galo cantou segunda vez. E Pedro lembrou-se da palavra que Jesus lhe tinha dito: Antes que o galo cante duas vezes, três vezes me negarás.  E, retirando-se dali, chorou.",
+"depois": "E o galo cantou segunda vez. E Pedro lembrou-se da palavra que Jesus lhe tinha dito: Antes que o galo cante duas vezes, três vezes me negarás. E, retirando-se dali, chorou."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "15",
+"verso": "7",
+"antes": "E havia um chamado Barrabás, que, preso com outros amotinado- res, tinha num motim cometido uma morte.",
+"depois": "E havia um chamado Barrabás, que, preso com outros amotinadores, tinha num motim cometido uma morte."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "15",
+"verso": "22",
+"antes": "E levaram-no ao lugar doGólgota, que se traduz por lugar da Caveira.",
+"depois": "E levaram-no ao lugar do Gólgota, que se traduz por lugar da Caveira."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "16",
+"verso": "3",
+"antes": "E diziam umas às outras: Quemnos revolverá a pedra da porta do sepulcro?",
+"depois": "E diziam umas às outras: Quem nos revolverá a pedra da porta do sepulcro?"
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "16",
+"verso": "15",
+"antes": "E disse-lhes: Ide por todo omundo, pregai o evangelho a toda criatura.",
+"depois": "E disse-lhes: Ide por todo o mundo, pregai o evangelho a toda criatura."
+},
+{
+"versao": "acf",
+"livro": "Marcos",
+"cap": "16",
+"verso": "18",
+"antes": "Pegarão nas serpentes; e, se beberem alguma coisa mortífera, não lhes fará dano algum; e porãoas mãos sobre os enfermos, e os curarão.",
+"depois": "Pegarão nas serpentes; e, se beberem alguma coisa mortífera, não lhes fará dano algum; e porão as mãos sobre os enfermos, e os curarão."
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "1",
+"verso": "2",
+"antes": "Segundo nos transmitiram os mesmos que os presenciaram desde oprincípio, e foram ministros da palavra,",
+"depois": "Segundo nos transmitiram os mesmos que os presenciaram desde o princípio, e foram ministros da palavra,"
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "3",
+"verso": "33",
+"antes": "E Naassom de Aminadabe, e Aminadabe de Arão, e Arão de Esrom, e Esrom Perez, e Perez de Judá,",
+"depois": "E Naassom de Aminadabe, e Aminadabe de Arão, e Arão de Esrom, e Esrom de Perez, e Perez de Judá,"
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "3",
+"verso": "35",
+"antes": "E Nacor de Seruque, e Seruque de Ragaú, e Ragaú de Fáleque, e Fáleque de Eber, e Eber de Salá,",
+"depois": "E Nacor de Seruque, e Seruque de Ragaú, e Ragaú de Fáleque, e Fáleque de Éber, e Éber de Salá,"
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "7",
+"verso": "19",
+"antes": "E João, chamando dois dos seusdiscípulos, enviou-os a Jesus, dizendo: És tu aquele que havia de vir, ou esperamos outro?",
+"depois": "E João, chamando dois dos seus discípulos, enviou-os a Jesus, dizendo: És tu aquele que havia de vir, ou esperamos outro?"
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "8",
+"verso": "14",
+"antes": "E a que caiu entre espinhos, esses são os que ouviram e, indo pordiante, são sufocados com os cuidados e riquezas e deleites da vida, e não dão fruto com perfeição;",
+"depois": "E a que caiu entre espinhos, esses são os que ouviram e, indo por diante, são sufocados com os cuidados e riquezas e deleites da vida, e não dão fruto com perfeição;"
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "8",
+"verso": "29",
+"antes": "Porque tinha ordenado ao espírito imundo que saísse daquele homem; pois já havia muito tempo que o arrebatava. E guardavamno preso, com grilhões e cadeias; mas, quebrando as prisões, era impelido pelo demônio para os desertos.",
+"depois": "Porque tinha ordenado ao espírito imundo que saísse daquele homem; pois já havia muito tempo que o arrebatava. E guardavam-no preso, com grilhões e cadeias; mas, quebrando as prisões, era impelido pelo demônio para os desertos."
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "9",
+"verso": "22",
+"antes": "Dizendo: É necessário que o Filho do homem padeça muitas coisas, e seja rejeitado dos anciãos edos escribas, e seja morto, e ressuscite ao terceiro dia.",
+"depois": "Dizendo: É necessário que o Filho do homem padeça muitas coisas, e seja rejeitado dos anciãos e dos escribas, e seja morto, e ressuscite ao terceiro dia."
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "10",
+"verso": "22",
+"antes": "Tudo por meu Pai foi entregue; e ninguém conhece quem é o Filho senão o Pai, nem quem é o Pai senão o Filho, e aquele a quem o Filho o quiser revelar.",
+"depois": "Tudo por meu Pai me foi entregue; e ninguém conhece quem é o Filho senão o Pai, nem quem é o Pai senão o Filho, e aquele a quem o Filho o quiser revelar."
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "11",
+"verso": "28",
+"antes": "Mas ele disse: Antes bemaventurados os que ouvem a palavra de Deus e a guardam.",
+"depois": "Mas ele disse: Antes bem-aventurados os que ouvem a palavra de Deus e a guardam."
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "13",
+"verso": "1",
+"antes": "E, Naquele mesmo tempo, estavam presentes ali alguns que lhe falavam dos galileus, cujo sangue Pilatos misturara com os seus sacrifícios.",
+"depois": "E, naquele mesmo tempo, estavam presentes ali alguns que lhe falavam dos galileus, cujo sangue Pilatos misturara com os seus sacrifícios."
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "15",
+"verso": "1",
+"antes": "E Chegavam-se a ele todos os publicanos e pecadores para o ouvir.",
+"depois": "E chegavam-se a ele todos os publicanos e pecadores para o ouvir."
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "19",
+"verso": "25",
+"antes": "(E disseram-lhe eles: Senhor, ele tem dez minas. )",
+"depois": "(E disseram-lhe eles: Senhor, ele tem dez minas.)"
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "20",
+"verso": "31",
+"antes": "E tomou-a o terceiro, e igualmente também os sete; e morreram, e nào deixaram filhos.",
+"depois": "E tomou-a o terceiro, e igualmente também os sete; e morreram, e não deixaram filhos."
+},
+{
+"versao": "acf",
+"livro": "Lucas",
+"cap": "24",
+"verso": "50",
+"antes": "E levou-os fora, até betânia; e, levantando as suas mãos, os abençoou.",
+"depois": "E levou-os fora, até Betânia; e, levantando as suas mãos, os abençoou."
+},
+{
+"versao": "acf",
+"livro": "João",
+"cap": "1",
+"verso": "26",
+"antes": "João respondeu-lhes, dizendo: Eu batizo com água; mas no meio devós está um a quem vós não conheceis.",
+"depois": "João respondeu-lhes, dizendo: Eu batizo com água; mas no meio de vós está um a quem vós não conheceis."
+},
+{
+"versao": "acf",
+"livro": "João",
+"cap": "3",
+"verso": "8",
+"antes": "O vento assopra onde quer, e ouves a sua voz, mas não sabes de onde vem, nem para onde vai; assim étodo aquele que é nascido do Espírito.",
+"depois": "O vento assopra onde quer, e ouves a sua voz, mas não sabes de onde vem, nem para onde vai; assim é todo aquele que é nascido do Espírito."
+},
+{
+"versao": "acf",
+"livro": "João",
+"cap": "10",
+"verso": "36",
+"antes": "«quele a quem o Pai santificou, e enviou ao mundo, vós dizeis: Blasfemas, porque disse: Sou Filho de Deus?",
+"depois": "Àquele a quem o Pai santificou, e enviou ao mundo, vós dizeis: Blasfemas, porque disse: Sou Filho de Deus?"
+},
+{
+"versao": "acf",
+"livro": "João",
+"cap": "11",
+"verso": "1",
+"antes": "Estava, porém, enfermo um certo Lázaro, de betânia, aldeia de Maria e de sua irmã Marta.",
+"depois": "Estava, porém, enfermo um certo Lázaro, de Betânia, aldeia de Maria e de sua irmã Marta."
+},
+{
+"versao": "acf",
+"livro": "João",
+"cap": "11",
+"verso": "18",
+"antes": "(Ora Betânia distava de Jerusalém quase quinze estádios. )",
+"depois": "(Ora Betânia distava de Jerusalém quase quinze estádios.)"
+},
+{
+"versao": "acf",
+"livro": "João",
+"cap": "12",
+"verso": "1",
+"antes": "Foi, pois, Jesus seis dias antes da páscoa a betânia, onde estava Lázaro, o que falecera, e a quem ressuscitara dentre os mortos.",
+"depois": "Foi, pois, Jesus seis dias antes da páscoa a Betânia, onde estava Lázaro, o que falecera, e a quem ressuscitara dentre os mortos."
+},
+{
+"versao": "acf",
+"livro": "João",
+"cap": "12",
+"verso": "39",
+"antes": "Por isso não podiam crer, entào Isaías disse outra vez:",
+"depois": "Por isso não podiam crer, então Isaías disse outra vez:"
+},
+{
+"versao": "acf",
+"livro": "João",
+"cap": "17",
+"verso": "1",
+"antes": "Jesus falou assim e, levantando seus olhos ao céu, e disse: Pai, é chegada a hora; glorifica a teu Filho, para que também o teu Filho te glorifique a ti;",
+"depois": "Jesus falou assim e, levantando seus olhos ao céu, disse: Pai, é chegada a hora; glorifica a teu Filho, para que também o teu Filho te glorifique a ti;"
+},
+{
+"versao": "acf",
+"livro": "João",
+"cap": "20",
+"verso": "23",
+"antes": "«queles a quem perdoardes os pecados lhes são perdoados; e àqueles a quem os retiverdes lhes são retidos.",
+"depois": "Àqueles a quem perdoardes os pecados lhes são perdoados; e àqueles a quem os retiverdes lhes são retidos."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "1",
+"verso": "13",
+"antes": "E, entrando, subiram ao cenáculo, onde habitavam Pedro e Tiago, João e André, Filipe e Tomé, Bartolomeu e Mateus, Tiago, filho de Alfeu, Simão, o Zelote, e Judas, irmào de Tiago.",
+"depois": "E, entrando, subiram ao cenáculo, onde habitavam Pedro e Tiago, João e André, Filipe e Tomé, Bartolomeu e Mateus, Tiago, filho de Alfeu, Simão, o Zelote, e Judas, irmão de Tiago."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "2",
+"verso": "9",
+"antes": "Partos e medos, elamitas e os que habitam na Mesopotâmia, Judéia, Capadócia, Ponto e Asia,",
+"depois": "Partos e medos, elamitas e os que habitam na Mesopotâmia, Judéia, Capadócia, Ponto e Ásia,"
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "2",
+"verso": "34",
+"antes": "Porque Davi não subiu aos céus, mas ele próprio diz:Disse o Senhor ao meu Senhor:Assenta-te à minha direita,",
+"depois": "Porque Davi não subiu aos céus, mas ele próprio diz: Disse o Senhor ao meu Senhor: Assenta-te à minha direita,"
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "4",
+"verso": "26",
+"antes": "Levantaram-se os reis da terra,E os príncipes se ajuntaram à uma,Contra o Senhor e contra o seu Ungido.",
+"depois": "Levantaram-se os reis da terra, E os príncipes se ajuntaram à uma, Contra o Senhor e contra o seu Ungido."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "4",
+"verso": "36",
+"antes": "Então José, cognominado pelos apóstolos Barnabé(que, traduzido, é Filho da consolação), levita, natural de Chipre,",
+"depois": "Então José, cognominado pelos apóstolos Barnabé (que, traduzido, é Filho da consolação), levita, natural de Chipre,"
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "6",
+"verso": "9",
+"antes": "E levantaram-se alguns que eram da sinagoga chamada dos libertinos, e dos cireneus e dos alexandrinos, e dos que eram da Cilícia e da Asia, e disputavam com Estêvão.",
+"depois": "E levantaram-se alguns que eram da sinagoga chamada dos libertinos, e dos cireneus e dos alexandrinos, e dos que eram da Cilícia e da Ásia, e disputavam com Estêvão."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "7",
+"verso": "2",
+"antes": "E ele disse: Homens, irmãos, e pais, ouvi. O Deus da glória apareceu a nosso pai Abraão, estando na mesopotâmia, antes de habitar em Harã,",
+"depois": "E ele disse: Homens, irmãos, e pais, ouvi. O Deus da glória apareceu a nosso pai Abraão, estando na Mesopotâmia, antes de habitar em Harã,"
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "7",
+"verso": "43",
+"antes": "Antes tomastes o tabernáculo de Moloque,E a estrela do vosso deus Renfã, figuras que vós fizestes para as adorar.Transportar-vos-ei, pois, para além da Babilônia.",
+"depois": "Antes tomastes o tabernáculo de Moloque, E a estrela do vosso deus Renfã, figuras que vós fizestes para as adorar. Transportar-vos-ei, pois, para além da Babilônia."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "7",
+"verso": "49",
+"antes": "O céu é o meu trono,e a terra o estrado dos meus pés.Que casa me edificareis? diz o Senhor,Ou qual é o lugar do meu repouso?",
+"depois": "O céu é o meu trono, e a terra o estrado dos meus pés. Que casa me edificareis? diz o Senhor, Ou qual é o lugar do meu repouso?"
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "13",
+"verso": "21",
+"antes": "E depois pediram um rei, e Deus lhes deu por quarenta anos, a Saul filho de Cis, homem da tribo de Benjamim.",
+"depois": "E depois pediram um rei, e Deus lhes deu por quarenta anos, a Saul filho de Quis, homem da tribo de Benjamim."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "13",
+"verso": "38",
+"antes": "Seja-vos, pois, notório, homens irmàos, que por este se vos anuncia a remissão dos pecados.",
+"depois": "Seja-vos, pois, notório, homens irmãos, que por este se vos anuncia a remissão dos pecados."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "13",
+"verso": "41",
+"antes": "Vede, ó desprezadores, e espantai-vos e desaparecei;porque opero uma obra em vossos dias,ora tal que não crereis, se alguém vo-la contar.",
+"depois": "Vede, ó desprezadores, e espantai-vos e desaparecei; porque opero uma obra em vossos dias, obra tal que não crereis, se alguém vo-la contar."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "13",
+"verso": "47",
+"antes": "Porque o Senhor assim no-lo mandou:eu te pus para luz dos gentios,a fim de que sejas para salvação até os confins da terra.",
+"depois": "Porque o Senhor assim no-lo mandou: eu te pus para luz dos gentios, a fim de que sejas para salvação até os confins da terra."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "15",
+"verso": "16",
+"antes": "Depois disto voltarei,e reedificarei o tabernáculo de Davi, que está caído, levantá-lo-ei das suas ruínas, e tornarei a edificá-lo.",
+"depois": "Depois disto voltarei, e reedificarei o tabernáculo de Davi, que está caído, levantá-lo-ei das suas ruínas, e tornarei a edificá-lo."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "15",
+"verso": "17",
+"antes": "Para que o restante dos homens busque ao Senhor,e todos os gentios, sobre os quais o meu nome é invocado,diz o Senhor, que faz todas estas coisas,",
+"depois": "Para que o restante dos homens busque ao Senhor, e todos os gentios, sobre os quais o meu nome é invocado, diz o Senhor, que faz todas estas coisas,"
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "15",
+"verso": "18",
+"antes": "Conhecidas sào a Deus, desde o princípio do mundo, todas as suas obras.",
+"depois": "Conhecidas são a Deus, desde o princípio do mundo, todas as suas obras."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "18",
+"verso": "7",
+"antes": "E, saindo dali, entrou em casa de um homem chamado chamado Justo, que servia a Deus, e cuja casa estava junto da sinagoga.",
+"depois": "E, saindo dali, entrou em casa de um homem chamado Justo, que servia a Deus, e cuja casa estava junto da sinagoga."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "18",
+"verso": "26",
+"antes": "Ele começou a falar ousadamente na sinagoga; e, quando o ouviram Priscila e Aqüila, o levaram consigo e lhe declararam mais precisamente o caminho de Deus.",
+"depois": "Ele começou a falar ousadamente na sinagoga; e, quando o ouviram Priscila e Áqüila, o levaram consigo e lhe declararam mais precisamente o caminho de Deus."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "20",
+"verso": "9",
+"antes": "E, estando um certo jovem, por nome Eutico, assentado numa janela, caiu do terceiro andar, tomado de um sono profundo que lhe sobreveio durante o extenso discurso de Paulo; e foi levantado morto.",
+"depois": "E, estando um certo jovem, por nome Êutico, assentado numa janela, caiu do terceiro andar, tomado de um sono profundo que lhe sobreveio durante o extenso discurso de Paulo; e foi levantado morto."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "22",
+"verso": "1",
+"antes": "Homens, irmàos e pais, ouvi agora a minha defesa perante vós",
+"depois": "Homens, irmãos e pais, ouvi agora a minha defesa perante vós"
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "22",
+"verso": "30",
+"antes": "E no dia seguinte, querendo saber ao certo a causa por que era acusado pelos judeus, soltou-o das prisões, e mandou vir o principais dos sacerdotes, e todo o seu conselho; e, trazendo Paulo, o apresentou diante deles.",
+"depois": "E no dia seguinte, querendo saber ao certo a causa por que era acusado pelos judeus, soltou-o das prisões, e mandou vir os principais dos sacerdotes, e todo o seu conselho; e, trazendo Paulo, o apresentou diante deles."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "27",
+"verso": "8",
+"antes": "E, consteando-a dificilmente, chegamos a um lugar chamando Bons Portos, perto do qual estava a cidade de Laséia.",
+"depois": "E, costeando-a dificilmente, chegamos a um lugar chamado Bons Portos, perto do qual estava a cidade de Laséia."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "28",
+"verso": "16",
+"antes": "E, logo que chegamos a Roma, o centurião entregou os presos ao capitào da guarda; mas a Paulo se lhe permitiu morar por sua conta à parte, com o soldado que o guardava.",
+"depois": "E, logo que chegamos a Roma, o centurião entregou os presos ao capitão da guarda; mas a Paulo se lhe permitiu morar por sua conta à parte, com o soldado que o guardava."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "28",
+"verso": "26",
+"antes": "Dizendo:Vai a este povo, e dize:De ouvido ouvireis, e de maneira nenhuma entendereis;E, vendo vereis, e de maneira nenhuma percebereis.",
+"depois": "Dizendo: Vai a este povo, e dize: De ouvido ouvireis, e de maneira nenhuma entendereis; E, vendo vereis, e de maneira nenhuma percebereis."
+},
+{
+"versao": "acf",
+"livro": "Atos",
+"cap": "28",
+"verso": "27",
+"antes": "Porquanto o coração deste povo está endurecido,e com os ouvidos ouviram pesadamente,e fecharam os olhos,para que nunca com os olhos vejam,Nem com os ouvidos ouçam,Nem do coração entendam,E se convertam,E eu os cure.",
+"depois": "Porquanto o coração deste povo está endurecido, e com os ouvidos ouviram pesadamente, e fecharam os olhos, para que nunca com os olhos vejam, Nem com os ouvidos ouçam, Nem do coração entendam, E se convertam, E eu os cure."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "3",
+"verso": "4",
+"antes": "De maneira nenhuma; sempre seja Deus verdadeiro, e todo o homem mentiroso; como está escrito:Para que sejas justificado em tuas palavras,E venças quando fores julgado.",
+"depois": "De maneira nenhuma; sempre seja Deus verdadeiro, e todo o homem mentiroso; como está escrito: Para que sejas justificado em tuas palavras, E venças quando fores julgado."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "3",
+"verso": "5",
+"antes": "E, se a nossa injustiça for causa da justiça de Deus, que diremos? Porventura será Deus injusto, trazendo ira sobre nós? (Falo como homem. )",
+"depois": "E, se a nossa injustiça for causa da justiça de Deus, que diremos? Porventura será Deus injusto, trazendo ira sobre nós? (Falo como homem.)"
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "3",
+"verso": "10",
+"antes": "Como está escrito:Não há um justo, nem um sequer.",
+"depois": "Como está escrito: Não há um justo, nem um sequer."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "3",
+"verso": "11",
+"antes": "Não há ninguém que entenda;Não há ninguém que busque a Deus.",
+"depois": "Não há ninguém que entenda; Não há ninguém que busque a Deus."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "3",
+"verso": "12",
+"antes": "Todos se extraviaram, e juntamente se fizeram inúteis.Não há quem faça o bem, não há nem um só.",
+"depois": "Todos se extraviaram, e juntamente se fizeram inúteis. Não há quem faça o bem, não há nem um só."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "3",
+"verso": "13",
+"antes": "A sua garganta é um sepulcro aberto;Com as suas línguas tratam enganosamente;Peçonha de áspides está debaixo de seus lábios;",
+"depois": "A sua garganta é um sepulcro aberto; Com as suas línguas tratam enganosamente; Peçonha de áspides está debaixo de seus lábios;"
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "4",
+"verso": "7",
+"antes": "Bem-aventurados aqueles cujas maldades são perdoadas,E cujos pecados são cobertos.",
+"depois": "Bem-aventurados aqueles cujas maldades são perdoadas, E cujos pecados são cobertos."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "4",
+"verso": "19",
+"antes": "E não enfraquecendo na fé, nào atentou para o seu próprio corpo já amortecido, pois era já de quase cem anos, nem tampouco para o amortecimento do ventre de Sara.",
+"depois": "E não enfraquecendo na fé, não atentou para o seu próprio corpo já amortecido, pois era já de quase cem anos, nem tampouco para o amortecimento do ventre de Sara."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "6",
+"verso": "15",
+"antes": "Pois que? Pecaremos porque não estamos debaixo da lei, mas debaixo da graça? De modo nenhum.",
+"depois": "Pois quê? Pecaremos porque não estamos debaixo da lei, mas debaixo da graça? De modo nenhum."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "8",
+"verso": "36",
+"antes": "Como está escrito:Por amor de ti somos entregues à morte todo o dia;Somos reputados como ovelhas para o matadouro.",
+"depois": "Como está escrito: Por amor de ti somos entregues à morte todo o dia; Somos reputados como ovelhas para o matadouro."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "9",
+"verso": "25",
+"antes": "Como também diz em Oséias:Chamarei meu povo ao que não era meu povo;E amada à que não era amada.",
+"depois": "Como também diz em Oséias: Chamarei meu povo ao que não era meu povo; E amada à que não era amada."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "9",
+"verso": "26",
+"antes": "E sucederá que no lugar em que lhes foi dito:Vós não sois meu povo;Aí serão chamados filhos do Deus vivo.",
+"depois": "E sucederá que no lugar em que lhes foi dito: Vós não sois meu povo; Aí serão chamados filhos do Deus vivo."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "9",
+"verso": "29",
+"antes": "E como antes disse Isaías:Se o Senhor dos Exércitos nos não deixara descendência,Teríamos nos tornado como Sodoma, e teríamos sido feitos como Gomorra.",
+"depois": "E como antes disse Isaías: Se o Senhor dos Exércitos nos não deixara descendência, Teríamos nos tornado como Sodoma, e teríamos sido feitos como Gomorra."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "9",
+"verso": "33",
+"antes": "Como está escrito:Eis que eu ponho em Sião uma pedra de tropeço, e uma rocha de escândalo;E todo aquele que crer nela não será confundido.",
+"depois": "Como está escrito: Eis que eu ponho em Sião uma pedra de tropeço, e uma rocha de escândalo; E todo aquele que crer nela não será confundido."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "10",
+"verso": "6",
+"antes": "Mas a justiça que é pela fé diz assim: Não digas em teu coração: Quem subirá ao céu? (isto é, a trazer do alto a Cristo. )",
+"depois": "Mas a justiça que é pela fé diz assim: Não digas em teu coração: Quem subirá ao céu? (isto é, a trazer do alto a Cristo.)"
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "10",
+"verso": "7",
+"antes": "Ou: Quem descerá ao abismo? (isto é, a tornar a trazer dentre os mortos a Cristo. )",
+"depois": "Ou: Quem descerá ao abismo? (isto é, a tornar a trazer dentre os mortos a Cristo.)"
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "10",
+"verso": "18",
+"antes": "Mas digo: Porventura não ouviram? Sim, por certo, pois Por toda a terra saiu a voz deles,E as suas palavras até aos confins do mundo.",
+"depois": "Mas digo: Porventura não ouviram? Sim, por certo, pois Por toda a terra saiu a voz deles, E as suas palavras até aos confins do mundo."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "10",
+"verso": "19",
+"antes": "Mas digo: Porventura Israel não o soube? Primeiramente diz Moisés:Eu vos porei em ciúmes com aqueles que não são povo,Com gente insensata vos provocarei à ira.",
+"depois": "Mas digo: Porventura Israel não o soube? Primeiramente diz Moisés: Eu vos porei em ciúmes com aqueles que não são povo, Com gente insensata vos provocarei à ira."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "10",
+"verso": "20",
+"antes": "E Isaías ousadamente diz:Fui achado pelos que não me buscavam,Fui manifestado aos que por mim não perguntavam.",
+"depois": "E Isaías ousadamente diz: Fui achado pelos que não me buscavam, Fui manifestado aos que por mim não perguntavam."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "10",
+"verso": "21",
+"antes": "Mas para Israel diz:Todo o dia estendi as minhas mãos a um povo rebelde e contradizente.",
+"depois": "Mas para Israel diz: Todo o dia estendi as minhas mãos a um povo rebelde e contradizente."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "11",
+"verso": "34",
+"antes": "Por que quem compreendeu a mente do Senhor? ou quem foi seu conselheiro?",
+"depois": "Porque quem compreendeu a mente do Senhor? ou quem foi seu conselheiro?"
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "14",
+"verso": "11",
+"antes": "Porque está escrito:Como eu vivo, diz o Senhor, que todo o joelho se dobrará a mim,E toda a língua confessará a Deus.",
+"depois": "Porque está escrito: Como eu vivo, diz o Senhor, que todo o joelho se dobrará a mim, E toda a língua confessará a Deus."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "15",
+"verso": "9",
+"antes": "E para que os gentios glorifiquem a Deus pela sua misericórdia, como está escrito:Portanto eu te louvarei entre os gentios,E cantarei ao teu nome.",
+"depois": "E para que os gentios glorifiquem a Deus pela sua misericórdia, como está escrito: Portanto eu te louvarei entre os gentios, E cantarei ao teu nome."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "15",
+"verso": "10",
+"antes": "E outra vez diz:Alegrai-vos, gentios, com o seu povo.",
+"depois": "E outra vez diz: Alegrai-vos, gentios, com o seu povo."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "15",
+"verso": "11",
+"antes": "E outra vez:Louvai ao Senhor, todos os gentios,E celebrai-o todos os povos.",
+"depois": "E outra vez: Louvai ao Senhor, todos os gentios, E celebrai-o todos os povos."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "15",
+"verso": "12",
+"antes": "Outra vez diz Isaías:Uma raiz em Jessé haverá,E naquele que se levantar para reger os gentios,Os gentios esperarão.",
+"depois": "Outra vez diz Isaías: Uma raiz em Jessé haverá, E naquele que se levantar para reger os gentios, Os gentios esperarão."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "15",
+"verso": "21",
+"antes": "Antes, como está escrito:Aqueles a quem não foi anunciado, o verão,E os que não ouviram o entenderão.",
+"depois": "Antes, como está escrito: Aqueles a quem não foi anunciado, o verão, E os que não ouviram o entenderão."
+},
+{
+"versao": "acf",
+"livro": "Romanos",
+"cap": "16",
+"verso": "5",
+"antes": "Saudai também a igreja que está em sua casa. Saudai a Epêneto, meu amado, que é as primícias da Acáia em Cristo.",
+"depois": "Saudai também a igreja que está em sua casa. Saudai a Epêneto, meu amado, que é as primícias da Acaia em Cristo."
+},
+{
+"versao": "acf",
+"livro": "1 Coríntios",
+"cap": "2",
+"verso": "9",
+"antes": "Mas, como está escrito:As coisas que o olho não viu, e o ouvido não ouviu,e não subiram ao coração do homem,são as que Deus preparou para os que o amam.",
+"depois": "Mas, como está escrito: As coisas que o olho não viu, e o ouvido não ouviu, e não subiram ao coração do homem, são as que Deus preparou para os que o amam."
+},
+{
+"versao": "acf",
+"livro": "1 Coríntios",
+"cap": "6",
+"verso": "4",
+"antes": "Então, se tiverdes negócios em juízo, pertencentes a esta vida, pondes para julga-los os que são de menos estima na igreja?",
+"depois": "Então, se tiverdes negócios em juízo, pertencentes a esta vida, pondes para julgá-los os que são de menos estima na igreja?"
+},
+{
+"versao": "acf",
+"livro": "1 Coríntios",
+"cap": "16",
+"verso": "19",
+"antes": "As igrejas da Ásia vos saúdam. Saúdam-vos afetuosamente no Senhor áqüila e Priscila, com a igreja que está em sua casa.",
+"depois": "As igrejas da Ásia vos saúdam. Saúdam-vos afetuosamente no Senhor Áqüila e Priscila, com a igreja que está em sua casa."
+},
+{
+"versao": "acf",
+"livro": "2 Coríntios",
+"cap": "1",
+"verso": "9",
+"antes": "Mas já em nós mesmos tínha- mos a sentença de morte, para que não confiássemos em nós, mas em Deus, que ressuscita os mortos;",
+"depois": "Mas já em nós mesmos tínhamos a sentença de morte, para que não confiássemos em nós, mas em Deus, que ressuscita os mortos;"
+},
+{
+"versao": "acf",
+"livro": "2 Coríntios",
+"cap": "2",
+"verso": "11",
+"antes": "Porque não ignoramos os seus ardís.",
+"depois": "Porque não ignoramos os seus ardis."
+},
+{
+"versao": "acf",
+"livro": "2 Coríntios",
+"cap": "6",
+"verso": "2",
+"antes": "(Porque diz:Ouvi-te em tempo aceitável e socorri-te no dia da salvação;eis aqui agora o tempo aceitável, eis aqui agora o dia da salvação).",
+"depois": "(Porque diz: Ouvi-te em tempo aceitável e socorri-te no dia da salvação; eis aqui agora o tempo aceitável, eis aqui agora o dia da salvação)."
+},
+{
+"versao": "acf",
+"livro": "2 Coríntios",
+"cap": "6",
+"verso": "17",
+"antes": "Por isso saí do meio deles, e apartai-vos, diz o Senhor;E não toqueis nada imundo,E eu vos receberei;",
+"depois": "Por isso saí do meio deles, e apartai-vos, diz o Senhor; E não toqueis nada imundo, E eu vos receberei;"
+},
+{
+"versao": "acf",
+"livro": "2 Coríntios",
+"cap": "6",
+"verso": "18",
+"antes": "E eu serei para vós Pai,E vós sereis para mim filhos e filhas, Diz o Senhor Todo-Poderoso.",
+"depois": "E eu serei para vós Pai, E vós sereis para mim filhos e filhas, Diz o Senhor Todo-Poderoso."
+},
+{
+"versao": "acf",
+"livro": "2 Coríntios",
+"cap": "9",
+"verso": "9",
+"antes": "Conforme está escrito:Espalhou, deu aos pobres;a sua justiça permanece para sempre.",
+"depois": "Conforme está escrito: Espalhou, deu aos pobres; a sua justiça permanece para sempre."
+},
+{
+"versao": "acf",
+"livro": "Efésios",
+"cap": "4",
+"verso": "8",
+"antes": "Por isso diz:Subindo ao alto, levou cativo o cativeiro,e deu dons aos homens.",
+"depois": "Por isso diz: Subindo ao alto, levou cativo o cativeiro, e deu dons aos homens."
+},
+{
+"versao": "acf",
+"livro": "Efésios",
+"cap": "4",
+"verso": "9",
+"antes": "Ora, istoele subiuque é, senão que também antes tinha descido às partes mais baixas da terra?",
+"depois": "Ora, isto — ele subiu — que é, senão que também antes tinha descido às partes mais baixas da terra?"
+},
+{
+"versao": "acf",
+"livro": "Filipenses",
+"cap": "4",
+"verso": "16",
+"antes": "Porque também uma e outra vez me mandastes o necessário a tessalônica.",
+"depois": "Porque também uma e outra vez me mandastes o necessário a Tessalônica."
+},
+{
+"versao": "acf",
+"livro": "Colossenses",
+"cap": "3",
+"verso": "5",
+"antes": "Mortificai, pois, os vossos membros, que estão sobre a terra: a fornicação, a impureza, o afeição desordenada, a vil concupiscência, e a avareza, que é idolatria;",
+"depois": "Mortificai, pois, os vossos membros, que estão sobre a terra: a fornicação, a impureza, a afeição desordenada, a vil concupiscência, e a avareza, que é idolatria;"
+},
+{
+"versao": "acf",
+"livro": "2 Tessalonicenses",
+"cap": "3",
+"verso": "16",
+"antes": "Ora, o mesmo Senhor da paz vos dê sempre paz de toda a maneira.O Senhor seja com todos vós.",
+"depois": "Ora, o mesmo Senhor da paz vos dê sempre paz de toda a maneira. O Senhor seja com todos vós."
+},
+{
+"versao": "acf",
+"livro": "1 Timóteo",
+"cap": "3",
+"verso": "5",
+"antes": "(Porque, se alguém não sabe governar a sua própria casa, terá cuidado da igreja de Deus? );",
+"depois": "(Porque, se alguém não sabe governar a sua própria casa, terá cuidado da igreja de Deus?);"
+},
+{
+"versao": "acf",
+"livro": "1 Timóteo",
+"cap": "5",
+"verso": "1",
+"antes": "NÃO repreendas asperamente o ancião, mas admoesta-o como a pai; aos moços como a irmãos;",
+"depois": "Não repreendas asperamente o ancião, mas admoesta-o como a pai; aos moços como a irmãos;"
+},
+{
+"versao": "acf",
+"livro": "2 Timóteo",
+"cap": "4",
+"verso": "14",
+"antes": "Alexandre, o latoeiro, causoume muitos males; o Senhor lhe pague segundo as suas obras.",
+"depois": "Alexandre, o latoeiro, causou-me muitos males; o Senhor lhe pague segundo as suas obras."
+},
+{
+"versao": "acf",
+"livro": "2 Timóteo",
+"cap": "4",
+"verso": "21",
+"antes": "Procura vir antes do inverno. Eubulo, e Prudente, e Lino, e Cláudia, e todos os irmãos te saúdam.",
+"depois": "Procura vir antes do inverno. Êubulo, e Prudente, e Lino, e Cláudia, e todos os irmãos te saúdam."
+},
+{
+"versao": "acf",
+"livro": "Tito",
+"cap": "3",
+"verso": "10",
+"antes": "Ao homem hereje, depois de uma e outra admoestação, evita-o,",
+"depois": "Ao homem herege, depois de uma e outra admoestação, evita-o,"
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "1",
+"verso": "6",
+"antes": "E outra vez, quando introduz no mundo o primogênito, diz:E todos os anjos de Deus o adorem.",
+"depois": "E outra vez, quando introduz no mundo o primogênito, diz: E todos os anjos de Deus o adorem."
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "1",
+"verso": "9",
+"antes": "Amaste a justiça e odiaste a iniqüidade; por isso Deus, o teu Deus, te ungiuCom óleo de alegria mais do que a teus companheiros.",
+"depois": "Amaste a justiça e odiaste a iniqüidade; por isso Deus, o teu Deus, te ungiu Com óleo de alegria mais do que a teus companheiros."
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "2",
+"verso": "6",
+"antes": "Mas em certo lugar testificou alguém, dizendo:Que é o homem, para que dele te lembres?Ou o filho do homem, para que o visites?",
+"depois": "Mas em certo lugar testificou alguém, dizendo: Que é o homem, para que dele te lembres? Ou o filho do homem, para que o visites?"
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "2",
+"verso": "7",
+"antes": "Tu o fizeste um pouco menor do que os anjos,De glória e de honra o coroaste,E o constituíste sobre as obras de tuas mãos;",
+"depois": "Tu o fizeste um pouco menor do que os anjos, De glória e de honra o coroaste, E o constituíste sobre as obras de tuas mãos;"
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "2",
+"verso": "8",
+"antes": "Todas as coisas lhe sujeitaste debaixo dos pés.Ora, visto que lhe sujeitou todas as coisas, nada deixou que lhe não esteja sujeito. Mas agora ainda não vemos que todas as coisas lhe estejam sujeitas.",
+"depois": "Todas as coisas lhe sujeitaste debaixo dos pés. Ora, visto que lhe sujeitou todas as coisas, nada deixou que lhe não esteja sujeito. Mas agora ainda não vemos que todas as coisas lhe estejam sujeitas."
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "2",
+"verso": "12",
+"antes": "Dizendo:Anunciarei o teu nome a meus irmãos,Cantar-te-ei louvores no meio da congregação.",
+"depois": "Dizendo: Anunciarei o teu nome a meus irmãos, Cantar-te-ei louvores no meio da congregação."
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "3",
+"verso": "8",
+"antes": "Não endureçais os vossos corações,Como na provocação, no dia da tentação no deserto.",
+"depois": "Não endureçais os vossos corações, Como na provocação, no dia da tentação no deserto."
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "3",
+"verso": "9",
+"antes": "Onde vossos pais me tentaram, me provaram,E viram por quarenta anos as minhas obras.",
+"depois": "Onde vossos pais me tentaram, me provaram, E viram por quarenta anos as minhas obras."
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "4",
+"verso": "3",
+"antes": "Porque nós, os que temos crido, entramos no repouso, tal como disse:Assim jurei na minha ira Que não entrarão no meu repouso; embora as suas obras estivessem acabadas desde a fundação do mundo.",
+"depois": "Porque nós, os que temos crido, entramos no repouso, tal como disse: Assim jurei na minha ira Que não entrarão no meu repouso; embora as suas obras estivessem acabadas desde a fundação do mundo."
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "4",
+"verso": "5",
+"antes": "E outra vez neste lugar:Não entrarão no meu repouso.",
+"depois": "E outra vez neste lugar: Não entrarão no meu repouso."
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "5",
+"verso": "5",
+"antes": "Assim também Cristo não se glorificou a si mesmo, para se fazer sumo sacerdote, mas aquele que lhe disse: Tu és meu Filho,Hoje te gerei.",
+"depois": "Assim também Cristo não se glorificou a si mesmo, para se fazer sumo sacerdote, mas aquele que lhe disse: Tu és meu Filho, Hoje te gerei."
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "7",
+"verso": "21",
+"antes": "Mas este com juramento por aquele que lhe disse: Jurou o Senhor, e não se arrependerá; Tu és sacerdote eternamente, Segundo a ordem de Melquisedeque,",
+"depois": "Mas este com juramento por aquele que lhe disse: Jurou o Senhor, e não se arrependerá; Tu és sacerdote eternamente, Segundo a ordem de Melquisedeque),"
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "8",
+"verso": "4",
+"antes": "Ora, se ele estivesse na terra, nem tão pouco sacerdote seria, havendo ainda sacerdotes que oferecem dons segundo a lei,",
+"depois": "Ora, se ele estivesse na terra, nem tampouco sacerdote seria, havendo ainda sacerdotes que oferecem dons segundo a lei,"
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "8",
+"verso": "9",
+"antes": "Não segundo a aliança que fiz com seus pais No dia em que os tomei pela mão, para os tirar da terra do Egito;Como não permaneceram naquela minha aliança,Eu para eles não atentei, diz o Senhor.",
+"depois": "Não segundo a aliança que fiz com seus pais No dia em que os tomei pela mão, para os tirar da terra do Egito; Como não permaneceram naquela minha aliança, Eu para eles não atentei, diz o Senhor."
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "8",
+"verso": "10",
+"antes": "Porque esta é a aliança que depois daqueles diasFarei com a casa de Israel, diz o Senhor; Porei as minhas leis no seu entendimento, E em seu coração as escreverei; E eu lhes serei por Deus, E eles me serão por povo;",
+"depois": "Porque esta é a aliança que depois daqueles dias Farei com a casa de Israel, diz o Senhor; Porei as minhas leis no seu entendimento, E em seu coração as escreverei; E eu lhes serei por Deus, E eles me serão por povo;"
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "10",
+"verso": "7",
+"antes": "Então disse: Eis aqui venho(No princípio do livro está escrito de mim),Para fazer, ó Deus, a tua vontade.",
+"depois": "Então disse: Eis aqui venho (No princípio do livro está escrito de mim), Para fazer, ó Deus, a tua vontade."
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "10",
+"verso": "16",
+"antes": "Esta é a aliança que farei com eles Depois daqueles dias, diz o Senhor:Porei as minhas leis em seus corações,E as escreverei em seus entendimentos; acrescenta:",
+"depois": "Esta é a aliança que farei com eles Depois daqueles dias, diz o Senhor: Porei as minhas leis em seus corações, E as escreverei em seus entendimentos; acrescenta:"
+},
+{
+"versao": "acf",
+"livro": "Hebreus",
+"cap": "12",
+"verso": "6",
+"antes": "Porque o Senhor corrige o que ama,E açoita a qualquer que recebe por filho.",
+"depois": "Porque o Senhor corrige o que ama, E açoita a qualquer que recebe por filho."
+},
+{
+"versao": "acf",
+"livro": "Tiago",
+"cap": "2",
+"verso": "16",
+"antes": "E algum de vós lhes disser: Ide em paz, aquentai-vos, e fartai-vos; e nào lhes derdes as coisas necessárias para o corpo, que proveito virá daí?",
+"depois": "E algum de vós lhes disser: Ide em paz, aquentai-vos, e fartai-vos; e não lhes derdes as coisas necessárias para o corpo, que proveito virá daí?"
+},
+{
+"versao": "acf",
+"livro": "1 Pedro",
+"cap": "1",
+"verso": "24",
+"antes": "Porque toda a carne é como a erva,e toda a glória do homem como a flor da erva.Secou-se a erva, e caiu a sua flor;",
+"depois": "Porque toda a carne é como a erva, e toda a glória do homem como a flor da erva. Secou-se a erva, e caiu a sua flor;"
+},
+{
+"versao": "acf",
+"livro": "1 Pedro",
+"cap": "1",
+"verso": "25",
+"antes": "Mas a palavra do Senhor permanece para sempre.E esta é a palavra que entre vós foi evangelizada.",
+"depois": "Mas a palavra do Senhor permanece para sempre. E esta é a palavra que entre vós foi evangelizada."
+},
+{
+"versao": "acf",
+"livro": "1 Pedro",
+"cap": "2",
+"verso": "5",
+"antes": "Vòs também, como pedras vivas, sois edificados casa espiritual e sacerdòcio santo, para oferecer sacrifícios espirituais agradáveis a Deus por Jesus Cristo.",
+"depois": "Vós também, como pedras vivas, sois edificados casa espiritual e sacerdócio santo, para oferecer sacrifícios espirituais agradáveis a Deus por Jesus Cristo."
+},
+{
+"versao": "acf",
+"livro": "1 Pedro",
+"cap": "2",
+"verso": "6",
+"antes": "Por isso também na Escritura se contém:Eis que ponho em Sião a pedra principal da esquina, eleita e preciosa;e quem nela crer não será confundido.",
+"depois": "Por isso também na Escritura se contém: Eis que ponho em Sião a pedra principal da esquina, eleita e preciosa; e quem nela crer não será confundido."
+},
+{
+"versao": "acf",
+"livro": "1 Pedro",
+"cap": "2",
+"verso": "7",
+"antes": "E assim para vòs, os que credes, é preciosa, mas, para os rebeldes,a pedra que os edificadores reprovaram,essa foi a principal da esquina,",
+"depois": "E assim para vós, os que credes, é preciosa, mas, para os rebeldes, a pedra que os edificadores reprovaram, essa foi a principal da esquina,"
+},
+{
+"versao": "acf",
+"livro": "1 Pedro",
+"cap": "2",
+"verso": "8",
+"antes": "E uma pedra de tropeço e rocha de escândalo,para aqueles que tropeçam na palavra, sendo desobedientes; para o que também foram destinados.",
+"depois": "E uma pedra de tropeço e rocha de escândalo, para aqueles que tropeçam na palavra, sendo desobedientes; para o que também foram destinados."
+},
+{
+"versao": "acf",
+"livro": "1 Pedro",
+"cap": "2",
+"verso": "9",
+"antes": "Mas vòs sois a geração eleita, o sacerdòcio real, a nação santa, o povo adquirido, para que anuncieis as virtudes daquele que vos chamou das trevas para a sua maravilhosa luz;",
+"depois": "Mas vós sois a geração eleita, o sacerdócio real, a nação santa, o povo adquirido, para que anuncieis as virtudes daquele que vos chamou das trevas para a sua maravilhosa luz;"
+},
+{
+"versao": "acf",
+"livro": "1 Pedro",
+"cap": "3",
+"verso": "14",
+"antes": "Mas também, se padecerdes por amor da justiça, sois bemaventurados. E não temais com medo deles, nem vos turbeis;",
+"depois": "Mas também, se padecerdes por amor da justiça, sois bem-aventurados. E não temais com medo deles, nem vos turbeis;"
+},
+{
+"versao": "acf",
+"livro": "1 Pedro",
+"cap": "5",
+"verso": "10",
+"antes": "E o Deus de toda a graça, que em Cristo Jesus nos chamou à sua eterna glória, depois de havemos padecido um pouco, ele mesmo vos aperfeiçoe, confirme, fortifique e estabeleça.",
+"depois": "E o Deus de toda a graça, que em Cristo Jesus nos chamou à sua eterna glória, depois de havermos padecido um pouco, ele mesmo vos aperfeiçoe, confirme, fortifique e estabeleça."
+},
+{
+"versao": "acf",
+"livro": "2 Pedro",
+"cap": "3",
+"verso": "2",
+"antes": "Para que vos lembreis das palavras que primeiramente foram ditas pelos santos profetas, e do nosso mandamento, como apòstolos do Senhor e Salvador.",
+"depois": "Para que vos lembreis das palavras que primeiramente foram ditas pelos santos profetas, e do nosso mandamento, como apóstolos do Senhor e Salvador."
+},
+{
+"versao": "acf",
+"livro": "Apocalipse",
+"cap": "7",
+"verso": "5",
+"antes": "Da tribo de Judá, havia doze mil selados; da tribo de Rúbem, doze mil selados; da tribo de Gade, doze mil selados;",
+"depois": "Da tribo de Judá, havia doze mil selados; da tribo de Rúben, doze mil selados; da tribo de Gade, doze mil selados;"
+},
+{
+"versao": "acf",
+"livro": "Apocalipse",
+"cap": "10",
+"verso": "4",
+"antes": "E, quando os sete trovões acabaram de emitir as suas vozes, eu ia escrever; mas ouvi uma voz do céu, que me dizia: Sela o que os sete trovões emitiram, e nào o escrevas.",
+"depois": "E, quando os sete trovões acabaram de emitir as suas vozes, eu ia escrever; mas ouvi uma voz do céu, que me dizia: Sela o que os sete trovões emitiram, e não o escrevas."
+},
+{
+"versao": "acf",
+"livro": "Apocalipse",
+"cap": "16",
+"verso": "1",
+"antes": "E ouvi, vinda do templo, uma grande voz, que dizia aos sete anjos: Ide, e derramaisobre a terra as sete taças da ira de Deus.",
+"depois": "E ouvi, vinda do templo, uma grande voz, que dizia aos sete anjos: Ide, e derramai sobre a terra as sete taças da ira de Deus."
+},
+{
+"versao": "acf",
+"livro": "Apocalipse",
+"cap": "17",
+"verso": "16",
+"antes": "E os dez chifres que viste na besta são os que odiarào a prostituta, e a colocarão desolada e nua, e comerão a sua carne, e a queimarão no fogo.",
+"depois": "E os dez chifres que viste na besta são os que odiarão a prostituta, e a colocarão desolada e nua, e comerão a sua carne, e a queimarão no fogo."
+},
+{
+"versao": "acf",
+"livro": "Apocalipse",
+"cap": "19",
+"verso": "9",
+"antes": "E disse-me: Escreve: Bemaventurados aqueles que são chamados à ceia das bodas do Cordeiro. E disse-me: Estas são as verdadeiras palavras de Deus.",
+"depois": "E disse-me: Escreve: Bem-aventurados aqueles que são chamados à ceia das bodas do Cordeiro. E disse-me: Estas são as verdadeiras palavras de Deus."
+},
+{
+"versao": "ara",
+"livro": "Marcos",
+"cap": "15",
+"verso": "28",
+"antes": "[E cumpriu-se a Escritura que diz: Com malfeitores foi contado. ]",
+"depois": "[E cumpriu-se a Escritura que diz: Com malfeitores foi contado.]"
+},
+{
+"versao": "ara",
+"livro": "Lucas",
+"cap": "18",
+"verso": "20",
+"antes": "Sabes os mandamentos: Não adulterarás , não matarás , não furtarás , não dirás falso testemunho , honra a teu pai e a tua mãe.",
+"depois": "Sabes os mandamentos: Não adulterarás, não matarás, não furtarás, não dirás falso testemunho, honra a teu pai e a tua mãe."
+},
+{
+"versao": "ara",
+"livro": "João",
+"cap": "4",
+"verso": "9",
+"antes": "Então, lhe disse a mulher samaritana: Como, sendo tu judeu, pedes de beber a mim, que sou mulher samaritana (porque os judeus não se dão com os samaritanos )?",
+"depois": "Então, lhe disse a mulher samaritana: Como, sendo tu judeu, pedes de beber a mim, que sou mulher samaritana (porque os judeus não se dão com os samaritanos)?"
+},
+{
+"versao": "ara",
+"livro": "João",
+"cap": "7",
+"verso": "22",
+"antes": "Pelo motivo de que Moisés vos deu a circuncisão (se bem que ela não vem dele, mas dos patriarcas ), no sábado circuncidais um homem.",
+"depois": "Pelo motivo de que Moisés vos deu a circuncisão (se bem que ela não vem dele, mas dos patriarcas), no sábado circuncidais um homem."
+},
+{
+"versao": "ara",
+"livro": "Atos",
+"cap": "1",
+"verso": "19",
+"antes": "e isto chegou ao conhecimento de todos os habitantes de Jerusalém, de maneira que em sua própria língua esse campo era chamado Aceldama, isto é, Campo de Sangue. )",
+"depois": "e isto chegou ao conhecimento de todos os habitantes de Jerusalém, de maneira que em sua própria língua esse campo era chamado Aceldama, isto é, Campo de Sangue.)"
+},
+{
+"versao": "ara",
+"livro": "Romanos",
+"cap": "4",
+"verso": "17",
+"antes": "como está escrito: Por pai de muitas nações te constituí. ), perante aquele no qual creu, o Deus que vivifica os mortos e chama à existência as coisas que não existem.",
+"depois": "como está escrito: Por pai de muitas nações te constituí.), perante aquele no qual creu, o Deus que vivifica os mortos e chama à existência as coisas que não existem."
+},
+{
+"versao": "ara",
+"livro": "Gálatas",
+"cap": "3",
+"verso": "13",
+"antes": "Cristo nos resgatou da maldição da lei, fazendo-se ele próprio maldição em nosso lugar (porque está escrito: Maldito todo aquele que for pendurado em madeiro ),",
+"depois": "Cristo nos resgatou da maldição da lei, fazendo-se ele próprio maldição em nosso lugar (porque está escrito: Maldito todo aquele que for pendurado em madeiro),"
+},
+{
+"versao": "ara",
+"livro": "Hebreus",
+"cap": "7",
+"verso": "21",
+"antes": "mas este, com juramento, por aquele que lhe disse: O Senhor jurou e não se arrependerá: Tu és sacerdote para sempre );",
+"depois": "mas este, com juramento, por aquele que lhe disse: O Senhor jurou e não se arrependerá: Tu és sacerdote para sempre);"
+}
+]
+}
