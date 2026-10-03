@@ -30,13 +30,15 @@ Este projeto está no ar e pode ser acessado por qualquer pessoa através do lin
 
 ---
 
-### 🛠️ Tecnologias Utilizadas
+### Licença e direitos autorais
 
-Este projeto foi construído utilizando as tecnologias fundamentais da web:
-
-* **HTML5**
-* **CSS3**
-* **JavaScript** (para a lógica de navegação, busca e troca de versões)
+* **Código** (HTML, CSS, JavaScript e scripts em `ferramentas/`): licença MIT, veja o arquivo `LICENSE`.
+* **Textos bíblicos**: não são cobertos pela licença MIT. Pertencem aos respectivos detentores:
+  * ARA - Almeida Revista e Atualizada © 1993 Sociedade Bíblica do Brasil
+  * NAA - Nova Almeida Atualizada © 2017 Sociedade Bíblica do Brasil
+  * ACF - Almeida Corrigida Fiel © 1994, 1995, 2007, 2011 Sociedade Bíblica Trinitariana do Brasil
+  * NBV - Biblica® Open Nova Bíblia Viva™ © 2007, 2010 Biblica, Inc., licença CC BY-SA 4.0 (veja `biblia/nbv/LICENCA.md`)
+  * BLIVRE - Bíblia Livre © Diego Santos, Mario Sérgio e Marco Teles, licença CC BY 3.0 Brasil (veja `biblia/blivre/LICENCA.md`)
 
 ---
 
