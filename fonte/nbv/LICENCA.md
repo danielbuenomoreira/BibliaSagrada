@@ -10,7 +10,7 @@ Copyright © 2007, 2010 by Biblica, Inc.
 
 Este texto é disponibilizado sob a licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0): https://creativecommons.org/licenses/by-sa/4.0/
 
-Os arquivos desta pasta **não** estão sob a licença MIT do restante do repositório; continuam sob CC BY-SA 4.0.
+Os arquivos desta pasta e as páginas geradas a partir deles (pasta `biblia/nbv/`) **não** estão sob a licença MIT do restante do repositório; continuam sob CC BY-SA 4.0.
 
 The original Work by its copyright holders is available for free at www.biblica.com and open.bible.
 
@@ -22,6 +22,7 @@ https://ebible.org/Scriptures/poronbv_usfm.zip (arquivos-fonte de 20/05/2025, ba
 
 - Conversão de formato: de USFM para JSON, um arquivo por livro, feita por `ferramentas/converter_usfm.py`.
 - As palavras dos versículos não foram alteradas.
+- As páginas HTML de `biblia/nbv/` são geradas a partir destes JSON por `ferramentas/gerar.py`, sem alterar as palavras dos versículos.
 - Não foram incluídos: notas de rodapé, referências cruzadas, títulos de seção, epígrafes dos Salmos, cabeçalhos alfabéticos do Salmo 119 e indicações de quem fala em Cânticos.
 - As linhas de poesia e de lista de um mesmo versículo foram reunidas em um parágrafo.
 - O nome divino, marcado no original para versalete, está escrito em maiúsculas (SENHOR).

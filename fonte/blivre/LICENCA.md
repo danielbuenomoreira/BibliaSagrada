@@ -8,7 +8,7 @@ Licença Creative Commons Atribuição 3.0 Brasil (CC BY 3.0 BR): http://creativ
 
 Reprodução permitida desde que devidamente mencionados fonte e autores.
 
-Os arquivos desta pasta **não** estão sob a licença MIT do restante do repositório; continuam sob CC BY 3.0 BR.
+Os arquivos desta pasta e as páginas geradas a partir deles (pasta `biblia/blivre/`) **não** estão sob a licença MIT do restante do repositório; continuam sob CC BY 3.0 BR.
 
 ## Fonte
 
@@ -18,3 +18,4 @@ https://github.com/blivre/BibliaLivre/releases/download/2018.2.0/usfm-s-blivre-t
 
 - Conversão de formato: de USFM para JSON, um arquivo por livro, feita por `ferramentas/converter_usfm.py`.
 - As palavras dos versículos não foram alteradas.
+- As páginas HTML de `biblia/blivre/` são geradas a partir destes JSON por `ferramentas/gerar.py`, sem alterar as palavras dos versículos.

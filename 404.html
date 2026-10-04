@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página não encontrada | Bíblia Sagrada</title>
+    <meta name="robots" content="noindex">
+    <!-- O GitHub Pages mostra esta página para QUALQUER endereço que não exista, em qualquer pasta.
+         Por isso os links daqui são absolutos e começam pelo nome do repositório (/BibliaSagrada/).
+         Se o repositório mudar de nome, troque o nome aqui também (4 lugares).
+         Este arquivo é escrito à mão: o gerar.py não mexe nele. -->
+    <link rel="icon" href="/BibliaSagrada/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/BibliaSagrada/style.css">
+    <script>
+    /* Mesmo tema (claro/escuro) que o leitor escolheu no site */
+    (function () {
+        var escuro = null;
+        try { escuro = localStorage.getItem('biblia_modoEscuro'); } catch (erro) { }
+        if (escuro === null && window.matchMedia) {
+            escuro = String(window.matchMedia('(prefers-color-scheme: dark)').matches);
+        }
+        if (escuro === 'true') document.documentElement.classList.add('dark-mode');
+    })();
+    </script>
+</head>
+
+<body>
+    <main id="pagina-404">
+        <h1>Bíblia Sagrada</h1>
+        <h2>Página não encontrada</h2>
+        <p>O endereço que você abriu não existe ou mudou de lugar.</p>
+        <p><a id="link-inicio" href="/BibliaSagrada/index.html">Ir para a página inicial</a></p>
+    </main>
+</body>
+
+</html>
