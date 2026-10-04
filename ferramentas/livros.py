@@ -105,14 +105,12 @@ TRADUCOES = [
         "rotulo": "ARA (Almeida Revista e Atualizada)",
         "nome": "Almeida Revista e Atualizada",
         "aviso": "Almeida Revista e Atualizada © 1993 Sociedade Bíblica do Brasil. Todos os direitos reservados.",
-        "nota": "Trechos entre colchetes [ ] não constam em alguns dos manuscritos mais antigos.",
     },
     {
         "sigla": "naa",
         "rotulo": "NAA (Nova Almeida Atualizada)",
         "nome": "Nova Almeida Atualizada",
         "aviso": "Nova Almeida Atualizada © 2017 Sociedade Bíblica do Brasil. Todos os direitos reservados.",
-        "nota": "Trechos entre colchetes [ ] não constam em alguns dos manuscritos mais antigos.",
     },
     {
         "sigla": "nbv",

@@ -66,6 +66,32 @@ input {
     display: none !important;
 }
 
+/* Foco do teclado sempre visível */
+:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
+#conteudo:focus {
+    outline: none;
+}
+
+/* Link "Pular para o texto": só aparece quando recebe o foco do teclado */
+.pular-para-texto {
+    position: absolute;
+    left: 8px;
+    top: -100px;
+    z-index: 200;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-botao);
+}
+
+.pular-para-texto:focus {
+    top: 8px;
+}
+
 /* --- Layout Principal --- */
 #container-principal {
     display: flex;
