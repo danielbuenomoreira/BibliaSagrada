@@ -5,11 +5,12 @@ Uso (na raiz do projeto):
     python ferramentas/corrigir.py               # aplica e grava os arquivos
 
 Opções:
-    --pasta CAMINHO       pasta que contém acf/, ara/, naa/ (padrão: ./biblia)
+    --pasta CAMINHO       pasta que contém acf/, ara/, naa/ (padrão: ./fonte)
     --correcoes ARQUIVO   lista de correções (padrão: correcoes.json ao lado deste script)
 
 O script é seguro para rodar mais de uma vez: o que já foi corrigido é reconhecido e pulado.
 Se qualquer correção não encaixar no texto, nada é gravado e o problema é listado.
+Depois de corrigir, rode o gerar.py para refazer as páginas do site.
 """
 import argparse
 import json
@@ -18,17 +19,14 @@ import re
 import sys
 import unicodedata
 
-LIVROS = [
-    "Gênesis", "Êxodo", "Levítico", "Números", "Deuteronômio", "Josué", "Juízes", "Rute",
-    "1 Samuel", "2 Samuel", "1 Reis", "2 Reis", "1 Crônicas", "2 Crônicas", "Esdras", "Neemias",
-    "Ester", "Jó", "Salmos", "Provérbios", "Eclesiastes", "Cânticos", "Isaías", "Jeremias",
-    "Lamentações de Jeremias", "Ezequiel", "Daniel", "Oséias", "Joel", "Amós", "Obadias", "Jonas",
-    "Miquéias", "Naum", "Habacuque", "Sofonias", "Ageu", "Zacarias", "Malaquias",
-    "Mateus", "Marcos", "Lucas", "João", "Atos", "Romanos", "1 Coríntios", "2 Coríntios",
-    "Gálatas", "Efésios", "Filipenses", "Colossenses", "1 Tessalonicenses", "2 Tessalonicenses",
-    "1 Timóteo", "2 Timóteo", "Tito", "Filemom", "Hebreus", "Tiago", "1 Pedro", "2 Pedro",
-    "1 João", "2 João", "3 João", "Judas", "Apocalipse",
-]
+import livros
+
+AQUI = os.path.dirname(os.path.abspath(__file__))
+RAIZ = os.path.dirname(AQUI)
+PASTA_FONTE = os.path.join(RAIZ, 'fonte')
+
+SLUGS = [livro['slug'] for livro in livros.LIVROS]                 # os 66 livros, na ordem da Bíblia
+NOME = {livro['slug']: livro['nome'] for livro in livros.LIVROS}   # slug -> nome exibido
 
 LETRAS_HEBRAICAS = ("Álefe|Bete|Guímel|Dálete|Hê|Vau|Zaine|Hete|Tete|Iode|Cafe|Lâmede|Mem|Num|"
                     "Sâmeque|Aim|Pê|Tsadê|Cofe|Rexe|Chim|Tau")
@@ -38,22 +36,13 @@ def sem_acento(texto):
     return ''.join(c for c in unicodedata.normalize('NFD', texto) if unicodedata.category(c) != 'Mn')
 
 
-def nomes_de_arquivo(livro):
-    """Nomes possíveis do arquivo de um livro: com espaços (site atual) ou com sublinhado (slug)."""
-    base = sem_acento(livro).lower()
-    nomes = [base + '.json', base.replace(' ', '_') + '.json']
-    if livro == "Lamentações de Jeremias":
-        nomes.append('lamentacoes.json')
-    return nomes
-
-
 class Biblia:
     """Carrega os livros de uma tradução sob demanda e lembra quais foram alterados."""
 
     def __init__(self, pasta, versao):
         self.pasta = os.path.join(pasta, versao)
         self.versao = versao
-        self.livros = {}      # nome do livro -> dicionário {capítulo: {versículo: texto}}
+        self.livros = {}      # slug do livro -> dicionário {capítulo: {versículo: texto}}
         self.caminhos = {}
         self.originais = {}
         self.alterados = set()
@@ -61,31 +50,28 @@ class Biblia:
     def existe(self):
         return os.path.isdir(self.pasta)
 
-    def livro(self, nome):
-        if nome not in self.livros:
-            for arquivo in nomes_de_arquivo(nome):
-                caminho = os.path.join(self.pasta, arquivo)
-                if os.path.exists(caminho):
-                    with open(caminho, 'r', encoding='utf-8') as f:
-                        bruto = f.read()
-                    dados = json.loads(bruto)
-                    self.livros[nome] = dados[0] if isinstance(dados, list) else dados
-                    self.caminhos[nome] = caminho
-                    self.originais[nome] = bruto
-                    break
-            else:
-                raise FileNotFoundError(f"{self.versao}: arquivo do livro '{nome}' não encontrado em {self.pasta}")
-        return self.livros[nome]
+    def livro(self, slug):
+        if slug not in self.livros:
+            caminho = os.path.join(self.pasta, slug + '.json')
+            if not os.path.exists(caminho):
+                raise FileNotFoundError(f"{self.versao}: arquivo {slug}.json não encontrado em {self.pasta}")
+            with open(caminho, 'r', encoding='utf-8') as f:
+                bruto = f.read()
+            dados = json.loads(bruto)
+            self.livros[slug] = dados[0] if isinstance(dados, list) else dados
+            self.caminhos[slug] = caminho
+            self.originais[slug] = bruto
+        return self.livros[slug]
 
-    def marcar(self, nome):
-        self.alterados.add(nome)
+    def marcar(self, slug):
+        self.alterados.add(slug)
 
     def gravar(self):
         gravados = 0
-        for nome in sorted(self.alterados):
-            texto = json.dumps([self.livros[nome]], ensure_ascii=False, separators=(',', ':'))
-            if texto != self.originais[nome]:
-                with open(self.caminhos[nome], 'w', encoding='utf-8', newline='') as f:
+        for slug in sorted(self.alterados):
+            texto = json.dumps([self.livros[slug]], ensure_ascii=False, separators=(',', ':'))
+            if texto != self.originais[slug]:
+                with open(self.caminhos[slug], 'w', encoding='utf-8', newline='') as f:
                     f.write(texto)
                 gravados += 1
         return gravados
@@ -100,8 +86,9 @@ def ordenar(capitulo):
 
 def mover_versiculos_em_lista(biblia, rel):
     """Versículo gravado como lista [a, b]: 'a' é o fim do capítulo anterior; 'b' é o versículo de verdade."""
-    for nome in LIVROS:
-        livro = biblia.livro(nome)
+    for slug in SLUGS:
+        nome = NOME[slug]
+        livro = biblia.livro(slug)
         for cap in sorted(livro, key=int):
             for verso in sorted(livro[cap], key=int):
                 valor = livro[cap][verso]
@@ -113,39 +100,42 @@ def mover_versiculos_em_lista(biblia, rel):
                     novo = str(max(int(k) for k in anterior) + 1)
                     anterior[novo] = valor[0]
                     livro[cap][verso] = valor[1]
-                    biblia.marcar(nome)
+                    biblia.marcar(slug)
                     rel.feito(f"{biblia.versao} {nome} {int(cap) - 1}:{novo} recuperado de dentro de {cap}:{verso}")
 
 
-def mover_versiculo(biblia, rel, nome, cap_errado, verso_errado, cap_certo, verso_certo):
+def mover_versiculo(biblia, rel, slug, cap_errado, verso_errado, cap_certo, verso_certo):
     """Versículo que foi parar no fim do capítulo seguinte (NAA 2 Samuel 22:51 gravado como 23:40)."""
-    livro = biblia.livro(nome)
+    nome = NOME[slug]
+    livro = biblia.livro(slug)
     if verso_certo in livro[cap_certo]:
         return rel.pulado(f"{biblia.versao} {nome} {cap_certo}:{verso_certo} já está no lugar")
     if verso_errado not in livro[cap_errado] or str(int(verso_certo) - 1) not in livro[cap_certo]:
         return rel.erro(f"{biblia.versao} {nome}: estado inesperado ao mover {cap_errado}:{verso_errado}")
     livro[cap_certo][verso_certo] = livro[cap_errado].pop(verso_errado)
-    biblia.marcar(nome)
+    biblia.marcar(slug)
     rel.feito(f"{biblia.versao} {nome} {cap_errado}:{verso_errado} movido para {cap_certo}:{verso_certo}")
 
 
-def remover_primeiro_duplicado(biblia, rel, nome, cap, total_certo):
+def remover_primeiro_duplicado(biblia, rel, slug, cap, total_certo):
     """Capítulo cujo v.1 foi gravado duas vezes (ACF Salmos 63 e 122): apaga a 1ª cópia e renumera."""
-    capitulo = biblia.livro(nome)[cap]
+    nome = NOME[slug]
+    capitulo = biblia.livro(slug)[cap]
     if len(capitulo) == total_certo:
         return rel.pulado(f"{biblia.versao} {nome} {cap} já tem {total_certo} versículos")
     simples = lambda t: re.sub(r'[^a-z]', '', sem_acento(t).lower())
     if len(capitulo) != total_certo + 1 or simples(capitulo['1']) != simples(capitulo['2']):
         return rel.erro(f"{biblia.versao} {nome} {cap}: estado inesperado (esperava v.1 duplicado)")
-    biblia.livro(nome)[cap] = {str(int(k) - 1): capitulo[k] for k in sorted(capitulo, key=int) if k != '1'}
-    biblia.marcar(nome)
+    biblia.livro(slug)[cap] = {str(int(k) - 1): capitulo[k] for k in sorted(capitulo, key=int) if k != '1'}
+    biblia.marcar(slug)
     rel.feito(f"{biblia.versao} {nome} {cap}: v.1 duplicado removido; capítulo renumerado ({total_certo} versículos)")
 
 
 def recolocar_letras_de_lamentacoes(biblia, rel):
     """NAA: a letra hebraica de cada estrofe ficou no fim do versículo anterior ('... forçados! Bete —')."""
-    nome = "Lamentações de Jeremias"
-    livro = biblia.livro(nome)
+    slug = "lamentacoes"
+    nome = NOME[slug]
+    livro = biblia.livro(slug)
     padrao = re.compile(r' (' + LETRAS_HEBRAICAS + r') —$')
     movidas = 0
     for cap in ('1', '2', '3', '4'):
@@ -161,7 +151,7 @@ def recolocar_letras_de_lamentacoes(biblia, rel):
             livro[cap][seguinte] = f"{achou.group(1)} — {livro[cap][seguinte]}"
             movidas += 1
     if movidas:
-        biblia.marcar(nome)
+        biblia.marcar(slug)
         rel.feito(f"{biblia.versao} {nome}: {movidas} letras hebraicas recolocadas no início da estrofe certa")
     else:
         rel.pulado(f"{biblia.versao} {nome}: letras hebraicas já estão no lugar")
@@ -170,14 +160,14 @@ def recolocar_letras_de_lamentacoes(biblia, rel):
 def corrigir_estrutura(biblias, rel):
     if 'naa' in biblias:
         mover_versiculos_em_lista(biblias['naa'], rel)
-        mover_versiculo(biblias['naa'], rel, "2 Samuel", '23', '40', '22', '51')
+        mover_versiculo(biblias['naa'], rel, "2_samuel", '23', '40', '22', '51')
         recolocar_letras_de_lamentacoes(biblias['naa'], rel)
     if 'acf' in biblias:
-        remover_primeiro_duplicado(biblias['acf'], rel, "Salmos", '63', 11)
-        remover_primeiro_duplicado(biblias['acf'], rel, "Salmos", '122', 9)
+        remover_primeiro_duplicado(biblias['acf'], rel, "salmos", '63', 11)
+        remover_primeiro_duplicado(biblias['acf'], rel, "salmos", '122', 9)
     for biblia in biblias.values():
-        for nome in list(biblia.alterados):
-            livro = biblia.livro(nome)
+        for slug in list(biblia.alterados):
+            livro = biblia.livro(slug)
             for cap in livro:
                 livro[cap] = ordenar(livro[cap])
 
@@ -191,12 +181,12 @@ def aplicar_globais(biblias, regras, rel):
         if biblia is None:
             continue
         lugares = []
-        for nome in LIVROS:
-            livro = biblia.livro(nome)
+        for slug in SLUGS:
+            livro = biblia.livro(slug)
             for cap in livro:
                 for verso, texto in livro[cap].items():
                     if isinstance(texto, str) and regra['de'] in texto:
-                        lugares.append((nome, cap, verso, texto.count(regra['de'])))
+                        lugares.append((slug, cap, verso, texto.count(regra['de'])))
         total = sum(n for _, _, _, n in lugares)
         rotulo = f"{regra['versao']} «{regra['de']}» → «{regra['para']}»"
         if total == 0:
@@ -204,10 +194,10 @@ def aplicar_globais(biblias, regras, rel):
         elif total != regra['esperado']:
             rel.erro(f"{rotulo}: encontrei {total} ocorrências, esperava {regra['esperado']}")
         else:
-            for nome, cap, verso, _ in lugares:
-                livro = biblia.livro(nome)
+            for slug, cap, verso, _ in lugares:
+                livro = biblia.livro(slug)
                 livro[cap][verso] = livro[cap][verso].replace(regra['de'], regra['para'])
-                biblia.marcar(nome)
+                biblia.marcar(slug)
             rel.feito(f"{rotulo}: {total} ocorrências")
 
 
@@ -231,10 +221,15 @@ def aplicar_pontuais(biblias, correcoes, rel):
         if biblia is None:
             continue
         onde = f"{c['versao']} {c['livro']} {c['cap']}:{c['verso']}"
-        texto = biblia.livro(c['livro']).get(c['cap'], {}).get(c['verso'])
+        livro = livros.livro_pelo_nome(c['livro'])     # correcoes.json usa o nome do livro (inclusive nomes antigos)
+        if livro is None:
+            rel.erro(f"{onde}: livro desconhecido (não está na tabela de livros.py)")
+            continue
+        slug = livro['slug']
+        texto = biblia.livro(slug).get(c['cap'], {}).get(c['verso'])
         if texto == c['antes']:
-            biblia.livro(c['livro'])[c['cap']][c['verso']] = c['depois']
-            biblia.marcar(c['livro'])
+            biblia.livro(slug)[c['cap']][c['verso']] = c['depois']
+            biblia.marcar(slug)
             de, para = trecho_alterado(c['antes'], c['depois'])
             rel.feito(f"{onde}: «{de}» → «{para}»", detalhe=True)
         elif texto == c['depois']:
@@ -268,10 +263,9 @@ class Relatorio:
 
 
 def main():
-    aqui = os.path.dirname(os.path.abspath(__file__))
     parser = argparse.ArgumentParser(description="Aplica a errata da auditoria nos JSON da Bíblia.")
-    parser.add_argument('--pasta', default='biblia', help="pasta com acf/, ara/, naa/ (padrão: biblia)")
-    parser.add_argument('--correcoes', default=os.path.join(aqui, 'correcoes.json'))
+    parser.add_argument('--pasta', default=PASTA_FONTE, help="pasta com acf/, ara/, naa/ (padrão: fonte)")
+    parser.add_argument('--correcoes', default=os.path.join(AQUI, 'correcoes.json'))
     parser.add_argument('--simular', action='store_true', help="não grava nada; só mostra o que seria feito")
     parser.add_argument('--detalhado', action='store_true', help="lista cada correção de texto, uma por linha")
     args = parser.parse_args()
@@ -289,7 +283,7 @@ def main():
         else:
             print(f"Aviso: pasta {biblia.pasta} não encontrada; tradução {versao.upper()} ignorada.")
     if not biblias:
-        print("Nenhuma tradução encontrada. Rode na raiz do projeto ou informe --pasta.")
+        print("Nenhuma tradução encontrada. Confira se a pasta fonte/ existe ou informe --pasta.")
         return 1
 
     rel = Relatorio(args.detalhado)
@@ -309,7 +303,7 @@ def main():
         print("Simulação: nenhum arquivo foi alterado. Rode sem --simular para gravar.")
         return 0
     total = sum(b.gravar() for b in biblias.values())
-    print(f"Arquivos gravados: {total}. Agora rode: python ferramentas/validar.py")
+    print(f"Arquivos gravados: {total}. Agora rode: python ferramentas/gerar.py (confere e refaz as páginas)")
     return 0
 
 
