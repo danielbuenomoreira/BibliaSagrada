@@ -1,0 +1,220 @@
+<!--
+    MOLDE DE TODAS AS PÁGINAS DO SITE — lido por ferramentas/gerar.py.
+
+    Como funciona:
+      - O gerador só usa o que está entre uma linha "PEDACO nome" e a linha "FIM nome" correspondente.
+        O que estiver fora dos pedaços (como este comentário) é ignorado.
+      - O pedaço "pagina" é a casca comum a todas as páginas. No lugar de {{CONTEUDO}} entra um dos
+        outros pedaços: "inicio" (página inicial), "traducao" (livros de uma tradução),
+        "livro" (capítulos de um livro) ou "capitulo" (texto de um capítulo).
+      - Cada {{NOME}} é trocado pelo gerador. Se você apagar um marcador ou escrever um que o gerador
+        não conhece, o gerar.py para e avisa qual foi.
+      - {{RAIZ}} é o caminho da página até a raiz do site ("" na página inicial, "../../../" num capítulo).
+      - O script curto do <head> põe a classe "com-js" no <html>. Se o arquivo leitor.js não carregar
+        (cópia offline incompleta, queda de rede), o onerror da última linha do <body> tira essa classe
+        e a página passa a se comportar como sem JavaScript: o menu do celular abre pelo link do botão
+        de menu e os botões que não fariam nada ficam escondidos.
+
+    Depois de mudar este arquivo, rode:  python ferramentas/gerar.py
+    Nunca edite as páginas geradas (index.html e biblia/...): a próxima geração apaga a edição.
+-->
+
+<!--[PEDACO pagina]-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITULO}}</title>
+    <meta name="description" content="{{DESCRICAO}}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Bíblia Sagrada">
+    <meta property="og:title" content="{{TITULO}}">
+    <meta property="og:description" content="{{DESCRICAO}}">
+    <link rel="icon" href="{{RAIZ}}favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="{{RAIZ}}style.css">
+    <script>
+        /* Tema, letra e menu aplicados antes de a página ser desenhada (sem clarão a cada capítulo). */
+        (function () {
+            var raiz = document.documentElement, escuro = null, letra = null, oculto = null;
+            raiz.classList.add('com-js');
+            try {
+                escuro = localStorage.getItem('biblia_modoEscuro');
+                letra = parseInt(localStorage.getItem('biblia_tamanhoFonte'), 10);
+                oculto = localStorage.getItem('biblia_menuOculto');
+            } catch (erro) { }
+            if (escuro === null && window.matchMedia) {
+                escuro = String(window.matchMedia('(prefers-color-scheme: dark)').matches);
+            }
+            if (escuro === 'true') raiz.classList.add('dark-mode');
+            if (letra >= 12 && letra <= 36) raiz.style.setProperty('--tamanho-fonte', letra + 'px');
+            if (oculto === 'true') raiz.classList.add('menu-oculto');
+        })();
+    </script>
+</head>
+
+<body{{DADOS}}>
+    <a class="pular-para-texto" href="#conteudo">Pular para o texto</a>
+
+    <div id="container-principal">
+
+        <aside id="lista-livros" aria-label="Lista de livros">
+            <header>
+                <h1>Bíblia Sagrada</h1>
+                <a id="fechar-menu" href="#controles-topo"><span aria-hidden="true">✕&nbsp;</span>Fechar</a>
+                <h1><a href="{{RAIZ}}index.html">Bíblia Sagrada</a></h1>
+                <div class="selecao-versao">
+                    <span id="rotulo-versao">Versão:</span>
+                    <details id="versao-select">
+                        <summary aria-labelledby="rotulo-versao versao-atual"><span
+                                id="versao-atual">{{TRADUCAO_ATUAL}}</span></summary>
+                        <ul>
+                            {{LINKS_TRADUCOES}}
+                        </ul>
+                    </details>
+                </div>
+            </header>
+
+            <nav class="listas-testamentos" aria-label="Livros da Bíblia">
+                <details class="lista-container" open>
+                    <summary>
+                        <h2>Velho Testamento</h2>
+                    </summary>
+                    <ul id="lista-vt">
+                        {{MENU_VT}}
+                    </ul>
+                </details>
+                <details class="lista-container" open>
+                    <summary>
+                        <h2>Novo Testamento</h2>
+                    </summary>
+                    <ul id="lista-nt">
+                        {{MENU_NT}}
+                    </ul>
+                </details>
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <div id="controles-topo">
+                <a id="btn-toggle-menu" href="#lista-livros" role="button" aria-controls="lista-livros"
+                    aria-label="Abrir ou fechar a lista de livros">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+
+                <div class="configuracoes-interface">
+                    <button type="button" id="btn-tema" title="Alternar tema">
+                        <span class="rotulo-tema-claro">🌙 Escuro</span>
+                        <span class="rotulo-tema-escuro">☀️ Claro</span>
+                    </button>
+                    <div class="controle-fonte">
+                        <button type="button" id="btn-diminuir-fonte" title="Diminuir letra"
+                            aria-label="Diminuir o tamanho da letra">A-</button>
+                        <button type="button" id="btn-normal-fonte" title="Letra normal"
+                            aria-label="Voltar ao tamanho normal da letra">A</button>
+                        <button type="button" id="btn-aumentar-fonte" title="Aumentar letra"
+                            aria-label="Aumentar o tamanho da letra">A+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="conteudo" tabindex="-1">
+                {{CONTEUDO}}
+            </div>
+        </main>
+    </div>
+
+    <script src="{{RAIZ}}leitor.js"
+        onerror="document.documentElement.classList.remove('com-js', 'menu-oculto')"></script>
+    </body>
+
+</html>
+<!--[FIM pagina]-->
+
+
+<!--[PEDACO inicio]-->
+                <div id="boas-vindas">
+                    <h2>Bem-vindo!</h2>
+                    <p>Escolha um livro na lista de livros para começar a leitura da Bíblia Sagrada. Se a lista não
+                        estiver aparecendo, toque no botão <span aria-hidden="true">☰</span> (lista de livros) no alto da tela.</p>
+                    <p id="continuar" hidden><a id="link-continuar" href="index.html">Continuar a leitura</a></p>
+                    <p class="creditos"><small>{{CREDITOS}}</small></p>
+                    <p><small>Desenvolvido por <a href="https://danielbuenomoreira.github.io/QuemSouEu/"
+                                target="_blank" rel="noopener noreferrer">@danielmoreiraprogramador</a></small></p>
+                </div>
+<!--[FIM inicio]-->
+
+
+<!--[PEDACO traducao]-->
+                <section id="pagina-traducao">
+                    <header class="cabecalho-capitulo">
+                        <h2>{{NOME_TRADUCAO}} <small class="sigla-versao">{{SIGLA}}</small></h2>
+                    </header>
+
+                    <h3>Velho Testamento</h3>
+                    <ul class="lista-de-livros">
+{{LIVROS_VT}}
+                    </ul>
+                    <h3>Novo Testamento</h3>
+                    <ul class="lista-de-livros">
+{{LIVROS_NT}}
+                    </ul>
+
+                    <nav id="navegacao-capitulos" aria-label="Navegação">
+                        <div class="nav-btn-container nav-center"><a id="link-inicio" href="{{RAIZ}}index.html">Início</a></div>
+                    </nav>
+                    <p class="aviso-direitos">{{AVISO}}</p>
+                </section>
+<!--[FIM traducao]-->
+
+
+<!--[PEDACO livro]-->
+                <section id="pagina-livro">
+                    <header class="cabecalho-capitulo">
+                        <h2>{{NOME_LIVRO}} <small class="sigla-versao">{{SIGLA}}</small></h2>
+                    </header>
+
+                    <nav class="grade-capitulos" aria-label="Capítulos de {{NOME_LIVRO}}">
+{{CAPITULOS}}
+                    </nav>
+
+                    <nav id="navegacao-capitulos" aria-label="Navegação entre livros">
+                        <div class="nav-btn-container nav-left">{{LINK_ANTERIOR}}</div>
+                        <div class="nav-btn-container nav-center"><a id="link-inicio" href="{{RAIZ}}index.html">Início</a></div>
+                        <div class="nav-btn-container nav-right">{{LINK_PROXIMO}}</div>
+                    </nav>
+                    <p class="aviso-direitos">{{AVISO}}</p>
+                </section>
+<!--[FIM livro]-->
+
+
+<!--[PEDACO capitulo]-->
+                <article id="exibicao-capitulo">
+                    <header class="cabecalho-capitulo">
+                        <h2 id="titulo-capitulo"><a href="index.html" title="Ver todos os capítulos de {{NOME_LIVRO}}">{{NOME_NO_TITULO}}</a> {{CAPITULO}} <small class="sigla-versao">{{SIGLA}}</small></h2>
+                        <form id="form-capitulo" class="controle-capitulo" action="index.html" method="get">
+                            <label for="input-capitulo">Capítulo:</label>
+                            <input type="number" id="input-capitulo" name="cap" min="1" max="{{TOTAL_DE_CAPITULOS}}"
+                                value="{{CAPITULO}}" required autocomplete="off">
+                            <button type="submit" id="ir-capitulo-btn">Ir</button>
+                        </form>
+                    </header>
+
+                    <div id="texto-biblico">
+{{VERSICULOS}}
+                    </div>
+
+                    <nav id="navegacao-capitulos" aria-label="Navegação entre capítulos">
+                        <div class="nav-btn-container nav-left">{{LINK_ANTERIOR}}</div>
+                        <div class="nav-btn-container nav-center"><a id="link-inicio" href="{{RAIZ}}index.html">Início</a></div>
+                        <div class="nav-btn-container nav-right">{{LINK_PROXIMO}}</div>
+                    </nav>
+                    <p class="nota-traducao">{{NOTA}}</p>
+                    <p class="aviso-direitos">{{AVISO}}</p>
+                </article>
+<!--[FIM capitulo]-->
