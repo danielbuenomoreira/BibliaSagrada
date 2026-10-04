@@ -1,10 +1,13 @@
 /* --- Variáveis Globais de Tema e Fonte --- */
 :root {
+    color-scheme: light;
     --bg-body: #f0f2f5;
     --bg-painel: #fff;
     --cor-texto: #333;
     --cor-texto-secundario: #666;
     --cor-borda: #ddd;
+    --cor-borda-controle: #767676;
+    /* Borda de campos e botões: contraste mínimo de 3:1 */
     --cor-hover: #e9ecef;
     --cor-input: #f9f9f9;
     --tamanho-fonte: 18px;
@@ -12,15 +15,20 @@
     /* Azul especificado para o Modo Claro */
     --cor-texto-botao: #ffffff;
     /* Texto branco sobre o azul escuro */
+    --largura-menu: 350px;
+    --altura-barra: 60px;
+    /* Altura da barra fixa do topo no celular */
 }
 
-/* --- Variáveis para o Modo Escuro --- */
-body.dark-mode {
+/* --- Variáveis para o Modo Escuro (a classe fica no <html>, posta pelo script do <head>) --- */
+html.dark-mode {
+    color-scheme: dark;
     --bg-body: #121212;
     --bg-painel: #1e1e1e;
     --cor-texto: #e0e0e0;
     --cor-texto-secundario: #aaa;
     --cor-borda: #333;
+    --cor-borda-controle: #8a8a8a;
     --cor-hover: #2c2c2c;
     --cor-input: #2a2a2a;
     --cor-destaque: #4da3ff;
@@ -36,39 +44,50 @@ body.dark-mode {
     padding: 0;
 }
 
+/* A página inteira rola (não há overflow: hidden): é isso que faz o botão Voltar do navegador
+   devolver a leitura ao ponto em que estava. */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: var(--bg-body);
     color: var(--cor-texto);
-    overflow: hidden;
     transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+    color: var(--cor-destaque);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+[hidden] {
+    display: none !important;
 }
 
 /* --- Layout Principal --- */
 #container-principal {
     display: flex;
-    height: 100vh;
-    width: 100vw;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
-/* --- Barra Lateral (Lista de Livros) --- */
+/* --- Barra Lateral (Lista de Livros): fica parada enquanto a página rola --- */
 #lista-livros {
-    width: 350px;
-    min-width: 350px;
+    width: var(--largura-menu);
+    flex: none;
     background-color: var(--bg-painel);
     border-right: 1px solid var(--cor-borda);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100dvh;
     margin-left: 0;
-    transition: margin-left 0.3s ease-in-out, background-color 0.3s, border-color 0.3s;
+    transition: margin-left 0.3s ease-in-out, visibility 0s, background-color 0.3s, border-color 0.3s;
     z-index: 5;
-    /* Nível padrão, ficará abaixo do hambúrguer no mobile */
-}
-
-/* Classe de ocultação para telas grandes */
-#container-principal.menu-oculto #lista-livros {
-    margin-left: -350px;
 }
 
 #lista-livros header {
@@ -80,87 +99,110 @@ body {
     font-size: 24px;
     text-align: center;
     margin-bottom: 15px;
-    color: var(--cor-destaque);
 }
 
+#lista-livros h1 a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+}
+
+/* Link "Fechar" do menu: só existe no celular (veja o @media no fim) */
+#fechar-menu {
+    display: none;
+}
+
+/* --- Seletor de versão: uma lista de links que abre e fecha (<details>), com a cara de um <select> --- */
 .selecao-versao {
     display: flex;
     align-items: center;
     gap: 10px;
+    position: relative;
 }
 
 #versao-select {
+    flex: 1;
+    min-width: 0;
+}
+
+#versao-select summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 44px;
     padding: 8px 12px;
     border-radius: 6px;
-    border: 1px solid var(--cor-borda);
+    border: 1px solid var(--cor-borda-controle);
     font-size: 14px;
     background-color: var(--cor-input);
     color: var(--cor-texto);
     cursor: pointer;
-    outline: none;
-    flex: 1;
+    list-style: none;
     transition: border-color 0.2s, background-color 0.3s, color 0.3s;
 }
 
-#versao-select:hover {
+#versao-select summary::-webkit-details-marker {
+    display: none;
+}
+
+#versao-select summary:hover {
     border-color: var(--cor-destaque);
 }
 
-/* --- Conteúdo Principal --- */
-#conteudo-principal {
-    flex: 1;
-    padding: 40px;
-    overflow-y: auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+#versao-atual {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-/* --- Controles do Topo (Rolam com a página, sem fundo branco feio) --- */
-#controles-topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    position: relative;
-    /* Permite rolar com o conteúdo */
+/* A seta é só enfeite: a 2ª linha (com / "") diz ao leitor de tela para não lê-la.
+   Navegador que não entende a 2ª linha fica com a 1ª. */
+#versao-select summary::after {
+    content: "▼";
+    content: "▼" / "";
+    font-size: 10px;
 }
 
-.configuracoes-interface {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 15px;
-    margin-left: auto;
-    /* Joga os botões para a direita */
-    z-index: 1;
-    /* Fica abaixo do menu lateral no celular */
-    position: relative;
+#versao-select[open] summary::after {
+    content: "▲";
+    content: "▲" / "";
 }
 
-.controle-fonte {
-    display: flex;
-    gap: 5px;
-}
-
-.configuracoes-interface button {
-    background: var(--cor-input);
-    border: 1px solid var(--cor-borda);
-    color: var(--cor-texto);
-    padding: 8px 14px;
+#versao-select ul {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 4px);
+    z-index: 30;
+    list-style: none;
+    padding: 4px;
     border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s;
+    border: 1px solid var(--cor-borda-controle);
+    background-color: var(--bg-painel);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+#versao-select li a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 10px;
+    border-radius: 4px;
     font-size: 14px;
-    font-weight: 500;
+    color: var(--cor-texto);
+    text-decoration: none;
 }
 
-.configuracoes-interface button:hover {
-    background: var(--cor-hover);
-    border-color: var(--cor-destaque);
-    color: var(--cor-destaque);
+#versao-select li a:hover {
+    background-color: var(--cor-hover);
 }
 
+#versao-select li a[aria-current] {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-botao);
+}
+
+/* --- Listas de livros --- */
 .listas-testamentos {
     flex: 1;
     overflow-y: auto;
@@ -171,13 +213,15 @@ body {
     margin-bottom: 20px;
 }
 
-details summary {
+.lista-container summary {
     cursor: pointer;
     list-style: none;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    padding: 10px 0;
+    /* 24px do título + 20px = 44px de área de toque */
 }
 
-details summary::-webkit-details-marker {
+.lista-container summary::-webkit-details-marker {
     display: none;
 }
 
@@ -191,36 +235,144 @@ details summary::-webkit-details-marker {
 
 .lista-container h2::after {
     content: "▼";
+    content: "▼" / "";
+    /* seta só de enfeite: veja a explicação no seletor de versão, acima */
     font-size: 12px;
     color: var(--cor-texto);
 }
 
-details[open] .lista-container h2::after {
+.lista-container[open] h2::after {
     content: "▲";
+    content: "▲" / "";
 }
 
-ul {
+.lista-container ul {
     list-style-type: none;
 }
 
-li {
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
+.lista-container li {
     margin-bottom: 5px;
+}
+
+.lista-container li a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px;
+    border-radius: 5px;
+    color: inherit;
+    text-decoration: none;
     transition: background-color 0.2s;
 }
 
-li:hover {
+.lista-container li a:hover {
     background-color: var(--cor-hover);
 }
 
-li.ativo {
+/* Livro que está sendo lido */
+.lista-container li a[aria-current] {
     background-color: var(--cor-destaque);
     color: var(--cor-texto-botao);
-    /* Cor do texto no modo claro ou escuro */
 }
 
+/* --- Conteúdo Principal --- */
+#conteudo-principal {
+    flex: 1;
+    min-width: 0;
+    padding: 40px;
+}
+
+/* Coluna central das páginas */
+#conteudo {
+    max-width: 648px;
+    margin: 0 auto;
+}
+
+/* Na página de capítulo (a que tem data-cap no <body>) a coluna de leitura tem cerca de 70 caracteres
+   por linha e cresce junto com o tamanho da letra */
+body[data-cap] #conteudo {
+    max-width: calc(var(--tamanho-fonte) * 36);
+}
+
+/* --- Controles do Topo --- */
+#controles-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.configuracoes-interface {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+    /* Joga os botões para a direita */
+}
+
+.controle-fonte {
+    display: flex;
+    gap: 5px;
+}
+
+.configuracoes-interface button {
+    min-height: 44px;
+    min-width: 44px;
+    background: var(--cor-input);
+    border: 1px solid var(--cor-borda-controle);
+    color: var(--cor-texto);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.configuracoes-interface button:hover {
+    background: var(--cor-hover);
+    border-color: var(--cor-destaque);
+    color: var(--cor-destaque);
+}
+
+/* O botão de tema mostra o tema para o qual ele muda */
+.rotulo-tema-escuro,
+html.dark-mode .rotulo-tema-claro {
+    display: none;
+}
+
+html.dark-mode .rotulo-tema-escuro {
+    display: inline;
+}
+
+/* Sem JavaScript os botões de tema e letra não fazem nada: ficam escondidos */
+html:not(.com-js) .configuracoes-interface {
+    display: none;
+}
+
+/* --- Botão do Menu (☰) --- */
+#btn-toggle-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#btn-toggle-menu span {
+    width: 30px;
+    height: 3px;
+    background: var(--cor-texto);
+    border-radius: 10px;
+}
+
+/* --- Página inicial --- */
 #boas-vindas {
     text-align: center;
     margin-top: 30px;
@@ -235,15 +387,68 @@ li.ativo {
 #boas-vindas p {
     font-size: 18px;
     color: var(--cor-texto-secundario);
+    margin-bottom: 12px;
 }
 
+#boas-vindas .creditos {
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#boas-vindas small a {
+    padding: 12px 0;
+    /* aumenta a área de toque para 44px sem mexer na altura da linha */
+}
+
+#link-continuar {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin: 8px 0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-botao);
+    text-decoration: none;
+}
+
+#link-continuar:hover {
+    opacity: 0.9;
+}
+
+/* --- Cabeçalho do capítulo --- */
 .cabecalho-capitulo {
     display: flex;
+    flex-wrap: wrap;
+    /* o campo "Capítulo" desce para a linha de baixo quando não cabe */
+    gap: 10px 16px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
     padding-bottom: 15px;
     border-bottom: 2px solid var(--cor-destaque);
+}
+
+/* O nome do livro no título é um link para a lista de capítulos: o pontilhado mostra que dá para tocar */
+#titulo-capitulo a {
+    color: inherit;
+    padding: 6px 0;
+    /* aumenta a área de toque para 44px sem mexer na altura da linha */
+    text-decoration: underline dotted;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+#titulo-capitulo a:hover {
+    text-decoration: underline;
+}
+
+/* Sigla da tradução ao lado do título (ex.: "João 3 ARA") */
+.sigla-versao {
+    font-size: 0.6em;
+    font-weight: normal;
+    color: var(--cor-texto-secundario);
 }
 
 .controle-capitulo {
@@ -253,16 +458,19 @@ li.ativo {
 }
 
 .controle-capitulo input {
-    width: 60px;
+    width: 70px;
+    min-height: 44px;
     padding: 5px;
     text-align: center;
-    border: 1px solid var(--cor-borda);
+    border: 1px solid var(--cor-borda-controle);
     border-radius: 4px;
     background-color: var(--cor-input);
     color: var(--cor-texto);
 }
 
 .controle-capitulo button {
+    min-height: 44px;
+    min-width: 44px;
     padding: 5px 15px;
     background-color: var(--cor-destaque);
     color: var(--cor-texto-botao);
@@ -276,19 +484,24 @@ li.ativo {
     opacity: 0.9;
 }
 
+/* --- Texto bíblico --- */
 #texto-biblico p {
     font-size: var(--tamanho-fonte);
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: justify;
-    transition: font-size 0.2s ease;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    /* palavra maior que a coluna quebra em vez de vazar */
 }
 
 #texto-biblico sup {
-    font-weight: bold;
-    margin-right: 5px;
-    color: var(--cor-texto);
-    font-size: 0.8em;
+    font-size: 0.7em;
+    font-weight: 600;
+    line-height: 0;
+    /* o número não aumenta a altura da linha */
+    margin-right: 4px;
+    color: var(--cor-destaque);
 }
 
 /* --- Rodapé e Navegação --- */
@@ -296,6 +509,7 @@ li.ativo {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8px;
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid var(--cor-borda);
@@ -318,77 +532,320 @@ li.ativo {
     justify-content: flex-end;
 }
 
-#navegacao-capitulos button {
+#navegacao-capitulos a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
     padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
     background-color: transparent;
     color: var(--cor-destaque);
     border: 1px solid var(--cor-destaque);
     border-radius: 4px;
-    cursor: pointer;
     transition: all 0.2s;
 }
 
-#navegacao-capitulos button:hover {
+#navegacao-capitulos a:hover {
     background-color: var(--cor-destaque);
     color: var(--cor-texto-botao);
     /* Cor do texto no modo claro ou escuro */
 }
 
-/* --- Botão do Menu (Flutua no fluxo normal no Desktop, Fixo no topo esquerdo no Mobile) --- */
-#btn-toggle-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
-    /* Sempre superior ao menu lateral */
-    position: relative;
+/* Nota da tradução (ex.: o que significam os colchetes) e aviso de direitos, abaixo do texto */
+.aviso-direitos,
+.nota-traducao {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--cor-texto-secundario);
+    overflow-wrap: anywhere;
 }
 
-#btn-toggle-menu span {
-    width: 30px;
-    height: 3px;
-    background: var(--cor-texto);
-    border-radius: 10px;
-    transition: transform 0.3s, opacity 0.3s;
+/* Tradução sem nota: o parágrafo fica vazio e não ocupa espaço */
+.nota-traducao:empty {
+    display: none;
+}
+
+/* --- Página de um livro: grade com os capítulos --- */
+.grade-capitulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+    gap: 8px;
+}
+
+.grade-capitulos a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    border: 1px solid var(--cor-borda-controle);
+    border-radius: 4px;
+    background-color: var(--bg-painel);
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+
+.grade-capitulos a:hover {
+    border-color: var(--cor-destaque);
+    color: var(--cor-destaque);
+}
+
+/* --- Página de uma tradução: lista dos livros --- */
+#pagina-traducao h3 {
+    margin: 20px 0 10px;
+}
+
+.lista-de-livros {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 4px 12px;
+}
+
+.lista-de-livros a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.lista-de-livros a:hover {
+    background-color: var(--cor-hover);
+}
+
+/* --- Página 404 (endereço que não existe) --- */
+#pagina-404 {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#pagina-404 h1 {
+    color: var(--cor-destaque);
+    margin-bottom: 30px;
+}
+
+#pagina-404 p {
+    margin-top: 15px;
+    color: var(--cor-texto-secundario);
+}
+
+#pagina-404 a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+
+/* --- Telas grandes: o botão ☰ esconde e mostra a barra lateral --- */
+@media (min-width: 801px) {
+    html.menu-oculto #lista-livros {
+        margin-left: calc(var(--largura-menu) * -1);
+        visibility: hidden;
+        /* escondido de verdade: sai do Tab e do leitor de tela */
+        transition-delay: 0s, 0.3s, 0s, 0s;
+        /* a 2ª espera é a do visibility: só some depois que a animação de fechar termina */
+    }
+
+    /* Sem JavaScript a barra lateral está sempre à vista: o botão não teria o que fazer */
+    html:not(.com-js) #btn-toggle-menu {
+        display: none;
+    }
 }
 
 /* --- Design Responsivo para Telas Menores --- */
 @media (max-width: 800px) {
+
+    /* Nada que o navegador rola até a vista (âncoras #v16 e #conteudo, foco do teclado) fica atrás da barra fixa */
+    html {
+        scroll-padding-top: calc(var(--altura-barra) + 10px);
+    }
+
     #conteudo-principal {
-        padding-top: 60px;
-        /* Dá espaço para os botões e evita sobreposição no texto */
+        padding: calc(var(--altura-barra) + 20px) 16px 24px;
     }
 
-    #btn-toggle-menu {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        z-index: 100;
-        /* Força ele a ficar em cima de tudo no celular */
-    }
-
-    #lista-livros {
-        position: absolute;
-        left: 0;
+    /* Barra fixa no topo: o botão ☰ fica sempre à mão e não cobre os outros controles */
+    #controles-topo {
+        position: fixed;
         top: 0;
-        z-index: 5;
-        /* Fica abaixo do botão hambúrguer (100) e acima do texto (1) */
-        margin-left: -350px;
-        height: 100%;
+        left: 0;
+        right: 0;
+        height: var(--altura-barra);
+        margin: 0;
+        padding: 0 8px;
+        align-items: center;
+        gap: 8px;
+        background-color: var(--bg-painel);
+        border-bottom: 1px solid var(--cor-borda);
+        z-index: 20;
     }
 
-    #container-principal.menu-aberto #lista-livros {
+    .configuracoes-interface {
+        gap: 8px;
+    }
+
+    .configuracoes-interface button {
+        padding: 8px 10px;
+    }
+
+    /* O menu abre por cima do texto, abaixo da barra, e nunca é mais largo que a tela */
+    #lista-livros {
+        --largura-menu: min(350px, 85vw);
+        position: fixed;
+        top: var(--altura-barra);
+        bottom: 0;
+        left: 0;
+        height: auto;
+        margin-left: calc(var(--largura-menu) * -1);
+        visibility: hidden;
+        transition-delay: 0s, 0.3s, 0s, 0s;
+        /* a 2ª espera é a do visibility: só some depois que a animação de fechar termina */
+        z-index: 15;
+        scroll-margin-top: var(--altura-barra);
+    }
+
+    /* Aberto pelo leitor.js (classe no <html>) ou, sem JavaScript, pelo link ☰ (#lista-livros na URL).
+       Limitação conhecida do modo sem JavaScript: cada abrir/fechar entra no histórico do navegador
+       (o botão Voltar passa por eles). */
+    html.menu-aberto #lista-livros,
+    html:not(.com-js) #lista-livros:target {
         margin-left: 0;
+        visibility: visible;
+        transition-delay: 0s;
+        /* ao abrir, aparece na hora (e já pode receber o foco do teclado) */
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    #fechar-menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        min-height: 44px;
+        margin: -10px 0 0;
+        text-decoration: none;
+    }
+
+    /* Linhas curtas: texto justificado abre buracos entre as palavras */
+    #texto-biblico p {
+        text-align: left;
+        hyphens: manual;
+    }
+
+    #navegacao-capitulos a {
+        padding: 10px 12px;
     }
 }
 
-.hidden {
-    display: none !important;
+/* --- Tela baixa (celular deitado, zoom alto no computador): o menu inteiro rola, e a lista de versões
+   abre dentro dele em vez de por cima. Assim nenhuma versão e nenhum livro ficam fora do alcance.
+   (Nas telas de altura normal, só a lista de livros rola.) --- */
+@media (max-height: 560px) {
+    #lista-livros {
+        overflow-y: auto;
+    }
+
+    #lista-livros header,
+    .listas-testamentos {
+        flex: none;
+    }
+
+    .listas-testamentos {
+        overflow-y: visible;
+    }
+
+    #versao-select ul {
+        position: static;
+        margin-top: 4px;
+        box-shadow: none;
+    }
+
+    /* o rótulo "Versão:" fica na altura da caixa, e não no meio da lista aberta */
+    .selecao-versao {
+        align-items: baseline;
+    }
+}
+
+/* --- Quem pediu menos animação ao sistema --- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --- Modo de alto contraste do Windows: o ícone ☰ é desenhado com background --- */
+@media (forced-colors: active) {
+    #btn-toggle-menu span {
+        forced-color-adjust: none;
+        background: CanvasText;
+    }
+
+    .lista-container li a[aria-current],
+    #versao-select li a[aria-current] {
+        outline: 2px solid Highlight;
+        outline-offset: -2px;
+    }
+}
+
+/* --- Impressão: só o texto do capítulo, preto no branco --- */
+@media print {
+
+    :root,
+    html.dark-mode {
+        color-scheme: light;
+        --bg-body: #fff;
+        --bg-painel: #fff;
+        --cor-texto: #000;
+        --cor-texto-secundario: #333;
+        --cor-destaque: #000;
+        --cor-borda: #999;
+    }
+
+    .pular-para-texto,
+    #lista-livros,
+    #controles-topo,
+    .controle-capitulo,
+    #navegacao-capitulos {
+        display: none !important;
+    }
+
+    body {
+        transition: none;
+    }
+
+    #container-principal {
+        display: block;
+    }
+
+    #conteudo-principal {
+        padding: 0;
+    }
+
+    #conteudo,
+    body[data-cap] #conteudo {
+        max-width: none;
+    }
+
+    /* no papel o nome do livro não é link: sai sem o pontilhado */
+    #titulo-capitulo a {
+        text-decoration: none;
+    }
+
+    #texto-biblico p {
+        font-size: 12pt;
+        text-align: left;
+        margin-bottom: 6pt;
+        break-inside: avoid;
+        /* não parte um versículo entre duas páginas */
+    }
 }
